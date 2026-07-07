@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Se7en Tech IT Solutions | Premier HR Consultancy & IT Staffing</title>
+    <meta name="description" content="Se7en Tech IT Solutions is a trusted HR Consultancy, IT Staffing, Recruitment and Corporate Training company in Hyderabad, helping businesses hire exceptional talent.">
+    <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Workforce Solutions, Hyderabad">
+    <meta name="author" content="Se7en Tech IT Solutions">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Se7en Tech IT Solutions | HR & Staffing Experts">
+    <meta property="og:description" content="Empowering businesses with top talent and practical industry-ready training programs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.se7entechitsolutions.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Se7en Tech IT Solutions">
+    <meta name="twitter:description" content="Empowering businesses with top talent and practical industry-ready training programs.">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- ==========================================
+         STYLESHEET (Normally style.css)
+         ========================================== -->
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #0A4D9C;
+            --secondary: #2F80ED;
+            --accent: #14B8FF;
+            --bg-color: #F8FBFF;
+            --card-bg: #FFFFFF;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --border-color: #E2E8F0;
+            --gradient: linear-gradient(135deg, #0A4D9C 0%, #14B8FF 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(10, 77, 156, 0.05);
+            --shadow-md: 0 10px 30px -5px rgba(10, 77, 156, 0.1);
+            --shadow-lg: 0 20px 40px -10px rgba(10, 77, 156, 0.15);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Base Styles & Reset */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* Typography Utilities */
+        .text-gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .eyebrow {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* Buttons */
+        .btn-custom {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1;
+        }
+
+        .btn-primary-custom {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px rgba(20, 184, 255, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(20, 184, 255, 0.4);
+            color: white;
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--border-color);
+            background-color: white;
+        }
+
+        .btn-outline-custom:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Ripple Effect */
+        .btn-custom::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        .btn-custom:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: var(--shadow-md);
+            border-radius: 20px;
+        }
+
+        /* Header / Navbar */
+        #mainNav {
+            padding: 20px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        #mainNav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary) !important;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-brand span {
+            color: var(--accent);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-blobs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(60px);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            top: -10%;
+            right: -5%;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            bottom: 10%;
+            left: -5%;
+            animation-delay: -5s;
+        }
+
+        /* Hero Right Side - Asymmetrical Image */
+        .hero-img-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-img {
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .floating-tag {
+            position: absolute;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            z-index: 3;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .tag-1 { top: 10%; left: -10%; animation-delay: 0s; }
+        .tag-2 { bottom: 20%; right: -5%; animation-delay: 1.5s; }
+        .tag-3 { bottom: 5%; left: 5%; animation-delay: 3s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            background: white;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Services Section */
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-color);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about-img-container {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .about-img-container img {
+            width: 100%;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .about-img-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 30px;
+            right: -20px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .about-badge .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* Checklist */
+        .premium-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .premium-checklist li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+            padding: 12px 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .premium-checklist li:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .premium-checklist li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Training Section */
+        .training-section {
+            background-color: var(--text-dark);
+            color: white;
+            overflow: hidden;
+        }
+
+        .training-section h2, 
+        .training-section .eyebrow {
+            color: white;
+        }
+
+        .training-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .training-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .training-card h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            padding: 40px;
+            margin: 20px;
+        }
+
+        .stars {
+            color: #FFC107;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .client-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .client-profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .client-info h5 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .client-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Client Logos */
+        .logo-ticker {
+            background: white;
+            padding: 50px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+        }
+
+        .logo-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+
+        .logo-item {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #A0AEC0;
+            margin: 0 50px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-item:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Office Gallery */
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 77, 156, 0.6), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section * {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #061E3E;
+            color: #A0AEC0;
+            padding: 80px 0 30px;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #A0AEC0;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Micro Interactions & Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active, .reveal-left.active, .reveal-right.active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+        
+        /* Delays for staggered animations */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .hero {
+                padding-top: 140px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero-img-wrapper {
+                margin-top: 60px;
+            }
+            .floating-tag {
+                display: none; /* Hide on mobile to prevent clutter */
+            }
+            .about-badge {
+                right: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+
+    <!-- ==========================================
+         HEADER / NAVIGATION
+         ========================================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Se7en<span>Tech</span></a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <i class="bi bi-list fs-1 text-dark"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header pb-0">
+                    <h5 class="offcanvas-title fw-bold text-primary" id="offcanvasNavbarLabel">Se7en<span class="text-info">Tech</span></h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#training">Training</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center mt-3 mt-lg-0">
+                        <a href="#contact" class="btn-custom btn-primary-custom w-100">
+                            Get In Touch <i class="bi bi-arrow-right-short fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section id="home" class="hero">
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-lg-6 reveal-left">
+                    <span class="eyebrow"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>Staffing • Recruitment • Training</span>
+                    <h1>Connecting Talent with <span class="text-gradient">Opportunity</span></h1>
+                    <p class="lead mb-4">Se7en Tech IT Solutions is a trusted HR Consultancy, IT Staffing, Recruitment and Corporate Training company helping businesses hire exceptional talent while empowering professionals with practical industry-ready skills.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#services" class="btn-custom btn-primary-custom">
+                            Hire Top Talent
+                        </a>
+                        <a href="#training" class="btn-custom btn-outline-custom">
+                            Explore Training <i class="bi bi-play-circle-fill ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Image & Floating Elements -->
+                <div class="col-lg-6 hero-img-wrapper reveal-right delay-200">
+                    <div class="glass-card floating-tag tag-1">
+                        <i class="bi bi-person-check text-primary me-2"></i> HR Consulting
+                    </div>
+                    <div class="glass-card floating-tag tag-2">
+                        <i class="bi bi-laptop text-info me-2"></i> Corporate Training
+                    </div>
+                    <div class="glass-card floating-tag tag-3">
+                        <i class="bi bi-graph-up-arrow text-success me-2"></i> Talent Acquisition
+                    </div>
+                    <!-- High quality placeholder image -->
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Professional Business Woman" class="hero-img img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         STATISTICS COUNTERS
+         ========================================== -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2 stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 stat-item reveal delay-100">
+                    <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
+                    <div class="stat-text">Clients Served</div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 stat-item reveal delay-200">
+                    <div class="stat-number"><span class="counter" data-target="1200">0</span>+</div>
+                    <div class="stat-text">Candidates Placed</div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 stat-item reveal delay-300">
+                    <div class="stat-number"><span class="counter" data-target="800">0</span>+</div>
+                    <div class="stat-text">Students Trained</div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 stat-item reveal delay-400">
+                    <div class="stat-number"><span class="counter" data-target="25">0</span>+</div>
+                    <div class="stat-text">Corp. Partners</div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 stat-item reveal delay-400">
+                    <div class="stat-number"><span class="counter" data-target="15">0</span>+</div>
+                    <div class="stat-text">Expert Recruiters</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         ABOUT SECTION
+         ========================================== -->
+    <section id="about" class="bg-white">
+        <div class="container">
+            <div class="row align-items-center gx-lg-5">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
+                    <div class="about-img-container">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Modern Office" class="img-fluid">
+                        <div class="about-badge glass-card">
+                            <div class="icon">
+                                <i class="bi bi-award-fill"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0 text-dark fw-bold">Premium Quality</h5>
+                                <small class="text-muted">Trusted Industry Partner</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-right delay-200">
+                    <span class="eyebrow">Who We Are</span>
+                    <h2 class="mb-4 display-6 fw-bold">Your Partner in <br><span class="text-gradient">People & Performance</span></h2>
+                    <p class="mb-4">Established in 2022, Se7en Tech IT Solutions is a Hyderabad-based HR Consultancy, Staffing, Recruitment and Corporate Training company committed to helping businesses build high-performing teams while empowering individuals with practical skills, confidence and career opportunities.</p>
+                    
+                    <!-- Premium Checklist -->
+                    <ul class="premium-checklist mb-4">
+                        <li><i class="bi bi-check-circle-fill"></i> Industry Experienced Team</li>
+                        <li><i class="bi bi-check-circle-fill"></i> End-to-End Recruitment Support</li>
+                        <li><i class="bi bi-check-circle-fill"></i> High Quality Candidates</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Fast Turnaround & Placement</li>
+                    </ul>
+                    
+                    <a href="#services" class="btn-custom btn-primary-custom mt-2">
+                        Know More <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES SECTION
+         ========================================== -->
+    <section id="services">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <span class="eyebrow">Our Expertise</span>
+                <h2 class="display-6 fw-bold">Premium <span class="text-gradient">Workforce Solutions</span></h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6 reveal delay-100">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-pc-display"></i></div>
+                        <h3>IT Staffing</h3>
+                        <p>Providing specialized technology professionals to meet your short-term and long-term project requirements efficiently.</p>
+                        <a href="#contact" class="text-primary fw-semibold mt-3 d-inline-block">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6 reveal delay-200">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-search"></i></div>
+                        <h3>Recruitment</h3>
+                        <p>End-to-end recruitment services ensuring you hire the right fit for your organizational culture and goals.</p>
+                        <a href="#contact" class="text-primary fw-semibold mt-3 d-inline-block">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6 reveal delay-300">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+                        <h3>HR Consulting</h3>
+                        <p>Strategic HR advisory services to streamline your processes, compliance, and employee engagement frameworks.</p>
+                        <a href="#contact" class="text-primary fw-semibold mt-3 d-inline-block">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6 reveal delay-100">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-magnet-fill"></i></div>
+                        <h3>Talent Acquisition</h3>
+                        <p>Proactive talent sourcing strategies targeting passive candidates to build a strong pipeline of future leaders.</p>
+                        <a href="#contact" class="text-primary fw-semibold mt-3 d-inline-block">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6 reveal delay-200">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-easel-fill"></i></div>
+                        <h3>Corporate Training</h3>
+                        <p>Customized skill development programs bridging the gap between academic knowledge and industry requirements.</p>
+                        <a href="#contact" class="text-primary fw-semibold mt-3 d-inline-block">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6 reveal delay-300">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-building-gear"></i></div>
+                        <h3>Workforce Solutions</h3>
+                        <p>Comprehensive managed services enabling you to optimize your contingent workforce and reduce operational costs.</p>
+                        <a href="#contact" class="text-primary fw-semibold mt-3 d-inline-block">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TRAINING SECTION
+         ========================================== -->
+    <section id="training" class="training-section position-relative">
+        <div class="blob blob-1" style="background: rgba(255,255,255,0.1); left: 10%; top: 20%;"></div>
+        <div class="container relative z-index-1">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-7 reveal-left">
+                    <span class="eyebrow">Skill Development</span>
+                    <h2 class="display-5 fw-bold mb-3">Learn. Upskill.<br><span class="text-info">Grow Your Career.</span></h2>
+                    <p class="text-light opacity-75">Our expert-led training programs are designed to equip you with the practical skills modern employers demand.</p>
+                </div>
+                <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 reveal-right">
+                    <a href="#contact" class="btn-custom btn-primary-custom text-white">
+                        View All Training <i class="bi bi-journal-text ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 reveal delay-100">
+                    <div class="training-card">
+                        <i class="bi bi-person-lines-fill fs-2 text-info mb-3"></i>
+                        <h4>HR Foundation Program</h4>
+                        <p class="text-light opacity-75 fs-6 mb-0">Master the core concepts of Human Resources, payroll, compliance, and employee lifecycle management.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal delay-200">
+                    <div class="training-card">
+                        <i class="bi bi-search-heart fs-2 text-info mb-3"></i>
+                        <h4>Recruitment Training</h4>
+                        <p class="text-light opacity-75 fs-6 mb-0">Learn advanced sourcing techniques, boolean search, interviewing skills, and negotiation tactics.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal delay-300">
+                    <div class="training-card">
+                        <i class="bi bi-linkedin fs-2 text-info mb-3"></i>
+                        <h4>Resume & LinkedIn Optimization</h4>
+                        <p class="text-light opacity-75 fs-6 mb-0">Craft compelling profiles that attract recruiters and pass ATS systems with ease.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal delay-100">
+                    <div class="training-card">
+                        <i class="bi bi-robot fs-2 text-info mb-3"></i>
+                        <h4>AI Tools for HR</h4>
+                        <p class="text-light opacity-75 fs-6 mb-0">Future-proof your career by integrating AI tools into daily HR and recruitment workflows.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal delay-200">
+                    <div class="training-card">
+                        <i class="bi bi-mic-fill fs-2 text-info mb-3"></i>
+                        <h4>Interview Preparation</h4>
+                        <p class="text-light opacity-75 fs-6 mb-0">Mock interviews, body language coaching, and structuring answers using the STAR method.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal delay-300">
+                    <div class="training-card">
+                        <i class="bi bi-briefcase-fill fs-2 text-info mb-3"></i>
+                        <h4>Placement Assistance</h4>
+                        <p class="text-light opacity-75 fs-6 mb-0">Dedicated support connecting our trained candidates with hiring partners across the IT industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TESTIMONIALS & CLIENT LOGOS
+         ========================================== -->
+    <section class="bg-white overflow-hidden pb-0">
+        <div class="container reveal">
+            <div class="text-center mb-5">
+                <span class="eyebrow">Client Success</span>
+                <h2 class="display-6 fw-bold">What Our <span class="text-gradient">Partners Say</span></h2>
+            </div>
+            
+            <!-- Testimonial Carousel -->
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Item 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="glass-card testimonial-card text-center shadow-sm">
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <h4 class="mb-4 lh-base text-dark fw-normal">"Se7en Tech IT Solutions transformed our hiring process. Their team understood our technical requirements perfectly and delivered high-quality candidates within tight deadlines."</h4>
+                                    <div class="client-profile justify-content-center">
+                                        <img src="https://i.pravatar.cc/150?img=11" alt="Avatar">
+                                        <div class="client-info text-start">
+                                            <h5>Rahul Sharma</h5>
+                                            <p>HR Director, Tech Innovators</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="glass-card testimonial-card text-center shadow-sm">
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <h4 class="mb-4 lh-base text-dark fw-normal">"The Corporate Training program was exceptional. Our freshers were quickly brought up to speed with industry standards, bridging the gap seamlessly. Highly recommended!"</h4>
+                                    <div class="client-profile justify-content-center">
+                                        <img src="https://i.pravatar.cc/150?img=5" alt="Avatar">
+                                        <div class="client-info text-start">
+                                            <h5>Priya Reddy</h5>
+                                            <p>L&D Manager, Global Sys</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <i class="bi bi-chevron-left text-dark fs-1"></i>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <i class="bi bi-chevron-right text-dark fs-1"></i>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Infinite Logo Ticker -->
+        <div class="logo-ticker mt-5">
+            <div class="logo-track">
+                <!-- Dummy Logos Double for infinite effect -->
+                <div class="logo-item"><i class="bi bi-hexagon-fill text-primary"></i> TCS</div>
+                <div class="logo-item"><i class="bi bi-triangle-fill text-info"></i> Infosys</div>
+                <div class="logo-item"><i class="bi bi-circle-square text-success"></i> Wipro</div>
+                <div class="logo-item"><i class="bi bi-braces-asterisk text-warning"></i> HCL</div>
+                <div class="logo-item"><i class="bi bi-cpu-fill text-danger"></i> Tech Mahindra</div>
+                <div class="logo-item"><i class="bi bi-layers-fill text-primary"></i> Accenture</div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="logo-item"><i class="bi bi-hexagon-fill text-primary"></i> TCS</div>
+                <div class="logo-item"><i class="bi bi-triangle-fill text-info"></i> Infosys</div>
+                <div class="logo-item"><i class="bi bi-circle-square text-success"></i> Wipro</div>
+                <div class="logo-item"><i class="bi bi-braces-asterisk text-warning"></i> HCL</div>
+                <div class="logo-item"><i class="bi bi-cpu-fill text-danger"></i> Tech Mahindra</div>
+                <div class="logo-item"><i class="bi bi-layers-fill text-primary"></i> Accenture</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         OFFICE GALLERY
+         ========================================== -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <span class="eyebrow">Life at Se7en Tech</span>
+                <h2 class="display-6 fw-bold">Our <span class="text-gradient">Workspace</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 reveal delay-100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600" alt="Office Space 1">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-8 reveal delay-200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Team Collaboration">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-8 reveal delay-100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000" alt="Corporate Training">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal delay-300">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600" alt="Recruitment Interview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CALL TO ACTION
+         ========================================== -->
+    <section class="cta-section text-center">
+        <!-- Abstract shape elements in background -->
+        <div style="position:absolute; top:-50%; left:-10%; width: 500px; height: 500px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index:0; filter: blur(40px);"></div>
+        <div class="container position-relative z-index-1 reveal">
+            <h2 class="display-5 fw-bold mb-4">Ready to Hire Top Talent or Upskill Your Career?</h2>
+            <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 700px;">Partner with Se7en Tech IT Solutions today. Let's build a brighter future for your business and career together.</p>
+            <a href="#contact" class="btn-custom bg-white text-primary fs-5" style="box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+                Contact Us Today <i class="bi bi-arrow-up-right-circle-fill ms-2 text-primary"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER & CONTACT
+         ========================================== -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Company Info -->
+                <div class="col-lg-4 reveal-up">
+                    <h3 class="fw-bold text-white mb-4">Se7en<span style="color: var(--accent);">Tech</span></h3>
+                    <p class="mb-4">Premium HR Consultancy, Staffing, Recruitment and Corporate Training company based in Hyderabad, dedicated to connecting talent with opportunity.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 reveal-up delay-100">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#training">Training</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="col-lg-2 col-md-6 reveal-up delay-200">
+                    <h5>Our Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">IT Staffing</a></li>
+                        <li><a href="#services">Recruitment</a></li>
+                        <li><a href="#services">HR Consulting</a></li>
+                        <li><a href="#training">Corporate Training</a></li>
+                        <li><a href="#services">Workforce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="col-lg-4 reveal-up delay-300">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-geo-alt-fill text-info me-3 fs-5"></i>
+                            <span>
+                                <a href="https://maps.app.goo.gl/1VCbWiZPAhB2GtoC8" target="_blank" class="text-decoration-none text-reset hover-text-white transition">
+                                    4-7-154/2/E/6, Attapur,<br>
+                                    Sai Hills Colony, Panduranga Nagar,<br>
+                                    Hyderabad, Telangana 500048
+                                </a>
+                            </span>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-telephone-fill text-info me-3 fs-5"></i>
+                            <span><a href="tel:+919989874934" class="text-decoration-none text-reset">99898 74934</a></span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-envelope-fill text-info me-3 fs-5"></i>
+                            <span><a href="mailto:info@se7entechitsolutions.com" class="text-decoration-none text-reset">info@se7entechitsolutions.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-5 border-secondary opacity-25">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small">&copy; <span id="currentYear"></span> Se7en Tech IT Solutions. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <p class="mb-0 small">Designed for Excellence.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle (Includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ==========================================
+         JAVASCRIPT LOGIC (Normally script.js)
+         ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Set Dynamic Year in Footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('mainNav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile Menu auto-close on link click
+            const navLinks = document.querySelectorAll('.offcanvas .nav-link, .offcanvas .btn-custom');
+            const offcanvasElement = document.getElementById('offcanvasNavbar');
+            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (offcanvasElement.classList.contains('show')) {
+                        bsOffcanvas.hide();
+                    }
+                });
+            });
+
+            // Smooth Scroll for Anchor Links (Vanilla JS)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for Scroll Reveal Animations
+            const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: stop observing once revealed
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // Counter Animation Logic (Only triggers when in view)
+            const counters = document.querySelectorAll('.counter');
+            let hasCounted = false;
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        animateCounter(entry.target);
+                        entry.target.classList.add('counted');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            function animateCounter(counter) {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 2 seconds
+                const stepTime = Math.abs(Math.floor(duration / target)) || 10;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    // Adjust increment step based on target size for smooth fast counting
+                    const increment = Math.ceil(target / 100); 
+                    current += increment;
+                    
+                    if (current >= target) {
+                        counter.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = current;
+                    }
+                }, stepTime);
+            }
+        });
+    </script>
+</body>
+</html>
