@@ -237,12 +237,12 @@
             box-shadow: var(--neu-out);
             padding: 10px 30px;
             z-index: 1000;
-            transition: var(--transition);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .navbar-floating.scrolled {
-            top: 10px;
+            top: 20px;
             background-color: rgba(237, 242, 247, 0.95);
             box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
         }
@@ -701,6 +701,51 @@
             section { padding: 60px 0; }
             .stat-number { font-size: 2.5rem; }
             .cta-card { padding: 3rem 1.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 95px;
+            }
+            .navbar-floating {
+                padding: 10px 20px;
+            }
+            .navbar-brand {
+                font-size: 1.15rem;
+            }
+            .navbar-toggler {
+                padding: 0.25rem 0.35rem;
+            }
+            .navbar-collapse {
+                max-height: calc(100vh - 110px);
+                overflow-y: auto;
+                padding: 16px;
+                margin-top: 12px;
+                border-radius: var(--radius-md);
+            }
+            .hero-section,
+            section[id],
+            #home {
+                scroll-margin-top: 100px;
+                padding-top: 120px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container,
+            .container-fluid {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .hero-section,
+            section[id],
+            #home {
+                padding-top: 110px !important;
+            }
+            .neu-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>

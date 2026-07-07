@@ -42,6 +42,62 @@ body {
     padding-bottom: 88px;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+section[id],
+.hero,
+.hero-section,
+#home {
+    scroll-margin-top: 110px;
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 92px;
+    }
+
+    body {
+        padding-bottom: 92px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.15rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.35rem;
+    }
+
+    .navbar-collapse,
+    .offcanvas-body {
+        max-height: calc(100vh - 110px);
+        overflow-y: auto;
+    }
+
+    .navbar-collapse {
+        padding: 16px;
+        margin-top: 12px;
+        border-radius: 16px;
+    }
+
+    .nav-link {
+        padding: 0.7rem 0.2rem !important;
+    }
+
+    .hero,
+    .hero-section,
+    #home {
+        padding-top: 120px !important;
+    }
+}
+
 @media (max-width: 576px) {
     .version-switcher-shell {
         bottom: 12px;
@@ -57,5 +113,15 @@ body {
 
     body {
         padding-bottom: 80px;
+    }
+
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+
+    .hero,
+    .hero-section,
+    #home {
+        padding-top: 110px !important;
     }
 }

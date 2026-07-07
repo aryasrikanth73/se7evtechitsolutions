@@ -175,15 +175,15 @@
 
         /* Header / Navbar */
         #mainNav {
-            padding: 20px 0;
-            transition: var(--transition);
+            padding: 16px 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
             background: transparent;
         }
 
         #mainNav.scrolled {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 12px 0;
+            padding: 16px 0;
             box-shadow: var(--shadow-sm);
         }
 
@@ -727,6 +727,50 @@
                 justify-content: center;
             }
         }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 95px;
+            }
+            body {
+                padding-top: 0;
+            }
+            .navbar {
+                padding: 10px 0;
+            }
+            .navbar-brand {
+                font-size: 1.15rem;
+            }
+            .navbar-toggler {
+                padding: 0.25rem 0.35rem;
+            }
+            .offcanvas-body {
+                max-height: calc(100vh - 110px);
+                overflow-y: auto;
+            }
+            .hero,
+            section[id],
+            #home {
+                scroll-margin-top: 100px;
+                padding-top: 120px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .hero,
+            section[id],
+            #home {
+                padding-top: 110px !important;
+            }
+            .btn-custom {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
@@ -743,27 +787,21 @@
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">Se7en<span>Tech</span></a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-1 text-dark"></i>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header pb-0">
-                    <h5 class="offcanvas-title fw-bold text-primary" id="offcanvasNavbarLabel">Se7en<span class="text-info">Tech</span></h5>
-                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#training">Training</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
-                    <div class="d-flex align-items-center mt-3 mt-lg-0">
-                        <a href="#contact" class="btn-custom btn-primary-custom w-100">
-                            Get In Touch <i class="bi bi-arrow-right-short fs-5"></i>
-                        </a>
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#training">Training</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <a href="#contact" class="btn-custom btn-primary-custom w-100">
+                        Get In Touch <i class="bi bi-arrow-right-short fs-5"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1260,14 +1298,14 @@
             });
 
             // Mobile Menu auto-close on link click
-            const navLinks = document.querySelectorAll('.offcanvas .nav-link, .offcanvas .btn-custom');
-            const offcanvasElement = document.getElementById('offcanvasNavbar');
-            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link, #navbarNav .btn-custom');
+            const navbarCollapse = document.getElementById('navbarNav');
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
             
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    if (offcanvasElement.classList.contains('show')) {
-                        bsOffcanvas.hide();
+                    if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                        bsCollapse.hide();
                     }
                 });
             });

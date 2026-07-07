@@ -188,13 +188,13 @@
         }
 
         .navbar {
-            transition: var(--transition);
-            padding: 20px 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+            padding: 16px 0;
             background: transparent;
         }
 
         .navbar.scrolled {
-            padding: 10px 0;
+            padding: 16px 0;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -529,6 +529,51 @@
             .hero-title { font-size: 2.5rem; }
             .section-padding { padding: 60px 0; }
             .stat-card { margin-bottom: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 95px;
+            }
+            .navbar {
+                padding: 10px 0;
+            }
+            .navbar-brand {
+                font-size: 1.15rem;
+            }
+            .navbar-toggler {
+                padding: 0.25rem 0.35rem;
+            }
+            .navbar-collapse {
+                max-height: calc(100vh - 110px);
+                overflow-y: auto;
+                padding: 16px;
+                margin-top: 12px;
+                border-radius: 16px;
+            }
+            .hero-section,
+            section[id],
+            #home {
+                scroll-margin-top: 100px;
+                padding-top: 120px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .hero-section,
+            section[id],
+            #home {
+                padding-top: 110px !important;
+            }
+            .btn-primary-custom,
+            .btn-glass {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
