@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Se7en Tech IT Solutions - Premium HR Consultancy, IT Staffing, Recruitment and Corporate Training in Hyderabad.">
+    <meta name="description" content="Explore professional HR Consultancy, Recruitment, IT Staffing, Talent Acquisition, Payroll Support, Compliance, Workforce Solutions and Corporate Training services offered by Se7en Tech IT Solutions.">
     <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Hyderabad">
     <meta name="author" content="Se7en Tech IT Solutions">
-    <title>Se7en Tech IT Solutions | Premium HR & Staffing</title>
+    <title>HR Services | Recruitment | Staffing | Se7en Tech IT Solutions</title>
 
     <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Se7en Tech IT Solutions">
-    <meta property="og:description" content="Connecting Talent with Opportunity. Top-tier HR Consultancy and IT Staffing.">
+    <meta property="og:title" content="HR Services | Recruitment | Staffing | Se7en Tech IT Solutions">
+    <meta property="og:description" content="Explore HR Consultancy, Recruitment, IT Staffing, Payroll Support, Compliance, Workforce Solutions and Corporate Training services.">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts: Poppins -->
@@ -127,14 +127,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .font-weight-bold {
-            font-weight: 700;
-        }
-
-        .text-heading {
-            color: var(--heading);
         }
         
         .section-title {
@@ -600,6 +592,350 @@
             grid-area: training;
         }
 
+        /* About Page */
+        .page-hero {
+            padding-top: 150px;
+            padding-bottom: 90px;
+            overflow: hidden;
+        }
+
+        .breadcrumb-soft {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            font-size: 0.86rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-card {
+            min-height: 460px;
+        }
+
+        .about-hero-img,
+        .story-img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card {
+            grid-column: 2;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: var(--neu-out-sm);
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .process-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .process-track::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--surface);
+            box-shadow: var(--neu-out);
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .about-gallery {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            grid-template-rows: 240px 240px;
+            grid-template-areas:
+                "office meetings training"
+                "office workshops corporate";
+            gap: 1.5rem;
+        }
+
+        .about-gallery .gallery-img-wrap {
+            min-height: 0;
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        .gallery-office { grid-area: office; }
+        .gallery-meetings { grid-area: meetings; }
+        .gallery-training { grid-area: training; }
+        .gallery-workshops { grid-area: workshops; }
+        .gallery-corporate { grid-area: corporate; }
+
+        /* Services Page */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-features {
+            display: grid;
+            gap: 0.75rem;
+            margin: 1.5rem 0 2rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-features li,
+        .benefit-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            color: var(--heading);
+        }
+
+        .service-features i,
+        .benefit-list i {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .industry-card {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .industry-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-list {
+            display: grid;
+            gap: 1.1rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .benefits-img {
+            width: 100%;
+            min-height: 440px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .services-process {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        .services-process::before {
+            left: 7%;
+            right: 7%;
+        }
+
+        .services-process .process-number {
+            width: 74px;
+            height: 74px;
+            font-size: 1.15rem;
+        }
+
+        .faq-accordion .accordion-item {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out-sm);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .faq-accordion .accordion-button {
+            background: var(--surface);
+            color: var(--heading);
+            font-weight: 700;
+            box-shadow: none;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .faq-accordion .accordion-body {
+            color: var(--paragraph);
+            line-height: 1.75;
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        @media (max-width: 1199px) {
+            .services-process {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-process::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .benefits-img {
+                min-height: 340px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-process {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-img {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .page-hero {
+                padding-top: 150px;
+                text-align: center;
+            }
+
+            .about-hero-img,
+            .story-img {
+                min-height: 340px;
+            }
+
+            .timeline::before {
+                left: 14px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) .timeline-card {
+                grid-template-columns: 1fr;
+                grid-column: auto;
+                padding-left: 3rem;
+                gap: 1rem;
+            }
+
+            .timeline-dot {
+                left: 14px;
+            }
+
+            .process-track {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-track::before {
+                display: none;
+            }
+
+            .about-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 320px 220px 220px;
+                grid-template-areas:
+                    "office office"
+                    "meetings training"
+                    "workshops corporate";
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-img,
+            .story-img {
+                min-height: 260px;
+            }
+
+            .process-track,
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-gallery {
+                grid-template-rows: none;
+                grid-template-areas:
+                    "office"
+                    "meetings"
+                    "training"
+                    "workshops"
+                    "corporate";
+            }
+
+            .about-gallery .gallery-img-wrap {
+                min-height: 220px;
+                aspect-ratio: 4/3;
+            }
+        }
+
         /* CTA Section */
         .cta-card {
             background: linear-gradient(135deg, var(--surface), var(--bg-alt));
@@ -1016,7 +1352,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <!-- <i class="bi bi-heptagon-fill text-gradient"></i> Se7en Tech -->
-                     <img class="navbar-logo" src="../logo/se7en-logo.png" alt="Se7en Tech Logo">
+                     <img class="navbar-logo" src="C:\Users\srika\Desktop\se7entechitsolutions\logo\se7en-logo.png" alt="Se7en Tech Logo">
                 </a>
                 
                 <!-- Refined Toggler to ensure it's always clearly visible on mobile -->
@@ -1026,9 +1362,9 @@
                 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center gap-2">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
@@ -1041,402 +1377,292 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
-        
+            <main>
         <!-- ==========================================
-             HERO SECTION
+             SERVICES PAGE HERO
         =========================================== -->
-        <section id="home" class="hero-section pb-lg-5">
+        <section class="page-hero hero-section">
             <div class="gradient-blob blob-1"></div>
             <div class="gradient-blob blob-2"></div>
-            
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 reveal">
-                        <span class="hero-label"><i class="bi bi-star-fill text-warning me-1"></i> STAFFING &bull; HR SERVICES &bull; TRAINING</span>
-                        <h1 class="hero-title">Connecting Talent with <span class="text-gradient">Opportunity</span></h1>
-                        <p class="hero-text">Se7en Tech IT Solutions is a trusted HR Consultancy, Recruitment, Staffing and Corporate Training company helping businesses build exceptional teams while empowering professionals with industry-ready skills.</p>
+                        <nav class="breadcrumb-soft" aria-label="Breadcrumb">
+                            <a href="index.html" class="text-primary">Home</a>
+                            <span>/</span>
+                            <span>Services</span>
+                        </nav>
+                        <h1 class="hero-title">Professional HR &<br><span class="text-gradient">Workforce Solutions</span></h1>
+                        <p class="hero-text">Helping businesses build stronger teams through expert HR consulting, recruitment, staffing, payroll support, compliance management, and workforce solutions tailored to every stage of business growth.</p>
                         <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center">
-                            <a href="contact.html" class="neu-btn neu-btn-primary">Get In Touch <i class="bi bi-arrow-right ms-2"></i></a>
-                            <a href="services.html" class="neu-btn"><i class="bi bi-briefcase-fill me-2"></i> Explore Services</a>
+                            <a href="contact.html" class="neu-btn neu-btn-primary">Talk to an Expert <i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="hire-talent.html" class="neu-btn"><i class="bi bi-people-fill me-2"></i> Hire Talent</a>
                         </div>
                     </div>
-                    
                     <div class="col-lg-6 reveal delay-1">
-                        <div class="hero-image-container">
-                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate office representing Se7en Tech HR services and staffing solutions" class="hero-main-img" loading="lazy">
+                        <div class="hero-image-container about-hero-card">
+                            <img class="about-hero-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Professional HR consultant discussing workforce solutions" loading="lazy">
                         </div>
-                    </div>
-                </div>
-
-                <div class="row g-4 mt-5">
-                    <div class="col-lg-4">
-                        <a href="training.html" class="neu-action-card reveal delay-1 h-100">
-                            <div class="card-icon-wrapper icon-blue">
-                                <i class="bi bi-mortarboard-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR STUDENTS</span>
-                                <h3 class="card-title">HR Foundation Program</h3>
-                                <p class="card-desc">Practical HR training with ATS resume support, LinkedIn branding, AI tools, mock interviews, and placement assistance.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="services.html" class="neu-action-card reveal delay-2 h-100">
-                            <div class="card-icon-wrapper icon-cyan">
-                                <i class="bi bi-building-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR BUSINESSES</span>
-                                <h3 class="card-title">HR Services</h3>
-                                <p class="card-desc">Recruitment, staffing, HR consulting, payroll support, compliance, employee engagement, and workforce solutions.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="contact.html" class="neu-action-card reveal delay-3 h-100">
-                            <div class="card-icon-wrapper icon-royal">
-                                <i class="bi bi-people-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR EMPLOYERS</span>
-                                <h3 class="card-title">Hire Talent</h3>
-                                <p class="card-desc">Connect with pre-screened HR, IT, and Non-IT professionals through our recruitment and staffing support.</p>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             STATISTICS SECTION
+             INTRODUCTION
         =========================================== -->
-        <section class="bg-alt py-5">
+        <section class="bg-alt">
             <div class="container">
-                <div class="row g-4" id="counter-section">
-                    <div class="col-6 col-lg-3 reveal">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
-                            <div class="stat-text">Years Experience</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-1">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
-                            <div class="stat-text">Clients Served</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-2">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="1200">0</span>+</div>
-                            <div class="stat-text">Candidates Placed</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-3">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="800">0</span>+</div>
-                            <div class="stat-text">Students Trained</div>
-                        </div>
-                    </div>
+                <div class="text-center max-w-700 mx-auto reveal">
+                    <span class="section-subtitle">Our Services</span>
+                    <h2 class="section-title">Complete HR Solutions Under One Roof</h2>
+                    <p class="fs-5">Se7en Tech IT Solutions helps companies build dependable teams through professional HR Consultancy, Recruitment, IT Staffing, Talent Acquisition, Payroll Support, Compliance, Workforce Solutions, and Corporate Training. Based in Hyderabad, we support businesses with structured hiring processes, practical HR guidance, candidate screening, onboarding coordination, and workforce planning. Our service model is designed for organizations that need quality talent, faster execution, transparent communication, and scalable HR support. Whether you are a startup hiring your first team, a growing company expanding departments, or an enterprise improving HR operations, Se7en Tech delivers people-focused solutions that align with business goals.</p>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             OUR SOLUTIONS SECTION
-        =========================================== -->
-        <section id="solutions">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">What We Do</span>
-                    <h2 class="section-title">Three Powerful Solutions.<br>One Trusted Partner.</h2>
-                    <p>Whether you're starting your HR career, growing your business, or hiring top talent, Se7en Tech has a solution designed for you.</p>
-                </div>
-                
-                <div class="row g-4">
-                    <!-- Solution 1 -->
-                    <div class="col-lg-4 reveal">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Foundation Program</h3>
-                            <p class="mb-4 flex-grow-1">Gain practical HR knowledge through live sessions, ATS resume building, LinkedIn branding, AI tools, mock interviews, and placement support.</p>
-                            <a href="training.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
-                        </article>
-                    </div>
-                    
-                    <!-- Solution 2 -->
-                    <div class="col-lg-4 reveal delay-1">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-building-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Services</h3>
-                            <p class="mb-4 flex-grow-1">Professional HR consulting, recruitment, payroll support, compliance, employee engagement, HR operations, and workforce management.</p>
-                            <a href="services.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Explore Services <i class="bi bi-arrow-right"></i></a>
-                        </article>
-                    </div>
-                    
-                    <!-- Solution 3 -->
-                    <div class="col-lg-4 reveal delay-2">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">Hire Talent</h3>
-                            <p class="mb-4 flex-grow-1">Hire pre-screened HR, IT, and Non-IT professionals quickly through our recruitment and staffing solutions.</p>
-                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Hire Talent <i class="bi bi-arrow-right"></i></a>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             WHO WE ARE SECTION
-        =========================================== -->
-        <section id="about" class="bg-alt">
-            <div class="container">
-                <div class="row justify-content-center text-center reveal">
-                    <div class="col-lg-8 col-xl-7">
-                        <span class="section-subtitle">About Se7en Tech</span>
-                        <h2 class="section-title">Building Careers.<br><span class="text-gradient">Strengthening Businesses.</span></h2>
-                        <p class="mb-3 fs-5">Se7en Tech IT Solutions is a premier HR Consultancy, Staffing, Recruitment, and Corporate Training company based in Hyderabad.</p>
-                        <p class="mb-4 pb-2">We bridge the gap between exceptional talent and outstanding organizations. Our mission is to help businesses scale seamlessly while empowering professionals with the practical skills and confidence needed to build successful careers.</p>
-                        <a href="about.html" class="neu-btn neu-btn-primary">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             WHY SE7EN TECH SECTION
-        =========================================== -->
-        <section id="why-us">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">Why Choose Us</span>
-                    <h2 class="section-title">Why Businesses & Professionals Trust Se7en Tech</h2>
-                </div>
-                
-                <div class="row g-4 justify-content-center">
-                    <!-- Feature 1 -->
-                    <div class="col-md-4 col-sm-6 reveal">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-person-check-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Industry Experts</h3>
-                            <p class="mb-0 small">Practical HR and recruitment experience across business hiring needs.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-1">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-lightning-charge-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Faster Hiring</h3>
-                            <p class="mb-0 small">Structured sourcing and screening to reduce hiring delays.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-2">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-laptop text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Practical Training</h3>
-                            <p class="mb-0 small">Career-focused learning built around real HR workflows.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="col-md-4 col-sm-6 reveal">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-award-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Placement Support</h3>
-                            <p class="mb-0 small">Resume, interview, LinkedIn, and opportunity guidance for learners.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 5 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-1">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-buildings-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">HR Consulting</h3>
-                            <p class="mb-0 small">Professional support for HR policies, operations, and workforce planning.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 6 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-2">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-diagram-3-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Corporate Partnerships</h3>
-                            <p class="mb-0 small">Long-term collaboration for recruitment, training, and HR solutions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             CAREER ACCELERATION SECTION
-        =========================================== -->
-        <section id="career" class="bg-alt">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">Learn With Us</span>
-                    <h2 class="section-title">Start Your HR Career with Confidence</h2>
-                    <p>Our HR Foundation Program equips aspiring HR professionals with practical skills, live projects, AI tools, interview preparation, and placement support.</p>
-                </div>
-                
-                <div class="neu-card career-card p-4 p-lg-5 reveal delay-1">
-                    <div class="row align-items-center g-4 g-lg-5">
-                        <div class="col-lg-6">
-                            <div class="gallery-img-wrap h-100">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="HR Corporate Training Session" loading="lazy" class="h-100 object-fit-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <h3 class="h2 font-weight-bold mb-4">HR Foundation Program</h3>
-                            <ul class="career-list list-unstyled mb-5">
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-camera-video-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Live Training</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-briefcase-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Real HR Projects</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-file-earmark-text-fill"></i></div> 
-                                    <span class="fw-medium fs-5">ATS Resume Building</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-linkedin"></i></div> 
-                                    <span class="fw-medium fs-5">LinkedIn Branding</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-award-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Placement Support</span>
-                                </li>
-                            </ul>
-                            <a href="training.html" class="neu-btn neu-btn-primary">View HR Foundation Program <i class="bi bi-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             TESTIMONIALS & CLIENTS
+             CORE SERVICES
         =========================================== -->
         <section>
             <div class="container">
-                <!-- Clients Strip -->
-                <div class="logo-strip mb-5 reveal">
-                    <span class="client-logo fw-bold fs-4">TCS</span>
-                    <span class="client-logo fw-bold fs-4">Infosys</span>
-                    <span class="client-logo fw-bold fs-4">Wipro</span>
-                    <span class="client-logo fw-bold fs-4">HCLTech</span>
-                    <span class="client-logo fw-bold fs-4">Tech Mahindra</span>
-                    <span class="client-logo fw-bold fs-4">Accenture</span>
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Core Services</span>
+                    <h2 class="section-title">HR Services Built For Growth</h2>
                 </div>
-
-                <!-- Testimonials Slider -->
-                <div class="text-center mt-5 pt-5 reveal">
-                    <span class="section-subtitle">Success Stories</span>
-                    <h2 class="section-title">What People Say</h2>
-                </div>
-
-                <div id="testimonialCarousel" class="carousel slide reveal delay-1" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <article class="neu-card service-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-laptop-fill"></i></div>
+                            <h3 class="h4">IT Staffing</h3>
+                            <p>Helping organizations hire qualified IT professionals for permanent, contract and project-based roles.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Permanent Staffing</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Contract Staffing</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Project Staffing</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Resource Augmentation</li>
+                            </ul>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
                     </div>
-                    <div class="carousel-inner pb-5">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Rajesh K." class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="review-text">"Se7en Tech transformed our hiring process. They understood our technical requirements perfectly and provided candidates who were not just skilled, but cultural fits. Highly recommended for IT staffing."</p>
-                                <h3 class="h5 mb-0">Rajesh K.</h3>
-                                <span class="small text-muted">VP of Engineering, FinTech Co.</span>
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student Review - Priya S." class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="review-text">"The Recruitment Training program was a game-changer for my career. The practical insights into sourcing and LinkedIn optimization helped me land a job as a Talent Acquisition Specialist within a month."</p>
-                                <h3 class="h5 mb-0">Priya S.</h3>
-                                <span class="small text-muted">Trained Candidate</span>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="carousel-item">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Vikram Reddy" class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="review-text">"A reliable partner for workforce solutions. Their turnaround time is impressive, and the quality of candidates is consistently high. They truly understand the nuances of the IT industry in Hyderabad."</p>
-                                <h3 class="h5 mb-0">Vikram Reddy</h3>
-                                <span class="small text-muted">HR Director, Tech Solutions</span>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1">
+                        <article class="neu-card service-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-search-heart-fill"></i></div>
+                            <h3 class="h4">Recruitment Services</h3>
+                            <p>Complete recruitment solutions to identify, screen and hire the right candidates.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Executive Hiring</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Campus Hiring</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Bulk Hiring</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Lateral Hiring</li>
+                            </ul>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2">
+                        <article class="neu-card service-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-buildings-fill"></i></div>
+                            <h3 class="h4">HR Consulting</h3>
+                            <p>Professional HR consulting services to streamline HR operations and improve organizational performance.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle-fill"></i> HR Policies</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Employee Lifecycle</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Performance Management</li>
+                                <li><i class="bi bi-check-circle-fill"></i> HR Advisory</li>
+                            </ul>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <article class="neu-card service-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-file-earmark-lock-fill"></i></div>
+                            <h3 class="h4">Payroll & Compliance</h3>
+                            <p>Reliable payroll processing and statutory compliance support for businesses.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Payroll Processing</li>
+                                <li><i class="bi bi-check-circle-fill"></i> PF & ESI</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Compliance</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Labour Laws</li>
+                            </ul>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1">
+                        <article class="neu-card service-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-person-plus-fill"></i></div>
+                            <h3 class="h4">Talent Acquisition</h3>
+                            <p>Strategic hiring solutions to attract, evaluate and retain top talent.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Talent Mapping</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Candidate Screening</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Interview Coordination</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Employer Branding</li>
+                            </ul>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2">
+                        <article class="neu-card service-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-diagram-3-fill"></i></div>
+                            <h3 class="h4">Workforce Solutions</h3>
+                            <p>End-to-end workforce management solutions for growing organizations.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Workforce Planning</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Resource Allocation</li>
+                                <li><i class="bi bi-check-circle-fill"></i> HR Operations</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Employee Engagement</li>
+                            </ul>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             OFFICE GALLERY
+             SERVICE PROCESS
         =========================================== -->
-        <section class="bg-alt pb-0">
-            <div class="container px-4">
-                <div class="text-center mb-5 reveal">
-                    <h2 class="section-title">Life at Se7en Tech</h2>
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Our Service Process</span>
+                    <h2 class="section-title">From Requirement To Onboarding</h2>
                 </div>
-                <div class="pb-5 reveal delay-1 life-gallery">
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-main">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Se7en Tech Office Space" loading="lazy">
+                <div class="process-track services-process">
+                    <article class="process-step reveal"><div class="process-number">01</div><h3 class="h5">Requirement Analysis</h3><p>We understand your role, team, timelines, and business expectations.</p></article>
+                    <article class="process-step reveal delay-1"><div class="process-number">02</div><h3 class="h5">Planning</h3><p>We create a hiring or HR support plan aligned with your goals.</p></article>
+                    <article class="process-step reveal delay-2"><div class="process-number">03</div><h3 class="h5">Candidate Sourcing</h3><p>We identify relevant profiles through structured sourcing channels.</p></article>
+                    <article class="process-step reveal"><div class="process-number">04</div><h3 class="h5">Screening</h3><p>We evaluate candidates for skills, fit, communication, and readiness.</p></article>
+                    <article class="process-step reveal delay-1"><div class="process-number">05</div><h3 class="h5">Selection</h3><p>We coordinate interviews, feedback, and final hiring decisions.</p></article>
+                    <article class="process-step reveal delay-2"><div class="process-number">06</div><h3 class="h5">Onboarding Support</h3><p>We support joining coordination and post-selection communication.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             INDUSTRIES
+        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Industries We Serve</span>
+                    <h2 class="section-title">Flexible HR Support Across Sectors</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-2 col-md-3 col-6 reveal"><div class="neu-card industry-card"><i class="bi bi-cpu-fill"></i><strong>Information Technology</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-1"><div class="neu-card industry-card"><i class="bi bi-hospital-fill"></i><strong>Healthcare</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-2"><div class="neu-card industry-card"><i class="bi bi-bank2"></i><strong>Banking</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal"><div class="neu-card industry-card"><i class="bi bi-cash-stack"></i><strong>Finance</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-1"><div class="neu-card industry-card"><i class="bi bi-gear-fill"></i><strong>Manufacturing</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-2"><div class="neu-card industry-card"><i class="bi bi-shop"></i><strong>Retail</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal"><div class="neu-card industry-card"><i class="bi bi-mortarboard-fill"></i><strong>Education</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-1"><div class="neu-card industry-card"><i class="bi bi-rocket-takeoff-fill"></i><strong>Startups</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-2"><div class="neu-card industry-card"><i class="bi bi-truck"></i><strong>Logistics</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal"><div class="neu-card industry-card"><i class="bi bi-cart-check-fill"></i><strong>E-commerce</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-1"><div class="neu-card industry-card"><i class="bi bi-headset"></i><strong>BPO</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-6 reveal delay-2"><div class="neu-card industry-card"><i class="bi bi-building-fill-check"></i><strong>Corporate Enterprises</strong></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             WHY CHOOSE US
+        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Why Businesses Choose Us</span>
+                    <h2 class="section-title">Dependable HR Partnership</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-person-workspace"></i></div><h3 class="h4">Experienced HR Professionals</h3><p>Practical HR, recruitment, staffing, and workforce management expertise.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-lightning-charge-fill"></i></div><h3 class="h4">Quick Turnaround Time</h3><p>Responsive execution for urgent, ongoing, and large-scale hiring needs.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-sliders"></i></div><h3 class="h4">Customized HR Solutions</h3><p>Flexible service models aligned to your company size, industry, and goals.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div><h3 class="h4">Quality Talent Pool</h3><p>Access to screened candidates across HR, IT, Non-IT, and corporate roles.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-eye-fill"></i></div><h3 class="h4">Transparent Hiring Process</h3><p>Clear communication, candidate updates, and structured feedback loops.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-life-preserver"></i></div><h3 class="h4">Dedicated Support</h3><p>Reliable coordination before, during, and after hiring or HR implementation.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SERVICE BENEFITS
+        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 reveal">
+                        <img class="benefits-img" src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="HR team planning hiring benefits and workforce strategy" loading="lazy">
                     </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-team">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Team Work" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-meeting">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Meeting" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-training">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Se7en Tech Training Session" loading="lazy">
+                    <div class="col-lg-6 reveal delay-1">
+                        <span class="section-subtitle">Service Benefits</span>
+                        <h2 class="section-title">Better Hiring. Stronger Operations.</h2>
+                        <ul class="benefit-list fs-5">
+                            <li><i class="bi bi-check-circle-fill"></i> Reduce Hiring Time</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Improve Candidate Quality</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Scalable HR Solutions</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Compliance Support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Cost Effective Recruitment</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Long-term Partnership</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             READY TO CONNECT CTA
+             SUCCESS METRICS
+        =========================================== -->
+        <section id="counter-section" class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Success Metrics</span>
+                    <h2 class="section-title">Measured By Outcomes</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-2 col-md-4 col-6 reveal"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="3">0</span>+</div><div class="stat-text">Years Experience</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-1"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="250">0</span>+</div><div class="stat-text">Business Clients</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-2"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="1200">0</span>+</div><div class="stat-text">Successful Placements</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="800">0</span>+</div><div class="stat-text">HR Professionals Trained</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-1"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="25">0</span>+</div><div class="stat-text">Corporate Partners</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-2"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="95">0</span>%</div><div class="stat-text">Client Satisfaction</div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             FAQ
+        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">FAQ</span>
+                    <h2 class="section-title">Services Questions</h2>
+                </div>
+                <div class="accordion faq-accordion reveal delay-1" id="servicesFaq">
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">Why choose Se7en Tech?</button></h3><div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#servicesFaq"><div class="accordion-body">Se7en Tech combines HR expertise, recruitment execution, staffing support, training knowledge, and transparent communication to help businesses hire and manage talent more effectively.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">How long does recruitment take?</button></h3><div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">Timelines depend on the role, skill level, location, and hiring urgency. We define expected turnaround after understanding your requirement.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">Do you provide contract staffing?</button></h3><div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">Yes. We support permanent staffing, contract staffing, project staffing, and resource augmentation based on your workforce model.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">Do you provide payroll support?</button></h3><div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">Yes. We provide payroll processing guidance and statutory compliance support including PF, ESI, labour law coordination, and HR documentation support.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">What industries do you serve?</button></h3><div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">We serve IT, healthcare, banking, finance, manufacturing, retail, education, startups, logistics, e-commerce, BPO, and corporate enterprise teams.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">Can startups use your services?</button></h3><div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">Yes. We help startups build early teams, define hiring priorities, source candidates, and create practical HR processes as they scale.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">How do you screen candidates?</button></h3><div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">We review experience, skills, communication, role fit, availability, salary expectations, and client-specific criteria before shortlisting profiles.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">How can we get started?</button></h3><div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#servicesFaq"><div class="accordion-body">You can contact our team with your hiring or HR requirement. We will schedule a consultation, understand your goals, and recommend the right service plan.</div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             FINAL CTA
         =========================================== -->
         <section class="pb-0 pt-5 mt-5">
             <div class="container reveal">
                 <div class="cta-card">
-                    <h2 class="section-title mb-4">Let's Build Your Success Story Together</h2>
-                    <p class="mb-5 fs-5 max-w-700 mx-auto">Whether you're looking to launch your HR career, strengthen your HR operations, or hire exceptional talent, our experts are ready to help.</p>
+                    <h2 class="section-title mb-4">Let's Build Your Dream Workforce</h2>
+                    <p class="mb-5 fs-5 max-w-700 mx-auto">Whether you're hiring one employee or building an entire workforce, Se7en Tech delivers professional HR solutions that drive business growth.</p>
                     <div class="d-flex flex-wrap gap-4 justify-content-center mt-3">
-                        <a href="contact.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Contact Us <i class="bi bi-arrow-right ms-2"></i></a>
-                        <a href="tel:+919989874934" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-telephone-fill me-2"></i> Call Now</a>
+                        <a href="contact.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Request Consultation <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="contact.html" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-chat-dots-fill me-2"></i> Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -1479,7 +1705,7 @@
                     <ul class="footer-links">
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> IT Staffing</a></li>
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> HR Consulting</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
+                        <li><a href="hire-talent.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
                         <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Corporate Training</a></li>
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Workforce Solutions</a></li>
                     </ul>
@@ -1625,3 +1851,5 @@
     </script>
 </body>
 </html>
+
+

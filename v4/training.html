@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Se7en Tech IT Solutions - Premium HR Consultancy, IT Staffing, Recruitment and Corporate Training in Hyderabad.">
+    <meta name="description" content="Kickstart your HR career with Se7en Tech IT Solutions' HR Foundation Program. Learn Recruitment, HR Operations, Payroll, ATS Resume Building, LinkedIn Branding, AI Tools for HR, Interview Preparation and Placement Assistance.">
     <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Hyderabad">
     <meta name="author" content="Se7en Tech IT Solutions">
-    <title>Se7en Tech IT Solutions | Premium HR & Staffing</title>
+    <title>HR Foundation Program & Corporate Training | Se7en Tech IT Solutions</title>
 
     <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Se7en Tech IT Solutions">
-    <meta property="og:description" content="Connecting Talent with Opportunity. Top-tier HR Consultancy and IT Staffing.">
+    <meta property="og:title" content="HR Foundation Program & Corporate Training | Se7en Tech IT Solutions">
+    <meta property="og:description" content="Kickstart your HR career with practical HR training, ATS resume support, LinkedIn branding, AI tools, interview preparation and placement assistance.">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts: Poppins -->
@@ -127,14 +127,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .font-weight-bold {
-            font-weight: 700;
-        }
-
-        .text-heading {
-            color: var(--heading);
         }
         
         .section-title {
@@ -600,6 +592,496 @@
             grid-area: training;
         }
 
+        /* About Page */
+        .page-hero {
+            padding-top: 150px;
+            padding-bottom: 90px;
+            overflow: hidden;
+        }
+
+        .breadcrumb-soft {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            font-size: 0.86rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-card {
+            min-height: 460px;
+        }
+
+        .about-hero-img,
+        .story-img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card {
+            grid-column: 2;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: var(--neu-out-sm);
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .process-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .process-track::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--surface);
+            box-shadow: var(--neu-out);
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .about-gallery {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            grid-template-rows: 240px 240px;
+            grid-template-areas:
+                "office meetings training"
+                "office workshops corporate";
+            gap: 1.5rem;
+        }
+
+        .about-gallery .gallery-img-wrap {
+            min-height: 0;
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        .gallery-office { grid-area: office; }
+        .gallery-meetings { grid-area: meetings; }
+        .gallery-training { grid-area: training; }
+        .gallery-workshops { grid-area: workshops; }
+        .gallery-corporate { grid-area: corporate; }
+
+        /* Services Page */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-features {
+            display: grid;
+            gap: 0.75rem;
+            margin: 1.5rem 0 2rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-features li,
+        .benefit-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            color: var(--heading);
+        }
+
+        .service-features i,
+        .benefit-list i {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .industry-card {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .industry-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-list {
+            display: grid;
+            gap: 1.1rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .benefits-img {
+            width: 100%;
+            min-height: 440px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .services-process {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        .services-process::before {
+            left: 7%;
+            right: 7%;
+        }
+
+        .services-process .process-number {
+            width: 74px;
+            height: 74px;
+            font-size: 1.15rem;
+        }
+
+        .faq-accordion .accordion-item {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out-sm);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .faq-accordion .accordion-button {
+            background: var(--surface);
+            color: var(--heading);
+            font-weight: 700;
+            box-shadow: none;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .faq-accordion .accordion-body {
+            color: var(--paragraph);
+            line-height: 1.75;
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        /* Training Page */
+        .course-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-badge {
+            padding: 10px 16px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.86rem;
+        }
+
+        .course-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .course-detail {
+            padding: 1.2rem;
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .course-detail span {
+            display: block;
+            color: var(--paragraph);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
+
+        .course-detail strong {
+            color: var(--heading);
+        }
+
+        .eligibility-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .eligibility-chips span {
+            padding: 8px 14px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            color: var(--heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            position: relative;
+            padding-top: 2.25rem;
+        }
+
+        .module-number {
+            position: absolute;
+            top: -14px;
+            left: 1.5rem;
+            padding: 8px 14px;
+            border-radius: var(--radius-pill);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            font-weight: 800;
+            font-size: 0.78rem;
+            box-shadow: 0 10px 20px rgba(10, 77, 156, 0.18);
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .learning-item {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+        }
+
+        .learning-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .cert-card {
+            overflow: hidden;
+        }
+
+        .cert-visual {
+            min-height: 320px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(10, 77, 156, 0.95), rgba(20, 184, 255, 0.85));
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            box-shadow: var(--neu-in);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .cert-visual i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .curriculum-grid,
+            .learning-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .course-detail-grid,
+            .curriculum-grid,
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-visual {
+                min-height: 240px;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .services-process {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-process::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .benefits-img {
+                min-height: 340px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-process {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-img {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .page-hero {
+                padding-top: 150px;
+                text-align: center;
+            }
+
+            .about-hero-img,
+            .story-img {
+                min-height: 340px;
+            }
+
+            .timeline::before {
+                left: 14px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) .timeline-card {
+                grid-template-columns: 1fr;
+                grid-column: auto;
+                padding-left: 3rem;
+                gap: 1rem;
+            }
+
+            .timeline-dot {
+                left: 14px;
+            }
+
+            .process-track {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-track::before {
+                display: none;
+            }
+
+            .about-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 320px 220px 220px;
+                grid-template-areas:
+                    "office office"
+                    "meetings training"
+                    "workshops corporate";
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-img,
+            .story-img {
+                min-height: 260px;
+            }
+
+            .process-track,
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-gallery {
+                grid-template-rows: none;
+                grid-template-areas:
+                    "office"
+                    "meetings"
+                    "training"
+                    "workshops"
+                    "corporate";
+            }
+
+            .about-gallery .gallery-img-wrap {
+                min-height: 220px;
+                aspect-ratio: 4/3;
+            }
+        }
+
         /* CTA Section */
         .cta-card {
             background: linear-gradient(135deg, var(--surface), var(--bg-alt));
@@ -1016,7 +1498,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <!-- <i class="bi bi-heptagon-fill text-gradient"></i> Se7en Tech -->
-                     <img class="navbar-logo" src="../logo/se7en-logo.png" alt="Se7en Tech Logo">
+                     <img class="navbar-logo" src="C:\Users\srika\Desktop\se7entechitsolutions\logo\se7en-logo.png" alt="Se7en Tech Logo">
                 </a>
                 
                 <!-- Refined Toggler to ensure it's always clearly visible on mobile -->
@@ -1026,10 +1508,10 @@
                 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center gap-2">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="training.html">Training</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
                             <a href="contact.html" class="neu-btn neu-btn-primary w-100 text-center">Get In Touch</a>
@@ -1041,407 +1523,206 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
-        
-        <!-- ==========================================
-             HERO SECTION
-        =========================================== -->
-        <section id="home" class="hero-section pb-lg-5">
+                <main>
+        <section class="page-hero hero-section">
             <div class="gradient-blob blob-1"></div>
             <div class="gradient-blob blob-2"></div>
-            
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 reveal">
-                        <span class="hero-label"><i class="bi bi-star-fill text-warning me-1"></i> STAFFING &bull; HR SERVICES &bull; TRAINING</span>
-                        <h1 class="hero-title">Connecting Talent with <span class="text-gradient">Opportunity</span></h1>
-                        <p class="hero-text">Se7en Tech IT Solutions is a trusted HR Consultancy, Recruitment, Staffing and Corporate Training company helping businesses build exceptional teams while empowering professionals with industry-ready skills.</p>
+                        <nav class="breadcrumb-soft" aria-label="Breadcrumb">
+                            <a href="index.html" class="text-primary">Home</a>
+                            <span>/</span>
+                            <span>Training</span>
+                        </nav>
+                        <span class="section-subtitle">Learn � Grow � Succeed</span>
+                        <h1 class="hero-title">HR Foundation Program & Corporate Training</h1>
+                        <h2 class="h3 mb-4">Launch Your HR Career<br><span class="text-gradient">with Confidence</span></h2>
+                        <p class="hero-text">Develop practical HR skills through live training, real-world HR projects, ATS resume optimization, LinkedIn branding, AI tools, interview preparation and placement support designed for aspiring HR professionals.</p>
                         <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center">
-                            <a href="contact.html" class="neu-btn neu-btn-primary">Get In Touch <i class="bi bi-arrow-right ms-2"></i></a>
-                            <a href="services.html" class="neu-btn"><i class="bi bi-briefcase-fill me-2"></i> Explore Services</a>
+                            <a href="contact.html" class="neu-btn neu-btn-primary">Join HR Foundation <i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.html" class="neu-btn"><i class="bi bi-download me-2"></i> Download Brochure</a>
                         </div>
                     </div>
-                    
                     <div class="col-lg-6 reveal delay-1">
-                        <div class="hero-image-container">
-                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate office representing Se7en Tech HR services and staffing solutions" class="hero-main-img" loading="lazy">
+                        <div class="hero-image-container about-hero-card">
+                            <img class="about-hero-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Students learning in a professional classroom training session" loading="lazy">
                         </div>
-                    </div>
-                </div>
-
-                <div class="row g-4 mt-5">
-                    <div class="col-lg-4">
-                        <a href="training.html" class="neu-action-card reveal delay-1 h-100">
-                            <div class="card-icon-wrapper icon-blue">
-                                <i class="bi bi-mortarboard-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR STUDENTS</span>
-                                <h3 class="card-title">HR Foundation Program</h3>
-                                <p class="card-desc">Practical HR training with ATS resume support, LinkedIn branding, AI tools, mock interviews, and placement assistance.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="services.html" class="neu-action-card reveal delay-2 h-100">
-                            <div class="card-icon-wrapper icon-cyan">
-                                <i class="bi bi-building-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR BUSINESSES</span>
-                                <h3 class="card-title">HR Services</h3>
-                                <p class="card-desc">Recruitment, staffing, HR consulting, payroll support, compliance, employee engagement, and workforce solutions.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="contact.html" class="neu-action-card reveal delay-3 h-100">
-                            <div class="card-icon-wrapper icon-royal">
-                                <i class="bi bi-people-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR EMPLOYERS</span>
-                                <h3 class="card-title">Hire Talent</h3>
-                                <p class="card-desc">Connect with pre-screened HR, IT, and Non-IT professionals through our recruitment and staffing support.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             STATISTICS SECTION
-        =========================================== -->
-        <section class="bg-alt py-5">
-            <div class="container">
-                <div class="row g-4" id="counter-section">
-                    <div class="col-6 col-lg-3 reveal">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
-                            <div class="stat-text">Years Experience</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-1">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
-                            <div class="stat-text">Clients Served</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-2">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="1200">0</span>+</div>
-                            <div class="stat-text">Candidates Placed</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-3">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="800">0</span>+</div>
-                            <div class="stat-text">Students Trained</div>
+                        <div class="course-badges justify-content-center">
+                            <span class="course-badge">HR</span><span class="course-badge">Recruitment</span><span class="course-badge">Payroll</span><span class="course-badge">AI</span><span class="course-badge">ATS</span><span class="course-badge">Interview</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             OUR SOLUTIONS SECTION
-        =========================================== -->
-        <section id="solutions">
+        <section class="bg-alt">
             <div class="container">
                 <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">What We Do</span>
-                    <h2 class="section-title">Three Powerful Solutions.<br>One Trusted Partner.</h2>
-                    <p>Whether you're starting your HR career, growing your business, or hiring top talent, Se7en Tech has a solution designed for you.</p>
+                    <span class="section-subtitle">Why Choose Our Training</span>
+                    <h2 class="section-title">Practical Learning for Real Careers</h2>
                 </div>
-                
                 <div class="row g-4">
-                    <!-- Solution 1 -->
-                    <div class="col-lg-4 reveal">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Foundation Program</h3>
-                            <p class="mb-4 flex-grow-1">Gain practical HR knowledge through live sessions, ATS resume building, LinkedIn branding, AI tools, mock interviews, and placement support.</p>
-                            <a href="training.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
-                        </article>
-                    </div>
-                    
-                    <!-- Solution 2 -->
-                    <div class="col-lg-4 reveal delay-1">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-building-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Services</h3>
-                            <p class="mb-4 flex-grow-1">Professional HR consulting, recruitment, payroll support, compliance, employee engagement, HR operations, and workforce management.</p>
-                            <a href="services.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Explore Services <i class="bi bi-arrow-right"></i></a>
-                        </article>
-                    </div>
-                    
-                    <!-- Solution 3 -->
-                    <div class="col-lg-4 reveal delay-2">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">Hire Talent</h3>
-                            <p class="mb-4 flex-grow-1">Hire pre-screened HR, IT, and Non-IT professionals quickly through our recruitment and staffing solutions.</p>
-                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Hire Talent <i class="bi bi-arrow-right"></i></a>
-                        </article>
-                    </div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-camera-video-fill"></i></div><h3 class="h4">Live Instructor Sessions</h3><p>Learn directly from experienced trainers through structured and interactive HR sessions.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-briefcase-fill"></i></div><h3 class="h4">Hands-on HR Projects</h3><p>Practice recruitment, documentation, HR operations, and real workplace scenarios.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-file-earmark-text-fill"></i></div><h3 class="h4">ATS Resume Building</h3><p>Create recruiter-ready resumes optimized for applicant tracking systems.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-linkedin"></i></div><h3 class="h4">LinkedIn Optimization</h3><p>Build a professional LinkedIn profile that supports visibility and hiring credibility.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-stars"></i></div><h3 class="h4">AI Tools for HR</h3><p>Use AI tools for sourcing, screening, communication, productivity, and interview prep.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-award-fill"></i></div><h3 class="h4">Placement Assistance</h3><p>Receive resume support, mock interviews, job referrals, and guided career preparation.</p></article></div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             WHO WE ARE SECTION
-        =========================================== -->
-        <section id="about" class="bg-alt">
-            <div class="container">
-                <div class="row justify-content-center text-center reveal">
-                    <div class="col-lg-8 col-xl-7">
-                        <span class="section-subtitle">About Se7en Tech</span>
-                        <h2 class="section-title">Building Careers.<br><span class="text-gradient">Strengthening Businesses.</span></h2>
-                        <p class="mb-3 fs-5">Se7en Tech IT Solutions is a premier HR Consultancy, Staffing, Recruitment, and Corporate Training company based in Hyderabad.</p>
-                        <p class="mb-4 pb-2">We bridge the gap between exceptional talent and outstanding organizations. Our mission is to help businesses scale seamlessly while empowering professionals with the practical skills and confidence needed to build successful careers.</p>
-                        <a href="about.html" class="neu-btn neu-btn-primary">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             WHY SE7EN TECH SECTION
-        =========================================== -->
-        <section id="why-us">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">Why Choose Us</span>
-                    <h2 class="section-title">Why Businesses & Professionals Trust Se7en Tech</h2>
-                </div>
-                
-                <div class="row g-4 justify-content-center">
-                    <!-- Feature 1 -->
-                    <div class="col-md-4 col-sm-6 reveal">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-person-check-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Industry Experts</h3>
-                            <p class="mb-0 small">Practical HR and recruitment experience across business hiring needs.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-1">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-lightning-charge-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Faster Hiring</h3>
-                            <p class="mb-0 small">Structured sourcing and screening to reduce hiring delays.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-2">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-laptop text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Practical Training</h3>
-                            <p class="mb-0 small">Career-focused learning built around real HR workflows.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="col-md-4 col-sm-6 reveal">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-award-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Placement Support</h3>
-                            <p class="mb-0 small">Resume, interview, LinkedIn, and opportunity guidance for learners.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 5 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-1">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-buildings-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">HR Consulting</h3>
-                            <p class="mb-0 small">Professional support for HR policies, operations, and workforce planning.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 6 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-2">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-diagram-3-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Corporate Partnerships</h3>
-                            <p class="mb-0 small">Long-term collaboration for recruitment, training, and HR solutions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             CAREER ACCELERATION SECTION
-        =========================================== -->
-        <section id="career" class="bg-alt">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">Learn With Us</span>
-                    <h2 class="section-title">Start Your HR Career with Confidence</h2>
-                    <p>Our HR Foundation Program equips aspiring HR professionals with practical skills, live projects, AI tools, interview preparation, and placement support.</p>
-                </div>
-                
-                <div class="neu-card career-card p-4 p-lg-5 reveal delay-1">
-                    <div class="row align-items-center g-4 g-lg-5">
-                        <div class="col-lg-6">
-                            <div class="gallery-img-wrap h-100">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="HR Corporate Training Session" loading="lazy" class="h-100 object-fit-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <h3 class="h2 font-weight-bold mb-4">HR Foundation Program</h3>
-                            <ul class="career-list list-unstyled mb-5">
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-camera-video-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Live Training</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-briefcase-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Real HR Projects</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-file-earmark-text-fill"></i></div> 
-                                    <span class="fw-medium fs-5">ATS Resume Building</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-linkedin"></i></div> 
-                                    <span class="fw-medium fs-5">LinkedIn Branding</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-award-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Placement Support</span>
-                                </li>
-                            </ul>
-                            <a href="training.html" class="neu-btn neu-btn-primary">View HR Foundation Program <i class="bi bi-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             TESTIMONIALS & CLIENTS
-        =========================================== -->
         <section>
             <div class="container">
-                <!-- Clients Strip -->
-                <div class="logo-strip mb-5 reveal">
-                    <span class="client-logo fw-bold fs-4">TCS</span>
-                    <span class="client-logo fw-bold fs-4">Infosys</span>
-                    <span class="client-logo fw-bold fs-4">Wipro</span>
-                    <span class="client-logo fw-bold fs-4">HCLTech</span>
-                    <span class="client-logo fw-bold fs-4">Tech Mahindra</span>
-                    <span class="client-logo fw-bold fs-4">Accenture</span>
-                </div>
-
-                <!-- Testimonials Slider -->
-                <div class="text-center mt-5 pt-5 reveal">
-                    <span class="section-subtitle">Success Stories</span>
-                    <h2 class="section-title">What People Say</h2>
-                </div>
-
-                <div id="testimonialCarousel" class="carousel slide reveal delay-1" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner pb-5">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Rajesh K." class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="review-text">"Se7en Tech transformed our hiring process. They understood our technical requirements perfectly and provided candidates who were not just skilled, but cultural fits. Highly recommended for IT staffing."</p>
-                                <h3 class="h5 mb-0">Rajesh K.</h3>
-                                <span class="small text-muted">VP of Engineering, FinTech Co.</span>
+                <div class="neu-card career-card p-4 p-lg-5 reveal">
+                    <div class="row align-items-center g-4 g-lg-5">
+                        <div class="col-lg-6"><div class="gallery-img-wrap h-100"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate trainer leading an HR Foundation Program class" loading="lazy"></div></div>
+                        <div class="col-lg-6">
+                            <span class="section-subtitle">HR Foundation Program</span>
+                            <h2 class="section-title">Career-Focused HR Training</h2>
+                            <div class="course-detail-grid">
+                                <div class="course-detail"><span>Course Name</span><strong>HR Foundation Program</strong></div>
+                                <div class="course-detail"><span>Duration</span><strong>6 Weeks</strong></div>
+                                <div class="course-detail"><span>Mode</span><strong>Online / Offline</strong></div>
+                                <div class="course-detail"><span>Level</span><strong>Beginner to Intermediate</strong></div>
                             </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student Review - Priya S." class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="review-text">"The Recruitment Training program was a game-changer for my career. The practical insights into sourcing and LinkedIn optimization helped me land a job as a Talent Acquisition Specialist within a month."</p>
-                                <h3 class="h5 mb-0">Priya S.</h3>
-                                <span class="small text-muted">Trained Candidate</span>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="carousel-item">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Vikram Reddy" class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="review-text">"A reliable partner for workforce solutions. Their turnaround time is impressive, and the quality of candidates is consistently high. They truly understand the nuances of the IT industry in Hyderabad."</p>
-                                <h3 class="h5 mb-0">Vikram Reddy</h3>
-                                <span class="small text-muted">HR Director, Tech Solutions</span>
-                            </div>
+                            <h3 class="h5 mb-3">Eligibility</h3>
+                            <div class="eligibility-chips"><span>Graduates</span><span>MBA</span><span>BBA</span><span>Freshers</span><span>Career Switchers</span></div>
+                            <a href="contact.html" class="neu-btn neu-btn-primary">Enroll Now <i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             OFFICE GALLERY
-        =========================================== -->
-        <section class="bg-alt pb-0">
-            <div class="container px-4">
-                <div class="text-center mb-5 reveal">
-                    <h2 class="section-title">Life at Se7en Tech</h2>
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Curriculum</span><h2 class="section-title">12 Practical HR Modules</h2></div>
+                <div class="curriculum-grid">
+                    <article class="neu-card module-card reveal"><span class="module-number">Module 1</span><div class="neu-icon-wrap"><i class="bi bi-person-badge-fill"></i></div><h3 class="h4">Introduction to HR</h3><p><strong>2 Sessions</strong><br>Understand HR roles, responsibilities, functions, and workplace expectations.</p></article>
+                    <article class="neu-card module-card reveal delay-1"><span class="module-number">Module 2</span><div class="neu-icon-wrap"><i class="bi bi-search"></i></div><h3 class="h4">Recruitment Process</h3><p><strong>3 Sessions</strong><br>Learn job analysis, sourcing, screening, interview coordination, and closures.</p></article>
+                    <article class="neu-card module-card reveal delay-2"><span class="module-number">Module 3</span><div class="neu-icon-wrap"><i class="bi bi-person-plus-fill"></i></div><h3 class="h4">Talent Acquisition</h3><p><strong>2 Sessions</strong><br>Explore talent mapping, candidate engagement, pipelines, and hiring strategy.</p></article>
+                    <article class="neu-card module-card reveal"><span class="module-number">Module 4</span><div class="neu-icon-wrap"><i class="bi bi-cash-stack"></i></div><h3 class="h4">Payroll Basics</h3><p><strong>2 Sessions</strong><br>Understand salary structure, payroll cycles, deductions, PF, and ESI basics.</p></article>
+                    <article class="neu-card module-card reveal delay-1"><span class="module-number">Module 5</span><div class="neu-icon-wrap"><i class="bi bi-gear-fill"></i></div><h3 class="h4">HR Operations</h3><p><strong>2 Sessions</strong><br>Practice onboarding, employee records, HR workflows, and operational support.</p></article>
+                    <article class="neu-card module-card reveal delay-2"><span class="module-number">Module 6</span><div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div><h3 class="h4">Employee Engagement</h3><p><strong>1 Session</strong><br>Learn engagement activities, communication, retention support, and feedback.</p></article>
+                    <article class="neu-card module-card reveal"><span class="module-number">Module 7</span><div class="neu-icon-wrap"><i class="bi bi-folder-fill"></i></div><h3 class="h4">HR Documentation</h3><p><strong>2 Sessions</strong><br>Work with offer letters, joining forms, employee files, and HR templates.</p></article>
+                    <article class="neu-card module-card reveal delay-1"><span class="module-number">Module 8</span><div class="neu-icon-wrap"><i class="bi bi-shield-check"></i></div><h3 class="h4">Labour Laws</h3><p><strong>2 Sessions</strong><br>Understand foundational statutory compliance and workplace law awareness.</p></article>
+                    <article class="neu-card module-card reveal delay-2"><span class="module-number">Module 9</span><div class="neu-icon-wrap"><i class="bi bi-file-earmark-check-fill"></i></div><h3 class="h4">ATS Resume Building</h3><p><strong>2 Sessions</strong><br>Build clean, keyword-rich resumes that pass modern screening systems.</p></article>
+                    <article class="neu-card module-card reveal"><span class="module-number">Module 10</span><div class="neu-icon-wrap"><i class="bi bi-linkedin"></i></div><h3 class="h4">LinkedIn Branding</h3><p><strong>1 Session</strong><br>Optimize your profile, headline, summary, experience, and networking approach.</p></article>
+                    <article class="neu-card module-card reveal delay-1"><span class="module-number">Module 11</span><div class="neu-icon-wrap"><i class="bi bi-stars"></i></div><h3 class="h4">AI Tools for HR</h3><p><strong>2 Sessions</strong><br>Use AI for sourcing, screening, writing, productivity, and interview practice.</p></article>
+                    <article class="neu-card module-card reveal delay-2"><span class="module-number">Module 12</span><div class="neu-icon-wrap"><i class="bi bi-mic-fill"></i></div><h3 class="h4">Interview Preparation</h3><p><strong>2 Sessions</strong><br>Prepare for HR interviews through mock questions, feedback, and confidence building.</p></article>
                 </div>
-                <div class="pb-5 reveal delay-1 life-gallery">
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-main">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Se7en Tech Office Space" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-team">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Team Work" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-meeting">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Meeting" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-training">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Se7en Tech Training Session" loading="lazy">
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">What You Will Learn</span><h2 class="section-title">Skills For Modern HR Roles</h2></div>
+                <div class="learning-grid reveal delay-1">
+                    <div class="neu-card learning-item"><i class="bi bi-diagram-3-fill"></i><strong>HR Lifecycle</strong></div><div class="neu-card learning-item"><i class="bi bi-search-heart-fill"></i><strong>Recruitment</strong></div><div class="neu-card learning-item"><i class="bi bi-person-plus-fill"></i><strong>Talent Acquisition</strong></div><div class="neu-card learning-item"><i class="bi bi-window-stack"></i><strong>HRMS Basics</strong></div>
+                    <div class="neu-card learning-item"><i class="bi bi-cash-coin"></i><strong>Payroll</strong></div><div class="neu-card learning-item"><i class="bi bi-shield-fill-check"></i><strong>Compliance</strong></div><div class="neu-card learning-item"><i class="bi bi-graph-up-arrow"></i><strong>Performance Management</strong></div><div class="neu-card learning-item"><i class="bi bi-chat-heart-fill"></i><strong>Employee Relations</strong></div>
+                    <div class="neu-card learning-item"><i class="bi bi-file-earmark-bar-graph-fill"></i><strong>ATS</strong></div><div class="neu-card learning-item"><i class="bi bi-pencil-square"></i><strong>Resume Writing</strong></div><div class="neu-card learning-item"><i class="bi bi-linkedin"></i><strong>LinkedIn Branding</strong></div><div class="neu-card learning-item"><i class="bi bi-magic"></i><strong>AI Productivity Tools</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Who Can Join</span><h2 class="section-title">Built For Aspiring HR Professionals</h2></div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100 text-center"><div class="neu-icon-wrap mx-auto"><i class="bi bi-mortarboard-fill"></i></div><h3 class="h4">MBA Students</h3><p>Build practical HR skills beyond classroom theory.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100 text-center"><div class="neu-icon-wrap mx-auto"><i class="bi bi-book-fill"></i></div><h3 class="h4">BBA Students</h3><p>Start early with recruitment and HR operations exposure.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100 text-center"><div class="neu-icon-wrap mx-auto"><i class="bi bi-person-check-fill"></i></div><h3 class="h4">Fresh Graduates</h3><p>Gain career-ready knowledge for entry-level HR jobs.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100 text-center"><div class="neu-icon-wrap mx-auto"><i class="bi bi-heart-fill"></i></div><h3 class="h4">HR Aspirants</h3><p>Prepare for recruiter, HR executive, and TA roles.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100 text-center"><div class="neu-icon-wrap mx-auto"><i class="bi bi-arrow-left-right"></i></div><h3 class="h4">Career Switchers</h3><p>Move into HR with structured guidance and practice.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100 text-center"><div class="neu-icon-wrap mx-auto"><i class="bi bi-briefcase-fill"></i></div><h3 class="h4">Working Professionals</h3><p>Upgrade your HR, hiring, and workplace operations skills.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Training Process</span><h2 class="section-title">A Guided Path From Learning To Placement</h2></div>
+                <div class="process-track services-process">
+                    <article class="process-step reveal"><div class="process-number">01</div><h3 class="h5">Register</h3><p>Enroll and receive your program orientation.</p></article>
+                    <article class="process-step reveal delay-1"><div class="process-number">02</div><h3 class="h5">Attend Live Sessions</h3><p>Learn through trainer-led practical classes.</p></article>
+                    <article class="process-step reveal delay-2"><div class="process-number">03</div><h3 class="h5">Practice Projects</h3><p>Work on HR tasks, hiring workflows, and cases.</p></article>
+                    <article class="process-step reveal"><div class="process-number">04</div><h3 class="h5">Assignments</h3><p>Complete structured exercises and templates.</p></article>
+                    <article class="process-step reveal delay-1"><div class="process-number">05</div><h3 class="h5">Mock Interviews</h3><p>Practice answers and receive feedback.</p></article>
+                    <article class="process-step reveal delay-2"><div class="process-number">06</div><h3 class="h5">Placement Support</h3><p>Get resume, profile, and opportunity support.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Placement Support</span><h2 class="section-title">We Don't Just Train.<br><span class="text-gradient">We Help You Get Hired.</span></h2></div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-file-text-fill"></i></div><h3 class="h5">Resume Review</h3><p>Improve resume clarity, structure, and relevance.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-check2-square"></i></div><h3 class="h5">ATS Optimization</h3><p>Make your resume keyword-rich and system friendly.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-linkedin"></i></div><h3 class="h5">LinkedIn Branding</h3><p>Build a polished professional profile.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-person-video3"></i></div><h3 class="h5">Interview Preparation</h3><p>Prepare for common HR and recruiter questions.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-mic-fill"></i></div><h3 class="h5">Mock Interviews</h3><p>Practice with feedback and confidence building.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-compass-fill"></i></div><h3 class="h5">Career Guidance</h3><p>Understand roles, career paths, and next steps.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-send-fill"></i></div><h3 class="h5">Job Referrals</h3><p>Get guided access to suitable opportunities.</p></article></div>
+                    <div class="col-lg-3 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-award-fill"></i></div><h3 class="h5">Placement Assistance</h3><p>Receive ongoing support during your job search.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="neu-card cert-card p-4 p-lg-5 reveal">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-6"><span class="section-subtitle">Certification</span><h2 class="section-title">Certificate of Completion</h2><ul class="benefit-list fs-5"><li><i class="bi bi-check-circle-fill"></i> Industry Recognition</li><li><i class="bi bi-check-circle-fill"></i> Portfolio Ready</li><li><i class="bi bi-check-circle-fill"></i> Professional Profile Enhancement</li></ul></div>
+                        <div class="col-lg-6"><div class="cert-visual"><div><i class="bi bi-patch-check-fill"></i><h3 class="h2 text-white mb-2">HR Foundation</h3><p class="mb-0">Certificate of Completion</p></div></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             READY TO CONNECT CTA
-        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Student Success</span><h2 class="section-title">Stories From Learners</h2></div>
+                <div class="row g-4">
+                    <div class="col-lg-4 reveal"><article class="neu-card h-100 text-center"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="HR Foundation student testimonial" class="client-img" loading="lazy"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="review-text">"The program helped me understand recruitment practically and build a strong resume and LinkedIn profile."</p><h3 class="h5 mb-0">HR Foundation Learner</h3></article></div>
+                    <div class="col-lg-4 reveal delay-1"><article class="neu-card h-100 text-center"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Corporate training student testimonial" class="client-img" loading="lazy"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="review-text">"The mock interviews and ATS resume guidance gave me clarity and confidence for HR interviews."</p><h3 class="h5 mb-0">Career Switcher</h3></article></div>
+                    <div class="col-lg-4 reveal delay-2"><article class="neu-card h-100 text-center"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Recruitment training student testimonial" class="client-img" loading="lazy"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="review-text">"The sessions were practical, simple to follow, and focused on what companies actually expect."</p><h3 class="h5 mb-0">MBA Graduate</h3></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">FAQ</span><h2 class="section-title">Training Questions</h2></div>
+                <div class="accordion faq-accordion reveal delay-1" id="trainingFaq">
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">Who can join?</button></h3><div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#trainingFaq"><div class="accordion-body">MBA students, BBA students, fresh graduates, HR aspirants, career switchers, and working professionals can join.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">Is prior HR knowledge required?</button></h3><div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">No. The program is designed for beginners and gradually moves into intermediate practical HR topics.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">Will I receive a certificate?</button></h3><div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">Yes. Learners receive a certificate of completion after meeting the program requirements.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">Is placement guaranteed?</button></h3><div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">Placement is assistance-based. We support resumes, interviews, referrals, and preparation, but final selection depends on employer requirements and candidate performance.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">Online or Offline?</button></h3><div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">The program is available in online and offline modes based on batch availability.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">What is the course duration?</button></h3><div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">The HR Foundation Program duration is 6 weeks.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">Do you provide recordings?</button></h3><div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">Recording availability depends on the batch format. Our team will confirm access details during enrollment.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">How do I enroll?</button></h3><div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">Contact Se7en Tech through the enrollment button or contact page, and our trainer coordination team will guide you.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqNine" aria-expanded="false" aria-controls="faqNine">Are projects included?</button></h3><div id="faqNine" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">Yes. The program includes hands-on HR projects, assignments, resume work, and interview practice.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTen" aria-expanded="false" aria-controls="faqTen">Can working professionals attend?</button></h3><div id="faqTen" class="accordion-collapse collapse" data-bs-parent="#trainingFaq"><div class="accordion-body">Yes. Working professionals can join to upgrade HR, recruitment, payroll, and HR operations knowledge.</div></div></div>
+                </div>
+            </div>
+        </section>
+
         <section class="pb-0 pt-5 mt-5">
             <div class="container reveal">
                 <div class="cta-card">
-                    <h2 class="section-title mb-4">Let's Build Your Success Story Together</h2>
-                    <p class="mb-5 fs-5 max-w-700 mx-auto">Whether you're looking to launch your HR career, strengthen your HR operations, or hire exceptional talent, our experts are ready to help.</p>
+                    <h2 class="section-title mb-4">Start Building Your HR Career Today</h2>
+                    <p class="mb-5 fs-5 max-w-700 mx-auto">Join our HR Foundation Program and gain the practical knowledge, confidence and career support needed to succeed in today's HR industry.</p>
                     <div class="d-flex flex-wrap gap-4 justify-content-center mt-3">
-                        <a href="contact.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Contact Us <i class="bi bi-arrow-right ms-2"></i></a>
-                        <a href="tel:+919989874934" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-telephone-fill me-2"></i> Call Now</a>
+                        <a href="contact.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Enroll Now <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="contact.html" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-person-video3 me-2"></i> Contact Trainer</a>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- ==========================================
@@ -1479,7 +1760,7 @@
                     <ul class="footer-links">
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> IT Staffing</a></li>
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> HR Consulting</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
+                        <li><a href="hire-talent.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
                         <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Corporate Training</a></li>
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Workforce Solutions</a></li>
                     </ul>
@@ -1625,3 +1906,6 @@
     </script>
 </body>
 </html>
+
+
+

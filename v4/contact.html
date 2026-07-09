@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Se7en Tech IT Solutions - Premium HR Consultancy, IT Staffing, Recruitment and Corporate Training in Hyderabad.">
+    <meta name="description" content="Contact Se7en Tech IT Solutions for HR Consultancy, Recruitment, Staffing, Talent Acquisition, Corporate Training and Workforce Solutions in Hyderabad.">
     <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Hyderabad">
     <meta name="author" content="Se7en Tech IT Solutions">
-    <title>Se7en Tech IT Solutions | Premium HR & Staffing</title>
+    <title>Contact Us | Se7en Tech IT Solutions</title>
 
     <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Se7en Tech IT Solutions">
-    <meta property="og:description" content="Connecting Talent with Opportunity. Top-tier HR Consultancy and IT Staffing.">
+    <meta property="og:title" content="Contact Us | Se7en Tech IT Solutions">
+    <meta property="og:description" content="Contact Se7en Tech IT Solutions for HR Consultancy, Recruitment, Staffing, Corporate Training and Workforce Solutions in Hyderabad.">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts: Poppins -->
@@ -23,6 +23,27 @@
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Se7en Tech IT Solutions",
+      "description": "HR Consultancy, Recruitment, Staffing, Talent Acquisition, Corporate Training and Workforce Solutions in Hyderabad.",
+      "telephone": "+919989874934",
+      "email": "info@se7entechitsolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4-7-154/2/E/6, Attapur, Sai Hills Colony, Panduranga Nagar",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500048",
+        "addressCountry": "IN"
+      },
+      "url": "https://se7entechitsolutions.com",
+      "areaServed": "Hyderabad"
+    }
+    </script>
 
     <style>
         /* ====================================================================
@@ -127,14 +148,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .font-weight-bold {
-            font-weight: 700;
-        }
-
-        .text-heading {
-            color: var(--heading);
         }
         
         .section-title {
@@ -600,6 +613,606 @@
             grid-area: training;
         }
 
+        /* About Page */
+        .page-hero {
+            padding-top: 150px;
+            padding-bottom: 90px;
+            overflow: hidden;
+        }
+
+        .breadcrumb-soft {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            font-size: 0.86rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-card {
+            min-height: 460px;
+        }
+
+        .about-hero-img,
+        .story-img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card {
+            grid-column: 2;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: var(--neu-out-sm);
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .process-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .process-track::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--surface);
+            box-shadow: var(--neu-out);
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .about-gallery {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            grid-template-rows: 240px 240px;
+            grid-template-areas:
+                "office meetings training"
+                "office workshops corporate";
+            gap: 1.5rem;
+        }
+
+        .about-gallery .gallery-img-wrap {
+            min-height: 0;
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        .gallery-office { grid-area: office; }
+        .gallery-meetings { grid-area: meetings; }
+        .gallery-training { grid-area: training; }
+        .gallery-workshops { grid-area: workshops; }
+        .gallery-corporate { grid-area: corporate; }
+
+        /* Services Page */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-features {
+            display: grid;
+            gap: 0.75rem;
+            margin: 1.5rem 0 2rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-features li,
+        .benefit-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            color: var(--heading);
+        }
+
+        .service-features i,
+        .benefit-list i {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .industry-card {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .industry-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-list {
+            display: grid;
+            gap: 1.1rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .benefits-img {
+            width: 100%;
+            min-height: 440px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .services-process {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        .services-process::before {
+            left: 7%;
+            right: 7%;
+        }
+
+        .services-process .process-number {
+            width: 74px;
+            height: 74px;
+            font-size: 1.15rem;
+        }
+
+        .faq-accordion .accordion-item {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out-sm);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .faq-accordion .accordion-button {
+            background: var(--surface);
+            color: var(--heading);
+            font-weight: 700;
+            box-shadow: none;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .faq-accordion .accordion-body {
+            color: var(--paragraph);
+            line-height: 1.75;
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        /* Contact Page */
+        .contact-hero-card {
+            position: relative;
+        }
+
+        .floating-contact-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 12px 18px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            color: var(--heading);
+            font-weight: 700;
+        }
+
+        .contact-floating-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+        }
+
+        .contact-floating-stack i {
+            color: var(--primary);
+        }
+
+        .contact-info-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info-card .contact-value {
+            color: var(--heading);
+            font-weight: 700;
+            line-height: 1.55;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form-card .form-floating > .form-control,
+        .contact-form-card .form-floating > .form-select {
+            min-height: 58px;
+            border: 0;
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+            color: var(--heading);
+        }
+
+        .contact-form-card textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form-card .form-control:focus,
+        .contact-form-card .form-select:focus {
+            box-shadow: var(--neu-in), 0 0 0 0.2rem rgba(47, 128, 237, 0.15);
+        }
+
+        .form-status {
+            display: none;
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .form-status.show {
+            display: block;
+        }
+
+        .form-status.success {
+            color: #0f5132;
+            background: rgba(25, 135, 84, 0.12);
+        }
+
+        .form-status.error {
+            color: #842029;
+            background: rgba(220, 53, 69, 0.12);
+        }
+
+        .map-card {
+            padding: 1rem;
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            box-shadow: var(--neu-out);
+        }
+
+        .map-card iframe {
+            width: 100%;
+            min-height: 430px;
+            border: 0;
+            border-radius: calc(var(--radius-lg) - 8px);
+            display: block;
+        }
+
+        .quick-action-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .map-card iframe {
+                min-height: 320px;
+            }
+        }
+
+        /* Training Page */
+        .course-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-badge {
+            padding: 10px 16px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.86rem;
+        }
+
+        .course-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .course-detail {
+            padding: 1.2rem;
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .course-detail span {
+            display: block;
+            color: var(--paragraph);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
+
+        .course-detail strong {
+            color: var(--heading);
+        }
+
+        .eligibility-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .eligibility-chips span {
+            padding: 8px 14px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            color: var(--heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            position: relative;
+            padding-top: 2.25rem;
+        }
+
+        .module-number {
+            position: absolute;
+            top: -14px;
+            left: 1.5rem;
+            padding: 8px 14px;
+            border-radius: var(--radius-pill);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            font-weight: 800;
+            font-size: 0.78rem;
+            box-shadow: 0 10px 20px rgba(10, 77, 156, 0.18);
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .learning-item {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+        }
+
+        .learning-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .cert-card {
+            overflow: hidden;
+        }
+
+        .cert-visual {
+            min-height: 320px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(10, 77, 156, 0.95), rgba(20, 184, 255, 0.85));
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            box-shadow: var(--neu-in);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .cert-visual i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .curriculum-grid,
+            .learning-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .course-detail-grid,
+            .curriculum-grid,
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-visual {
+                min-height: 240px;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .services-process {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-process::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .benefits-img {
+                min-height: 340px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-process {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-img {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .page-hero {
+                padding-top: 150px;
+                text-align: center;
+            }
+
+            .about-hero-img,
+            .story-img {
+                min-height: 340px;
+            }
+
+            .timeline::before {
+                left: 14px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) .timeline-card {
+                grid-template-columns: 1fr;
+                grid-column: auto;
+                padding-left: 3rem;
+                gap: 1rem;
+            }
+
+            .timeline-dot {
+                left: 14px;
+            }
+
+            .process-track {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-track::before {
+                display: none;
+            }
+
+            .about-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 320px 220px 220px;
+                grid-template-areas:
+                    "office office"
+                    "meetings training"
+                    "workshops corporate";
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-img,
+            .story-img {
+                min-height: 260px;
+            }
+
+            .process-track,
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-gallery {
+                grid-template-rows: none;
+                grid-template-areas:
+                    "office"
+                    "meetings"
+                    "training"
+                    "workshops"
+                    "corporate";
+            }
+
+            .about-gallery .gallery-img-wrap {
+                min-height: 220px;
+                aspect-ratio: 4/3;
+            }
+        }
+
         /* CTA Section */
         .cta-card {
             background: linear-gradient(135deg, var(--surface), var(--bg-alt));
@@ -1016,7 +1629,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <!-- <i class="bi bi-heptagon-fill text-gradient"></i> Se7en Tech -->
-                     <img class="navbar-logo" src="../logo/se7en-logo.png" alt="Se7en Tech Logo">
+                     <img class="navbar-logo" src="C:\Users\srika\Desktop\se7entechitsolutions\logo\se7en-logo.png" alt="Se7en Tech Logo">
                 </a>
                 
                 <!-- Refined Toggler to ensure it's always clearly visible on mobile -->
@@ -1026,11 +1639,11 @@
                 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center gap-2">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                         <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
                             <a href="contact.html" class="neu-btn neu-btn-primary w-100 text-center">Get In Touch</a>
                         </li>
@@ -1041,407 +1654,202 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
-        
-        <!-- ==========================================
-             HERO SECTION
-        =========================================== -->
-        <section id="home" class="hero-section pb-lg-5">
+                    <main>
+        <section class="page-hero hero-section">
             <div class="gradient-blob blob-1"></div>
             <div class="gradient-blob blob-2"></div>
-            
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 reveal">
-                        <span class="hero-label"><i class="bi bi-star-fill text-warning me-1"></i> STAFFING &bull; HR SERVICES &bull; TRAINING</span>
-                        <h1 class="hero-title">Connecting Talent with <span class="text-gradient">Opportunity</span></h1>
-                        <p class="hero-text">Se7en Tech IT Solutions is a trusted HR Consultancy, Recruitment, Staffing and Corporate Training company helping businesses build exceptional teams while empowering professionals with industry-ready skills.</p>
+                        <nav class="breadcrumb-soft" aria-label="Breadcrumb">
+                            <a href="index.html" class="text-primary">Home</a>
+                            <span>/</span>
+                            <span>Contact</span>
+                        </nav>
+                        <span class="section-subtitle">Let's Connect</span>
+                        <h1 class="hero-title">Contact Se7en Tech IT Solutions</h1>
+                        <h2 class="h3 mb-4">Let's Build Success <span class="text-gradient">Together</span></h2>
+                        <p class="hero-text">Whether you're looking for HR Consultancy, Recruitment Services, Corporate Training, or Workforce Solutions, our team is ready to help you achieve your business and career goals.</p>
                         <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center">
-                            <a href="contact.html" class="neu-btn neu-btn-primary">Get In Touch <i class="bi bi-arrow-right ms-2"></i></a>
-                            <a href="services.html" class="neu-btn"><i class="bi bi-briefcase-fill me-2"></i> Explore Services</a>
+                            <a href="tel:+919989874934" class="neu-btn neu-btn-primary"><i class="bi bi-telephone-fill me-2"></i> Call Now</a>
+                            <a href="https://maps.app.goo.gl/1VCbWiZPAhB2GtoC8" target="_blank" rel="noopener" class="neu-btn"><i class="bi bi-geo-alt-fill me-2"></i> Get Directions</a>
                         </div>
                     </div>
-                    
                     <div class="col-lg-6 reveal delay-1">
-                        <div class="hero-image-container">
-                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate office representing Se7en Tech HR services and staffing solutions" class="hero-main-img" loading="lazy">
+                        <div class="hero-image-container about-hero-card contact-hero-card">
+                            <img class="about-hero-img" src="https://images.unsplash.com/photo-1551836022-b06985bceb24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Professional customer support team assisting business clients" loading="lazy">
                         </div>
-                    </div>
-                </div>
-
-                <div class="row g-4 mt-5">
-                    <div class="col-lg-4">
-                        <a href="training.html" class="neu-action-card reveal delay-1 h-100">
-                            <div class="card-icon-wrapper icon-blue">
-                                <i class="bi bi-mortarboard-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR STUDENTS</span>
-                                <h3 class="card-title">HR Foundation Program</h3>
-                                <p class="card-desc">Practical HR training with ATS resume support, LinkedIn branding, AI tools, mock interviews, and placement assistance.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="services.html" class="neu-action-card reveal delay-2 h-100">
-                            <div class="card-icon-wrapper icon-cyan">
-                                <i class="bi bi-building-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR BUSINESSES</span>
-                                <h3 class="card-title">HR Services</h3>
-                                <p class="card-desc">Recruitment, staffing, HR consulting, payroll support, compliance, employee engagement, and workforce solutions.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="contact.html" class="neu-action-card reveal delay-3 h-100">
-                            <div class="card-icon-wrapper icon-royal">
-                                <i class="bi bi-people-fill"></i>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-label">FOR EMPLOYERS</span>
-                                <h3 class="card-title">Hire Talent</h3>
-                                <p class="card-desc">Connect with pre-screened HR, IT, and Non-IT professionals through our recruitment and staffing support.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             STATISTICS SECTION
-        =========================================== -->
-        <section class="bg-alt py-5">
-            <div class="container">
-                <div class="row g-4" id="counter-section">
-                    <div class="col-6 col-lg-3 reveal">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
-                            <div class="stat-text">Years Experience</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-1">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
-                            <div class="stat-text">Clients Served</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-2">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="1200">0</span>+</div>
-                            <div class="stat-text">Candidates Placed</div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 reveal delay-3">
-                        <div class="neu-card stat-card">
-                            <div class="stat-number"><span class="counter" data-target="800">0</span>+</div>
-                            <div class="stat-text">Students Trained</div>
+                        <div class="contact-floating-stack" aria-label="Contact highlights">
+                            <span class="floating-contact-card"><i class="bi bi-telephone-fill"></i> Phone</span>
+                            <span class="floating-contact-card"><i class="bi bi-envelope-fill"></i> Email</span>
+                            <span class="floating-contact-card"><i class="bi bi-geo-alt-fill"></i> Location</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             OUR SOLUTIONS SECTION
-        =========================================== -->
-        <section id="solutions">
+        <section class="bg-alt">
             <div class="container">
                 <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">What We Do</span>
-                    <h2 class="section-title">Three Powerful Solutions.<br>One Trusted Partner.</h2>
-                    <p>Whether you're starting your HR career, growing your business, or hiring top talent, Se7en Tech has a solution designed for you.</p>
+                    <span class="section-subtitle">Contact Information</span>
+                    <h2 class="section-title">Get in Touch</h2>
                 </div>
-                
                 <div class="row g-4">
-                    <!-- Solution 1 -->
-                    <div class="col-lg-4 reveal">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Foundation Program</h3>
-                            <p class="mb-4 flex-grow-1">Gain practical HR knowledge through live sessions, ATS resume building, LinkedIn branding, AI tools, mock interviews, and placement support.</p>
-                            <a href="training.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <div class="col-lg-3 col-md-6 reveal">
+                        <article class="neu-card contact-info-card">
+                            <div class="neu-icon-wrap"><i class="bi bi-telephone-fill"></i></div>
+                            <h3 class="h4">Phone</h3>
+                            <p class="contact-value">99898 74934</p>
+                            <a href="tel:+919989874934" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Click to Call <i class="bi bi-arrow-right"></i></a>
                         </article>
                     </div>
-                    
-                    <!-- Solution 2 -->
-                    <div class="col-lg-4 reveal delay-1">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-building-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Services</h3>
-                            <p class="mb-4 flex-grow-1">Professional HR consulting, recruitment, payroll support, compliance, employee engagement, HR operations, and workforce management.</p>
-                            <a href="services.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Explore Services <i class="bi bi-arrow-right"></i></a>
+                    <div class="col-lg-3 col-md-6 reveal delay-1">
+                        <article class="neu-card contact-info-card">
+                            <div class="neu-icon-wrap"><i class="bi bi-envelope-fill"></i></div>
+                            <h3 class="h4">Email</h3>
+                            <p class="contact-value" style="word-break: break-word;">info@se7entechitsolutions.com</p>
+                            <a href="mailto:info@se7entechitsolutions.com" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Click to Email <i class="bi bi-arrow-right"></i></a>
                         </article>
                     </div>
-                    
-                    <!-- Solution 3 -->
-                    <div class="col-lg-4 reveal delay-2">
-                        <article class="neu-card h-100 d-flex flex-column">
-                            <div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div>
-                            <h3 class="h4 font-weight-bold mb-3 text-heading">Hire Talent</h3>
-                            <p class="mb-4 flex-grow-1">Hire pre-screened HR, IT, and Non-IT professionals quickly through our recruitment and staffing solutions.</p>
-                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Hire Talent <i class="bi bi-arrow-right"></i></a>
+                    <div class="col-lg-3 col-md-6 reveal delay-2">
+                        <article class="neu-card contact-info-card">
+                            <div class="neu-icon-wrap"><i class="bi bi-geo-alt-fill"></i></div>
+                            <h3 class="h4">Office Address</h3>
+                            <p class="contact-value">4-7-154/2/E/6,<br>Attapur,<br>Sai Hills Colony,<br>Panduranga Nagar,<br>Hyderabad,<br>Telangana 500048</p>
+                            <a href="https://maps.app.goo.gl/1VCbWiZPAhB2GtoC8" target="_blank" rel="noopener" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Open in Google Maps <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-6 reveal delay-3">
+                        <article class="neu-card contact-info-card">
+                            <div class="neu-icon-wrap"><i class="bi bi-clock-fill"></i></div>
+                            <h3 class="h4">Business Hours</h3>
+                            <p class="contact-value">Monday - Saturday<br>09:00 AM - 06:00 PM<br><br>Sunday<br>Closed</p>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             WHO WE ARE SECTION
-        =========================================== -->
-        <section id="about" class="bg-alt">
-            <div class="container">
-                <div class="row justify-content-center text-center reveal">
-                    <div class="col-lg-8 col-xl-7">
-                        <span class="section-subtitle">About Se7en Tech</span>
-                        <h2 class="section-title">Building Careers.<br><span class="text-gradient">Strengthening Businesses.</span></h2>
-                        <p class="mb-3 fs-5">Se7en Tech IT Solutions is a premier HR Consultancy, Staffing, Recruitment, and Corporate Training company based in Hyderabad.</p>
-                        <p class="mb-4 pb-2">We bridge the gap between exceptional talent and outstanding organizations. Our mission is to help businesses scale seamlessly while empowering professionals with the practical skills and confidence needed to build successful careers.</p>
-                        <a href="about.html" class="neu-btn neu-btn-primary">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             WHY SE7EN TECH SECTION
-        =========================================== -->
-        <section id="why-us">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">Why Choose Us</span>
-                    <h2 class="section-title">Why Businesses & Professionals Trust Se7en Tech</h2>
-                </div>
-                
-                <div class="row g-4 justify-content-center">
-                    <!-- Feature 1 -->
-                    <div class="col-md-4 col-sm-6 reveal">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-person-check-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Industry Experts</h3>
-                            <p class="mb-0 small">Practical HR and recruitment experience across business hiring needs.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-1">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-lightning-charge-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Faster Hiring</h3>
-                            <p class="mb-0 small">Structured sourcing and screening to reduce hiring delays.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-2">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-laptop text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Practical Training</h3>
-                            <p class="mb-0 small">Career-focused learning built around real HR workflows.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="col-md-4 col-sm-6 reveal">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-award-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Placement Support</h3>
-                            <p class="mb-0 small">Resume, interview, LinkedIn, and opportunity guidance for learners.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 5 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-1">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-buildings-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">HR Consulting</h3>
-                            <p class="mb-0 small">Professional support for HR policies, operations, and workforce planning.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 6 -->
-                    <div class="col-md-4 col-sm-6 reveal delay-2">
-                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
-                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                <i class="bi bi-diagram-3-fill text-primary"></i>
-                            </div>
-                            <h3 class="h5 mb-2 font-weight-bold">Corporate Partnerships</h3>
-                            <p class="mb-0 small">Long-term collaboration for recruitment, training, and HR solutions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             CAREER ACCELERATION SECTION
-        =========================================== -->
-        <section id="career" class="bg-alt">
-            <div class="container">
-                <div class="text-center max-w-700 mx-auto mb-5 reveal">
-                    <span class="section-subtitle">Learn With Us</span>
-                    <h2 class="section-title">Start Your HR Career with Confidence</h2>
-                    <p>Our HR Foundation Program equips aspiring HR professionals with practical skills, live projects, AI tools, interview preparation, and placement support.</p>
-                </div>
-                
-                <div class="neu-card career-card p-4 p-lg-5 reveal delay-1">
-                    <div class="row align-items-center g-4 g-lg-5">
-                        <div class="col-lg-6">
-                            <div class="gallery-img-wrap h-100">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="HR Corporate Training Session" loading="lazy" class="h-100 object-fit-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <h3 class="h2 font-weight-bold mb-4">HR Foundation Program</h3>
-                            <ul class="career-list list-unstyled mb-5">
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-camera-video-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Live Training</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-briefcase-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Real HR Projects</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-file-earmark-text-fill"></i></div> 
-                                    <span class="fw-medium fs-5">ATS Resume Building</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-linkedin"></i></div> 
-                                    <span class="fw-medium fs-5">LinkedIn Branding</span>
-                                </li>
-                                <li class="mb-4 d-flex align-items-center gap-3">
-                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-award-fill"></i></div> 
-                                    <span class="fw-medium fs-5">Placement Support</span>
-                                </li>
-                            </ul>
-                            <a href="training.html" class="neu-btn neu-btn-primary">View HR Foundation Program <i class="bi bi-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             TESTIMONIALS & CLIENTS
-        =========================================== -->
         <section>
             <div class="container">
-                <!-- Clients Strip -->
-                <div class="logo-strip mb-5 reveal">
-                    <span class="client-logo fw-bold fs-4">TCS</span>
-                    <span class="client-logo fw-bold fs-4">Infosys</span>
-                    <span class="client-logo fw-bold fs-4">Wipro</span>
-                    <span class="client-logo fw-bold fs-4">HCLTech</span>
-                    <span class="client-logo fw-bold fs-4">Tech Mahindra</span>
-                    <span class="client-logo fw-bold fs-4">Accenture</span>
-                </div>
-
-                <!-- Testimonials Slider -->
-                <div class="text-center mt-5 pt-5 reveal">
-                    <span class="section-subtitle">Success Stories</span>
-                    <h2 class="section-title">What People Say</h2>
-                </div>
-
-                <div id="testimonialCarousel" class="carousel slide reveal delay-1" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-5 reveal">
+                        <span class="section-subtitle">Send Us a Message</span>
+                        <h2 class="section-title">Tell Us How We Can Help</h2>
+                        <p class="fs-5">Use the form to reach our team for HR consulting, recruitment, training, staffing, or workforce solutions. We will review your message and respond as quickly as possible.</p>
+                        <div class="neu-card mt-4">
+                            <h3 class="h4">Quick Response</h3>
+                            <p class="mb-0">For urgent hiring or enrollment support, call us directly at <a href="tel:+919989874934" class="fw-bold text-primary">99898 74934</a>.</p>
+                        </div>
                     </div>
-                    <div class="carousel-inner pb-5">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Rajesh K." class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <div class="col-lg-7 reveal delay-1">
+                        <form class="neu-card contact-form-card needs-validation" id="contactForm" novalidate aria-label="Contact form">
+                            <div id="formSuccess" class="form-status success mb-4" role="status">Thank you. Your message is ready to send. Our team will contact you soon.</div>
+                            <div id="formError" class="form-status error mb-4" role="alert">Please complete all required fields and agree to the Privacy Policy.</div>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating"><input type="text" class="form-control" id="fullName" placeholder="Full Name" required><label for="fullName">Full Name</label><div class="invalid-feedback">Please enter your full name.</div></div>
                                 </div>
-                                <p class="review-text">"Se7en Tech transformed our hiring process. They understood our technical requirements perfectly and provided candidates who were not just skilled, but cultural fits. Highly recommended for IT staffing."</p>
-                                <h3 class="h5 mb-0">Rajesh K.</h3>
-                                <span class="small text-muted">VP of Engineering, FinTech Co.</span>
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student Review - Priya S." class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                <div class="col-md-6">
+                                    <div class="form-floating"><input type="text" class="form-control" id="companyName" placeholder="Company Name"><label for="companyName">Company Name</label></div>
                                 </div>
-                                <p class="review-text">"The Recruitment Training program was a game-changer for my career. The practical insights into sourcing and LinkedIn optimization helped me land a job as a Talent Acquisition Specialist within a month."</p>
-                                <h3 class="h5 mb-0">Priya S.</h3>
-                                <span class="small text-muted">Trained Candidate</span>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="carousel-item">
-                            <div class="neu-card testimonial-card">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Vikram Reddy" class="client-img" loading="lazy">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                <div class="col-md-6">
+                                    <div class="form-floating"><input type="email" class="form-control" id="emailAddress" placeholder="Email Address" required><label for="emailAddress">Email Address</label><div class="invalid-feedback">Please enter a valid email.</div></div>
                                 </div>
-                                <p class="review-text">"A reliable partner for workforce solutions. Their turnaround time is impressive, and the quality of candidates is consistently high. They truly understand the nuances of the IT industry in Hyderabad."</p>
-                                <h3 class="h5 mb-0">Vikram Reddy</h3>
-                                <span class="small text-muted">HR Director, Tech Solutions</span>
+                                <div class="col-md-6">
+                                    <div class="form-floating"><input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" required><label for="phoneNumber">Phone Number</label><div class="invalid-feedback">Please enter your phone number.</div></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating"><input type="text" class="form-control" id="subject" placeholder="Subject" required><label for="subject">Subject</label><div class="invalid-feedback">Please enter a subject.</div></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating"><select class="form-select" id="serviceSelect" required><option value="" selected>Select Service</option><option>HR Consultancy</option><option>Recruitment</option><option>IT Staffing</option><option>Corporate Training</option><option>HR Foundation Program</option><option>Talent Acquisition</option><option>Other</option></select><label for="serviceSelect">Select Service</label><div class="invalid-feedback">Please choose a service.</div></div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating"><textarea class="form-control" id="message" placeholder="Message" required></textarea><label for="message">Message</label><div class="invalid-feedback">Please write your message.</div></div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="privacyCheck" required><label class="form-check-label" for="privacyCheck">I agree to the Privacy Policy.</label><div class="invalid-feedback">Please agree before submitting.</div></div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="neu-btn neu-btn-primary" id="contactSubmit" type="submit"><span class="btn-text">Send Message</span><span class="spinner-border spinner-border-sm ms-2 d-none" aria-hidden="true"></span></button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             OFFICE GALLERY
-        =========================================== -->
-        <section class="bg-alt pb-0">
-            <div class="container px-4">
-                <div class="text-center mb-5 reveal">
-                    <h2 class="section-title">Life at Se7en Tech</h2>
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Find Us</span>
+                    <h2 class="section-title">Visit Our Office</h2>
                 </div>
-                <div class="pb-5 reveal delay-1 life-gallery">
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-main">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Se7en Tech Office Space" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-team">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Team Work" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-meeting">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Meeting" loading="lazy">
-                    </div>
-                    <div class="gallery-img-wrap life-gallery-item life-gallery-training">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Se7en Tech Training Session" loading="lazy">
-                    </div>
+                <div class="map-card reveal delay-1">
+                    <iframe title="Se7en Tech IT Solutions office location map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=4-7-154%2F2%2FE%2F6%20Attapur%20Sai%20Hills%20Colony%20Panduranga%20Nagar%20Hyderabad%20Telangana%20500048&output=embed"></iframe>
+                </div>
+                <div class="text-center mt-4 reveal">
+                    <a href="https://maps.app.goo.gl/1VCbWiZPAhB2GtoC8" target="_blank" rel="noopener" class="neu-btn neu-btn-primary">Open in Google Maps <i class="bi bi-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             READY TO CONNECT CTA
-        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Why Contact Us</span><h2 class="section-title">Why Choose Se7en Tech?</h2></div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-person-workspace"></i></div><h3 class="h4">Expert HR Guidance</h3><p>Practical advice for hiring, HR operations, staffing, and workforce planning.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-lightning-charge-fill"></i></div><h3 class="h4">Quick Response</h3><p>Our team responds promptly to business, training, and hiring inquiries.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-sliders"></i></div><h3 class="h4">Tailored Solutions</h3><p>We recommend solutions based on your business stage, goals, and workforce needs.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-award-fill"></i></div><h3 class="h4">Experienced Consultants</h3><p>Work with professionals who understand recruitment and HR delivery.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div><h3 class="h4">Corporate Training Experts</h3><p>Get career-focused HR training support for students and professionals.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-handshake-fill"></i></div><h3 class="h4">Long-Term Partnership</h3><p>We support clients beyond a single service with ongoing HR collaboration.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">Quick Contact Options</span><h2 class="section-title">Choose Your Next Step</h2></div>
+                <div class="row g-4">
+                    <div class="col-lg-4 reveal"><article class="neu-card quick-action-card"><div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div><h3 class="h4">HR Foundation Program</h3><p>Start your HR career with practical training and placement support.</p><a href="training.html" class="neu-btn neu-btn-primary mt-auto text-center">Join Now</a></article></div>
+                    <div class="col-lg-4 reveal delay-1"><article class="neu-card quick-action-card"><div class="neu-icon-wrap"><i class="bi bi-buildings-fill"></i></div><h3 class="h4">Business HR Services</h3><p>Strengthen your business with professional HR consulting and workforce solutions.</p><a href="services.html" class="neu-btn neu-btn-primary mt-auto text-center">Explore Services</a></article></div>
+                    <div class="col-lg-4 reveal delay-2"><article class="neu-card quick-action-card"><div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div><h3 class="h4">Hire Talent</h3><p>Connect with qualified HR, IT and Non-IT professionals through our recruitment solutions.</p><a href="hire-talent.html" class="neu-btn neu-btn-primary mt-auto text-center">Hire Talent</a></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal"><span class="section-subtitle">FAQ</span><h2 class="section-title">Contact Questions</h2></div>
+                <div class="accordion faq-accordion reveal delay-1" id="contactFaq">
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">How can I contact Se7en Tech?</button></h3><div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#contactFaq"><div class="accordion-body">You can call 99898 74934, email info@se7entechitsolutions.com, or submit the contact form on this page.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">Where is your office located?</button></h3><div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Our office is located at 4-7-154/2/E/6, Attapur, Sai Hills Colony, Panduranga Nagar, Hyderabad, Telangana 500048.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">How quickly will I receive a response?</button></h3><div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Our team aims to respond as quickly as possible during business hours, Monday to Saturday from 09:00 AM to 06:00 PM.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">Do you offer online consultations?</button></h3><div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Yes. We can support online consultations for HR services, recruitment requirements, staffing discussions, and training inquiries.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">Can I visit your office?</button></h3><div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Yes. We recommend calling ahead so our team can schedule the right consultant or trainer for your visit.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">How can I enroll in the HR Foundation Program?</button></h3><div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Use the contact form, call our team, or visit the Training page to begin enrollment for the HR Foundation Program.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">How do I request recruitment services?</button></h3><div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Select Recruitment, IT Staffing, or Talent Acquisition in the form and share your hiring requirement. Our team will contact you to discuss the role details.</div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">How do I schedule a consultation?</button></h3><div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Call us or submit the form with your preferred service and message. We will coordinate a suitable consultation time.</div></div></div>
+                </div>
+            </div>
+        </section>
+
         <section class="pb-0 pt-5 mt-5">
             <div class="container reveal">
                 <div class="cta-card">
-                    <h2 class="section-title mb-4">Let's Build Your Success Story Together</h2>
-                    <p class="mb-5 fs-5 max-w-700 mx-auto">Whether you're looking to launch your HR career, strengthen your HR operations, or hire exceptional talent, our experts are ready to help.</p>
+                    <h2 class="section-title mb-4">Ready to Transform Your Career or Business?</h2>
+                    <p class="mb-5 fs-5 max-w-700 mx-auto">Our HR experts are here to help you with recruitment, HR consulting, staffing, workforce solutions and professional training.</p>
                     <div class="d-flex flex-wrap gap-4 justify-content-center mt-3">
-                        <a href="contact.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Contact Us <i class="bi bi-arrow-right ms-2"></i></a>
-                        <a href="tel:+919989874934" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-telephone-fill me-2"></i> Call Now</a>
+                        <a href="tel:+919989874934" class="neu-btn neu-btn-primary fs-5 px-5 py-3"><i class="bi bi-telephone-fill me-2"></i> Call Now</a>
+                        <a href="mailto:info@se7entechitsolutions.com" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-envelope-fill me-2"></i> Send Email</a>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- ==========================================
@@ -1479,7 +1887,7 @@
                     <ul class="footer-links">
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> IT Staffing</a></li>
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> HR Consulting</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
+                        <li><a href="hire-talent.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
                         <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Corporate Training</a></li>
                         <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Workforce Solutions</a></li>
                     </ul>
@@ -1623,5 +2031,49 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const submitBtn = document.getElementById('contactSubmit');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const spinner = submitBtn.querySelector('.spinner-border');
+            const success = document.getElementById('formSuccess');
+            const error = document.getElementById('formError');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                success.classList.remove('show');
+                error.classList.remove('show');
+                form.classList.add('was-validated');
+
+                if (!form.checkValidity()) {
+                    error.classList.add('show');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                spinner.classList.remove('d-none');
+                btnText.textContent = 'Sending';
+
+                window.setTimeout(() => {
+                    spinner.classList.add('d-none');
+                    btnText.textContent = 'Send Message';
+                    submitBtn.disabled = false;
+                    success.classList.add('show');
+                    form.reset();
+                    form.classList.remove('was-validated');
+                }, 900);
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+

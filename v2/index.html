@@ -190,16 +190,19 @@
         .navbar {
             transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
             padding: 16px 0;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(47, 128, 237, 0.08);
         }
 
         .navbar.scrolled {
             padding: 16px 0;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(47, 128, 237, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .navbar-brand {
@@ -209,6 +212,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            background-color: rgba(47, 128, 237, 0.08);
         }
 
         .brand-icon {
@@ -221,6 +231,35 @@
             justify-content: center;
             font-size: 1.2rem;
             font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover .brand-icon {
+            box-shadow: 0 8px 20px rgba(47, 128, 237, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            padding: 8px 12px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: rgba(47, 128, 237, 0.05);
+            border: 1px solid rgba(47, 128, 237, 0.1);
+        }
+
+        .navbar-toggler:hover,
+        .navbar-toggler:focus {
+            background-color: rgba(47, 128, 237, 0.15);
+            border-color: rgba(47, 128, 237, 0.3);
+            box-shadow: 0 4px 12px rgba(47, 128, 237, 0.1);
+        }
+
+        .navbar-toggler i {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover i {
+            color: var(--primary-blue) !important;
         }
 
         .nav-link {
@@ -228,6 +267,9 @@
             font-weight: 500;
             margin: 0 10px;
             position: relative;
+            padding: 8px 14px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
         .nav-link::after {
@@ -238,6 +280,12 @@
             background-color: var(--primary-blue);
             transition: var(--transition);
             transform: translateX(-50%);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: rgba(47, 128, 237, 0.1);
+            color: var(--primary-blue) !important;
         }
 
         .nav-link:hover::after {
@@ -523,6 +571,19 @@
                 backdrop-filter: blur(20px);
                 padding: 20px; border-radius: 16px; margin-top: 15px;
                 box-shadow: var(--glass-shadow);
+            }
+            .nav-link {
+                margin: 4px 0 !important;
+                padding: 10px 14px !important;
+                border-radius: 8px;
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-link:hover,
+            .nav-link.active {
+                background-color: rgba(47, 128, 237, 0.15);
+                padding-left: 20px !important;
             }
         }
         @media (max-width: 576px) {
@@ -994,17 +1055,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
-            // 1. Navbar Scroll Effect
-            const navbar = document.getElementById('mainNav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-
-            // 2. Scroll Reveal Animations utilizing Intersection Observer
+            // 1. Scroll Reveal Animations utilizing Intersection Observer
             const revealElements = document.querySelectorAll('.reveal');
             
             const revealOptions = {
