@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if (Date.now() < new Date('2026-07-11T17:30:00+05:30').getTime()) {
+            location.replace('index.html');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Se7en Tech IT Solutions, a Hyderabad-based HR Consultancy specializing in Recruitment, IT Staffing, HR Services, Talent Acquisition, Workforce Solutions, and Corporate Training.">
+    <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Hyderabad">
+    <meta name="author" content="Se7en Tech IT Solutions">
+    <title>About Us | Se7en Tech IT Solutions</title>
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="About Us | Se7en Tech IT Solutions">
+    <meta property="og:description" content="Learn about Se7en Tech IT Solutions, Hyderabad's trusted HR Consultancy, Recruitment, Staffing, and Corporate Training partner.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ====================================================================
+           DESIGN SYSTEM & CSS VARIABLES
+           Neumorphism 2.0 / Minimal Luxury
+        ==================================================================== */
+        :root {
+            /* Color Palette */
+            --primary: #0A4D9C;
+            --secondary: #2F80ED;
+            --accent: #14B8FF;
+            --bg-base: #EEF3F8;
+            --bg-alt: #F5F8FC;
+            --surface: #EDF2F7;
+            --heading: #0F172A;
+            --paragraph: #475569;
+            --white: #FFFFFF;
+
+            /* Neumorphic Shadow Calculations based on --surface */
+            --shadow-light: #ffffff;
+            --shadow-dark: #d1d9e6;
+            
+            /* Shadows for Dark Footer */
+            --footer-bg: #0F172A;
+            --footer-shadow-light: #16223e;
+            --footer-shadow-dark: #080c16;
+
+            /* Neumorphic Extrusions */
+            --neu-out: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+            --neu-out-sm: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+            --neu-out-hover: 15px 15px 30px var(--shadow-dark), -15px -15px 30px var(--shadow-light);
+            --neu-in: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+            --neu-in-sm: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+            
+            /* Border Radii */
+            --radius-sm: 12px;
+            --radius-md: 24px;
+            --radius-lg: 40px;
+            --radius-pill: 50px;
+
+            /* Typography */
+            --font-main: 'Poppins', sans-serif;
+            --text-base: 1rem;
+            --text-lead: clamp(1.02rem, 0.96rem + 0.24vw, 1.12rem);
+            --title-hero: clamp(2.45rem, 1.95rem + 2.25vw, 3.85rem);
+            --title-section: clamp(2rem, 1.7rem + 1.25vw, 2.75rem);
+            --title-card: clamp(1.08rem, 1.02rem + 0.28vw, 1.2rem);
+            --title-feature: clamp(1.35rem, 1.18rem + 0.75vw, 1.8rem);
+            
+            /* Transitions */
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* ====================================================================
+           GLOBAL STYLES
+        ==================================================================== */
+        html {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-base);
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-base);
+            color: var(--paragraph);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading);
+            font-weight: 700;
+            line-height: 1.18;
+            letter-spacing: 0;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.75;
+            font-size: var(--text-base);
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        main {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .bg-alt {
+            background-color: var(--bg-alt);
+        }
+
+        /* Utilities */
+        .max-w-700 {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-title {
+            font-size: var(--title-section);
+            font-weight: 800;
+            line-height: 1.16;
+            letter-spacing: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subtitle {
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 0.78rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .fs-5 {
+            font-size: var(--text-lead) !important;
+        }
+
+        h3.h2 {
+            font-size: var(--title-feature);
+            line-height: 1.2;
+        }
+
+        h3.h4 {
+            font-size: clamp(1.12rem, 1.05rem + 0.28vw, 1.25rem);
+            line-height: 1.3;
+        }
+
+        h3.h5 {
+            font-size: clamp(1rem, 0.95rem + 0.22vw, 1.12rem);
+            line-height: 1.32;
+        }
+
+        /* ====================================================================
+           NEUMORPHIC COMPONENTS
+        ==================================================================== */
+        .neu-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out);
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .neu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neu-out-hover);
+        }
+
+        .neu-card-inner {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-in);
+            padding: 2rem;
+        }
+
+        /* Buttons */
+        .neu-btn {
+            background-color: var(--surface);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            box-shadow: var(--neu-out-sm);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .neu-btn:hover {
+            box-shadow: var(--neu-out);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .neu-btn:active, .neu-btn-pressed {
+            box-shadow: var(--neu-in-sm);
+            transform: translateY(0);
+        }
+
+        .neu-btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(10, 77, 156, 0.2);
+            border: none;
+        }
+
+        .neu-btn-primary:hover {
+            box-shadow: 0 15px 25px rgba(10, 77, 156, 0.3);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Icons */
+        .neu-icon-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--surface);
+            box-shadow: var(--neu-out);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .neu-card:hover .neu-icon-wrap {
+            color: var(--accent);
+            box-shadow: var(--neu-in);
+        }
+
+        /* Feature List Icons */
+        .contact-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* ====================================================================
+           SPECIFIC SECTIONS
+        ==================================================================== */
+        
+        /* Navigation */
+        .navbar-floating {
+            position: fixed;
+            top: 20px;
+            /* Fixed center position across all viewport widths */
+            left: 50%;
+            right: auto;
+            width: min(95%, 1200px);
+            transform: translateX(-50%);
+            max-width: 1200px;
+            background-color: rgba(237, 242, 247, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-pill);
+            box-shadow: var(--neu-out);
+            padding: 10px 30px;
+            z-index: 9999; /* Fix applied: Bumped z-index to stay above all elements */
+            transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .navbar-floating.scrolled {
+            top: 20px;
+            background-color: rgba(237, 242, 247, 0.95);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0;
+        }
+
+        .navbar-brand .navbar-logo {
+            display: block;
+            height: 52px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-brand .navbar-logo {
+                height: 46px;
+                max-width: 160px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-floating {
+                left: 12px;
+                right: 12px;
+                width: auto !important;
+                transform: none;
+            }
+            .navbar-brand .navbar-logo {
+                height: 42px;
+                max-width: 140px;
+            }
+        }
+
+        .nav-link {
+            color: var(--paragraph);
+            font-weight: 500;
+            padding: 10px 20px !important;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+            background-color: transparent;
+            box-shadow: var(--neu-in-sm);
+        }
+        
+        /* Mobile menu toggle */
+        .navbar-toggler-custom {
+            color: var(--primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: 120px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: var(--radius-pill);
+            background-color: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            color: var(--paragraph);
+        }
+
+        .hero-title {
+            font-size: var(--title-hero);
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .hero-text {
+            font-size: var(--text-lead);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Floating Elements */
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+        }
+        .blob-1 {
+            width: 400px; height: 400px;
+            background: var(--accent);
+            top: -100px; right: -100px;
+        }
+        .blob-2 {
+            width: 300px; height: 300px;
+            background: var(--secondary);
+            bottom: -50px; left: 40%;
+        }
+
+        /* Statistics */
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            height: 100%;
+        }
+        .stat-number {
+            font-size: clamp(2.25rem, 1.95rem + 1.3vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-text {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Slider */
+        .testimonial-card {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 3rem;
+        }
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--neu-out);
+            border: 4px solid var(--surface);
+        }
+        .stars {
+            color: #FFC107;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .review-text {
+            font-size: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--shadow-dark);
+            border: none;
+            box-shadow: var(--neu-in-sm);
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+        .carousel-indicators .active {
+            background-color: var(--primary);
+            box-shadow: var(--neu-out-sm);
+            transform: scale(1.2);
+        }
+
+        /* Client Logos */
+        .logo-strip {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            box-shadow: var(--neu-in);
+        }
+        .client-logo {
+            font-size: clamp(1.05rem, 0.96rem + 0.36vw, 1.25rem);
+            font-weight: 800;
+            color: var(--paragraph);
+            opacity: 0.5;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+        .client-logo:hover {
+            opacity: 1;
+            color: var(--primary);
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Office Gallery */
+        .gallery-img-wrap {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--neu-out);
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+        .gallery-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-img-wrap:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
+
+        .career-card .gallery-img-wrap {
+            min-height: clamp(260px, 34vw, 400px);
+        }
+
+        .career-card > .row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+            align-items: center;
+            column-gap: clamp(3rem, 5vw, 5rem);
+            row-gap: 2.5rem;
+            margin: 0;
+        }
+
+        .career-card > .row > [class*="col-"] {
+            width: 100%;
+            max-width: none;
+            padding: 0;
+        }
+
+        .career-list {
+            display: grid;
+            gap: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .career-list li {
+            margin-bottom: 0 !important;
+        }
+
+        .life-gallery {
+            display: grid;
+            grid-template-columns: 1.1fr 0.95fr 0.95fr;
+            grid-template-rows: 240px 240px;
+            grid-template-areas:
+                "main team meeting"
+                "main training training";
+            gap: 1.5rem;
+        }
+
+        .life-gallery-item {
+            height: 100%;
+            min-height: 0;
+            aspect-ratio: auto;
+        }
+
+        .life-gallery-main {
+            grid-area: main;
+        }
+
+        .life-gallery-team {
+            grid-area: team;
+        }
+
+        .life-gallery-meeting {
+            grid-area: meeting;
+        }
+
+        .life-gallery-training {
+            grid-area: training;
+        }
+
+        /* About Page */
+        .page-hero {
+            padding-top: 150px;
+            padding-bottom: 90px;
+            overflow: hidden;
+        }
+
+        .breadcrumb-soft {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            font-size: 0.86rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-card {
+            min-height: 460px;
+        }
+
+        .about-hero-img,
+        .story-img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+        }
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card {
+            grid-column: 2;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: var(--neu-out-sm);
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .process-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .process-track::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--surface);
+            box-shadow: var(--neu-out);
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .about-gallery {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            grid-template-rows: 240px 240px;
+            grid-template-areas:
+                "office meetings training"
+                "office workshops corporate";
+            gap: 1.5rem;
+        }
+
+        .about-gallery .gallery-img-wrap {
+            min-height: 0;
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        .gallery-office { grid-area: office; }
+        .gallery-meetings { grid-area: meetings; }
+        .gallery-training { grid-area: training; }
+        .gallery-workshops { grid-area: workshops; }
+        .gallery-corporate { grid-area: corporate; }
+
+        @media (max-width: 991px) {
+            .page-hero {
+                padding-top: 150px;
+                text-align: center;
+            }
+
+            .about-hero-img,
+            .story-img {
+                min-height: 340px;
+            }
+
+            .timeline::before {
+                left: 14px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) .timeline-card {
+                grid-template-columns: 1fr;
+                grid-column: auto;
+                padding-left: 3rem;
+                gap: 1rem;
+            }
+
+            .timeline-dot {
+                left: 14px;
+            }
+
+            .process-track {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-track::before {
+                display: none;
+            }
+
+            .about-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 320px 220px 220px;
+                grid-template-areas:
+                    "office office"
+                    "meetings training"
+                    "workshops corporate";
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-img,
+            .story-img {
+                min-height: 260px;
+            }
+
+            .process-track,
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-gallery {
+                grid-template-rows: none;
+                grid-template-areas:
+                    "office"
+                    "meetings"
+                    "training"
+                    "workshops"
+                    "corporate";
+            }
+
+            .about-gallery .gallery-img-wrap {
+                min-height: 220px;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        /* CTA Section */
+        .cta-card {
+            background: linear-gradient(135deg, var(--surface), var(--bg-alt));
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+            padding: 5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(20, 184, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        /* Footer (Dark Neumorphism) */
+        .site-footer {
+            background-color: var(--footer-bg);
+            color: #94a3b8;
+            padding: 80px 0 30px;
+            border-top-left-radius: var(--radius-lg);
+            border-top-right-radius: var(--radius-lg);
+            margin-top: 50px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .footer-heading {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icon {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background-color: var(--footer-bg);
+            box-shadow: 5px 5px 10px var(--footer-shadow-dark), -5px -5px 10px var(--footer-shadow-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        .social-icon:hover {
+            color: var(--accent);
+            box-shadow: inset 3px 3px 6px var(--footer-shadow-dark), inset -3px -3px 6px var(--footer-shadow-light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ====================================================================
+           MICRO INTERACTIONS & ANIMATIONS
+        ==================================================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ====================================================================
+           HERO ACTION CARDS CSS
+        ==================================================================== */
+        .hero-cards-wrapper {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+
+        .hero-image-container {
+            border-radius: var(--radius-lg);
+            background-color: var(--surface);
+            padding: 15px;
+            box-shadow: var(--neu-in);
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-main-img {
+            border-radius: calc(var(--radius-lg) - 5px);
+            box-shadow: var(--neu-out);
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .neu-action-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            text-decoration: none !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neu-action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neu-out-hover);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .neu-action-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-md);
+            box-shadow: inset 0 0 0 rgba(20, 184, 255, 0);
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .neu-action-card:hover::before {
+            box-shadow: inset 0 0 20px rgba(20, 184, 255, 0.15);
+        }
+
+        .card-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            border-radius: var(--radius-md);
+            background-color: var(--surface);
+            box-shadow: var(--neu-in);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .neu-action-card:hover .card-icon-wrapper {
+            transform: scale(1.08);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .icon-blue { color: var(--secondary); }
+        .icon-cyan { color: var(--accent); }
+        .icon-royal { color: var(--primary); }
+
+        .card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--paragraph);
+            margin-bottom: 0.3rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: var(--title-card);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+            color: var(--heading);
+            transition: var(--transition);
+        }
+
+        .neu-action-card:hover .card-title {
+            color: var(--primary);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+            color: var(--paragraph);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-action {
+            flex-shrink: 0;
+        }
+
+        .btn-sm-custom {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .icon-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .neu-action-card:hover .icon-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Simulate button hover inside the card */
+        .neu-action-card:hover .neu-btn:not(.neu-btn-primary) {
+            box-shadow: var(--neu-out);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        .neu-action-card:hover .neu-btn-primary {
+            box-shadow: 0 15px 25px rgba(10, 77, 156, 0.3);
+            transform: translateY(-2px);
+        }
+        .neu-action-card:active .neu-btn {
+            box-shadow: var(--neu-in-sm) !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .neu-action-card {
+                padding: 1.25rem;
+                gap: 1rem;
+            }
+            .card-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            .card-title { font-size: 1.08rem; }
+            .btn-sm-custom { padding: 8px 16px; font-size: 0.85rem; }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-floating { padding: 10px 20px; }
+            .hero-section { text-align: center; padding-top: 150px; }
+            .hero-text { margin: 0 auto 2rem; }
+            .floating-bubble { display: none; }
+            .navbar-collapse {
+                background: var(--surface);
+                padding: 20px;
+                border-radius: var(--radius-md);
+                box-shadow: var(--neu-out);
+                margin-top: 15px;
+            }
+            
+            /* Responsive adjustments for hero cards */
+            .hero-image-container {
+                min-height: 350px;
+                margin-top: 2rem;
+            }
+            .neu-action-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                padding: 2rem;
+                gap: 1rem;
+            }
+            .card-desc {
+                -webkit-line-clamp: unset;
+                margin-bottom: 1rem;
+            }
+
+            .career-card {
+                padding: 2rem !important;
+            }
+
+            .career-card .gallery-img-wrap {
+                min-height: 320px;
+            }
+
+            .career-card > .row {
+                grid-template-columns: 1fr;
+                row-gap: 2rem;
+            }
+
+            .life-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 320px 230px 240px;
+                grid-template-areas:
+                    "main main"
+                    "team meeting"
+                    "training training";
+            }
+
+            .life-gallery-main {
+                min-height: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .cta-card { padding: 3rem 1.5rem; }
+
+            .career-card {
+                padding: 1.5rem !important;
+            }
+
+            .career-card .gallery-img-wrap {
+                min-height: 240px;
+            }
+
+            .career-list {
+                gap: 0.85rem;
+            }
+
+            .career-list li {
+                align-items: flex-start !important;
+            }
+
+            .career-list .contact-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+            }
+
+            .life-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+                grid-template-areas:
+                    "main"
+                    "team"
+                    "meeting"
+                    "training";
+                gap: 1rem;
+            }
+
+            .life-gallery-item,
+            .life-gallery-main,
+            .life-gallery-training {
+                min-height: 220px;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-floating {
+                left: 12px;
+                right: 12px;
+                width: auto !important;
+                transform: none;
+            }
+            .career-card {
+                border-radius: var(--radius-sm);
+                padding: 1.25rem !important;
+            }
+
+            .career-card .gallery-img-wrap {
+                min-height: 210px;
+            }
+
+            .career-list .fs-5 {
+                font-size: 0.98rem !important;
+                line-height: 1.45;
+            }
+
+            .career-card .neu-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .life-gallery-item,
+            .life-gallery-main,
+            .life-gallery-training {
+                min-height: 190px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         HEADER / NAVIGATION
+    =========================================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-floating" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <!-- <i class="bi bi-heptagon-fill text-gradient"></i> Se7en Tech -->
+                     <img class="navbar-logo" src="logo/se7en-logo.png" alt="Se7en Tech Logo">
+                </a>
+                
+                <!-- Refined Toggler to ensure it's always clearly visible on mobile -->
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list navbar-toggler-custom"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                            <a href="contact.html" class="neu-btn neu-btn-primary w-100 text-center">Get In Touch</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+        <main>
+        <!-- ==========================================
+             ABOUT PAGE HERO
+        =========================================== -->
+        <section class="page-hero hero-section">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 reveal">
+                        <nav class="breadcrumb-soft" aria-label="Breadcrumb">
+                            <a href="index.html" class="text-primary">Home</a>
+                            <span>/</span>
+                            <span>About Us</span>
+                        </nav>
+                        <h1 class="hero-title">About Se7en Tech IT Solutions</h1>
+                        <h2 class="h3 mb-4">Empowering Careers.<br>Building Businesses.<br><span class="text-gradient">Creating Opportunities.</span></h2>
+                        <p class="hero-text">Se7en Tech IT Solutions is committed to bridging the gap between talented professionals and growing organizations through innovative HR solutions, recruitment expertise, workforce management, and industry-focused training.</p>
+                        <a href="contact.html" class="neu-btn neu-btn-primary">Contact Us <i class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="col-lg-6 reveal delay-1">
+                        <div class="hero-image-container about-hero-card">
+                            <img class="about-hero-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Se7en Tech professionals collaborating in a corporate office" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             COMPANY STORY
+        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 reveal">
+                        <span class="section-subtitle">Who We Are</span>
+                        <h2 class="section-title">Your Trusted HR & Workforce Partner</h2>
+                        <p>Founded in 2022 and based in Hyderabad, Telangana, Se7en Tech IT Solutions was built with a clear purpose: to help organizations find dependable talent while helping professionals build meaningful careers. We work across HR Consultancy, Recruitment, IT Staffing, Talent Acquisition, Workforce Solutions, and Corporate Training with a practical, business-focused approach.</p>
+                        <p>Our team understands that hiring is more than filling a vacancy. It is about finding people who fit the role, culture, pace, and long-term goals of a company. For businesses, we provide structured recruitment support, staffing guidance, HR services, and workforce planning that improve hiring quality and operational confidence. For candidates and aspiring HR professionals, we offer industry-focused training, mentoring, interview preparation, and placement support.</p>
+                        <p>Se7en Tech combines consulting discipline with people-first execution. We listen carefully, plan responsibly, and support every engagement with transparency. Whether a company is scaling its workforce or a professional is starting a new career path, our mission remains the same: create opportunities that are practical, ethical, and built for long-term success.</p>
+                    </div>
+                    <div class="col-lg-6 reveal delay-1">
+                        <img class="story-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="HR consultant discussing workforce planning with a business team" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MISSION VISION VALUES
+        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">What Guides Us</span>
+                    <h2 class="section-title">Mission, Vision & Core Values</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 reveal">
+                        <article class="neu-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-bullseye"></i></div>
+                            <h3 class="h4">Mission</h3>
+                            <p>To deliver dependable HR, recruitment, staffing, and training solutions that help businesses grow stronger while helping professionals build confident careers.</p>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 reveal delay-1">
+                        <article class="neu-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-eye-fill"></i></div>
+                            <h3 class="h4">Vision</h3>
+                            <p>To become a trusted workforce solutions partner recognized for quality hiring, ethical service, practical training, and long-term client success.</p>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 reveal delay-2">
+                        <article class="neu-card h-100">
+                            <div class="neu-icon-wrap"><i class="bi bi-gem"></i></div>
+                            <h3 class="h4">Core Values</h3>
+                            <p>Integrity, accountability, learning, collaboration, and client-first execution guide every recruitment, consulting, and training engagement we handle.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             OUR JOURNEY
+        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Our Journey</span>
+                    <h2 class="section-title">Growing With Purpose</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <article class="neu-card timeline-card">
+                            <span class="section-subtitle">2022</span>
+                            <h3 class="h4">Company Founded</h3>
+                            <p>Se7en Tech IT Solutions began in Hyderabad with a focus on HR consultancy, recruitment, and career support.</p>
+                        </article>
+                    </div>
+                    <div class="timeline-item reveal delay-1">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <article class="neu-card timeline-card">
+                            <span class="section-subtitle">2023</span>
+                            <h3 class="h4">Expanded HR Services</h3>
+                            <p>We strengthened recruitment operations, HR consulting support, and workforce management services for growing businesses.</p>
+                        </article>
+                    </div>
+                    <div class="timeline-item reveal delay-2">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <article class="neu-card timeline-card">
+                            <span class="section-subtitle">2024</span>
+                            <h3 class="h4">Corporate Training Division</h3>
+                            <p>Practical training programs were introduced to prepare students and professionals for HR and recruitment careers.</p>
+                        </article>
+                    </div>
+                    <div class="timeline-item reveal delay-1">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <article class="neu-card timeline-card">
+                            <span class="section-subtitle">2025</span>
+                            <h3 class="h4">Business Growth</h3>
+                            <p>Se7en Tech expanded its client support, candidate network, and corporate partnerships across hiring requirements.</p>
+                        </article>
+                    </div>
+                    <div class="timeline-item reveal delay-2">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <article class="neu-card timeline-card">
+                            <span class="section-subtitle">Future</span>
+                            <h3 class="h4">Pan India Expansion</h3>
+                            <p>Our next chapter focuses on broader workforce partnerships, digital hiring systems, and wider training access.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             WHY CHOOSE US
+        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Why Choose Us</span>
+                    <h2 class="section-title">Built For Reliable Workforce Outcomes</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-person-workspace"></i></div><h3 class="h4">Industry Expertise</h3><p>Practical HR and recruitment knowledge shaped around real business hiring needs.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-person-check-fill"></i></div><h3 class="h4">Quality Recruitment</h3><p>Focused screening and shortlisting for stronger candidate-role alignment.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-buildings-fill"></i></div><h3 class="h4">HR Consulting</h3><p>Structured support for HR operations, hiring workflows, and workforce planning.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div><h3 class="h4">Corporate Training</h3><p>Career-ready learning programs designed around practical HR execution.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-handshake-fill"></i></div><h3 class="h4">Business Partnership</h3><p>Responsive collaboration that supports hiring goals beyond a single vacancy.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-graph-up-arrow"></i></div><h3 class="h4">Career Growth</h3><p>Guidance, training, and placement support for professionals entering HR careers.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             OUR PROCESS
+        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Our Process</span>
+                    <h2 class="section-title">Clear Steps. Consistent Support.</h2>
+                </div>
+                <div class="process-track">
+                    <article class="process-step reveal"><div class="process-number">01</div><h3 class="h4">Understand</h3><p>We study the requirement, role, goals, and expectations.</p></article>
+                    <article class="process-step reveal delay-1"><div class="process-number">02</div><h3 class="h4">Plan</h3><p>We map the right sourcing, consulting, or training strategy.</p></article>
+                    <article class="process-step reveal delay-2"><div class="process-number">03</div><h3 class="h4">Execute</h3><p>We deliver recruitment, HR support, or learning with discipline.</p></article>
+                    <article class="process-step reveal delay-3"><div class="process-number">04</div><h3 class="h4">Support</h3><p>We stay connected through feedback, improvement, and follow-up.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             OUR IMPACT
+        =========================================== -->
+        <section id="counter-section">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Our Impact</span>
+                    <h2 class="section-title">Results That Keep Growing</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-2 col-md-4 col-6 reveal"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="3">0</span>+</div><div class="stat-text">Years Experience</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-1"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="250">0</span>+</div><div class="stat-text">Companies Served</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-2"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="1200">0</span>+</div><div class="stat-text">Candidates Placed</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="800">0</span>+</div><div class="stat-text">Students Trained</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-1"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="25">0</span>+</div><div class="stat-text">Corporate Partners</div></div></div>
+                    <div class="col-lg-2 col-md-4 col-6 reveal delay-2"><div class="neu-card stat-card"><div class="stat-number"><span class="counter" data-target="15">0</span>+</div><div class="stat-text">HR Experts</div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             LEADERSHIP PHILOSOPHY
+        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Our Team</span>
+                    <h2 class="section-title">Leadership Philosophy</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-heart-fill"></i></div><h3 class="h4">Client First</h3><p>We focus on business needs, timelines, quality, and practical outcomes.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-lightbulb-fill"></i></div><h3 class="h4">Innovation</h3><p>We use modern hiring methods, AI-aware tools, and continuous process improvement.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-shield-check"></i></div><h3 class="h4">Integrity</h3><p>We value ethical hiring, honest communication, and responsible commitments.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-briefcase-fill"></i></div><h3 class="h4">Professionalism</h3><p>Every interaction is handled with clarity, respect, and accountability.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-1"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-journal-check"></i></div><h3 class="h4">Continuous Learning</h3><p>We keep improving our training, recruitment, and consulting practices.</p></article></div>
+                    <div class="col-lg-4 col-md-6 reveal delay-2"><article class="neu-card h-100"><div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div><h3 class="h4">Collaboration</h3><p>We work closely with clients, candidates, students, and corporate partners.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             LIFE AT SE7EN TECH
+        =========================================== -->
+        <section>
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Life at Se7en Tech</span>
+                    <h2 class="section-title">A Professional, People-Focused Workplace</h2>
+                </div>
+                <div class="about-gallery reveal delay-1">
+                    <div class="gallery-img-wrap gallery-office"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern Se7en Tech office workspace" loading="lazy"></div>
+                    <div class="gallery-img-wrap gallery-meetings"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Team meeting at Se7en Tech" loading="lazy"></div>
+                    <div class="gallery-img-wrap gallery-training"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Training session at Se7en Tech" loading="lazy"></div>
+                    <div class="gallery-img-wrap gallery-workshops"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Professional workshop discussion" loading="lazy"></div>
+                    <div class="gallery-img-wrap gallery-corporate"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Corporate session with laptops and presentation" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             CLIENT TESTIMONIALS
+        =========================================== -->
+        <section class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Testimonials</span>
+                    <h2 class="section-title">What Clients Say</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 reveal"><article class="neu-card h-100"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="review-text">"Se7en Tech helped us close urgent hiring needs with quality profiles and clear communication throughout the process."</p><h3 class="h5 mb-0">Technology Client</h3><span class="small text-muted">Hyderabad</span></article></div>
+                    <div class="col-lg-4 reveal delay-1"><article class="neu-card h-100"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="review-text">"Their HR consulting support brought structure to our recruitment and onboarding process. A dependable partner."</p><h3 class="h5 mb-0">HR Operations Lead</h3><span class="small text-muted">Corporate Partner</span></article></div>
+                    <div class="col-lg-4 reveal delay-2"><article class="neu-card h-100"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="review-text">"The training was practical, clear, and industry-focused. It gave our learners stronger confidence for HR interviews."</p><h3 class="h5 mb-0">Training Coordinator</h3><span class="small text-muted">Education Partner</span></article></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             FINAL CTA
+        =========================================== -->
+        <section class="pb-0 pt-5 mt-5">
+            <div class="container reveal">
+                <div class="cta-card">
+                    <h2 class="section-title mb-4">Let's Build Success Together</h2>
+                    <p class="mb-5 fs-5 max-w-700 mx-auto">Whether you're looking for exceptional HR solutions or planning to build a successful HR career, Se7en Tech is ready to help you achieve your goals.</p>
+                    <div class="d-flex flex-wrap gap-4 justify-content-center mt-3">
+                        <a href="services.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Explore Services <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="contact.html" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-chat-dots-fill me-2"></i> Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER (Dark Neumorphism)
+    =========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 reveal">
+                    <h3 class="footer-heading d-flex align-items-center gap-2">
+                        <i class="bi bi-heptagon-fill text-accent"></i> Se7en Tech
+                    </h3>
+                    <p class="mb-4 pe-lg-4">Your trusted partner in HR Consultancy, IT Staffing, Recruitment, and Corporate Training in Hyderabad. Empowering businesses and careers since 2022.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 reveal delay-1">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Services</a></li>
+                        <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Training</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 reveal delay-2">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> IT Staffing</a></li>
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> HR Consulting</a></li>
+                        <li><a href="hire-talent.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
+                        <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Corporate Training</a></li>
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Workforce Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 reveal delay-3">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+917680043177"><i class="bi bi-telephone text-accent me-2"></i> +91 76800 43177</a></li>
+                        <li><a href="mailto:info@se7entechitsolutions.com" style="word-break: break-all;"><i class="bi bi-envelope text-accent me-2"></i> info@se7entech.com</a></li>
+                        <li class="d-flex align-items-start mt-2">
+                            <i class="bi bi-geo-alt text-accent me-2 mt-1"></i> 
+                            <span>4-7-154/2/E/6, Attapur, Hyderabad, TS 500048</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; <span id="year"></span> Se7en Tech IT Solutions. All Rights Reserved. Developed by <a href="https://aryasrikanth73.github.io/srikantharya/resume" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700;">Srikanth Arya</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Javascript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth Scrolling for Nav Links pointing to anchor tags (if any remain)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Close mobile menu if open
+                        const navbarCollapse = document.getElementById('navbarNav');
+                        if (navbarCollapse.classList.contains('show')) {
+                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                            bsCollapse.hide();
+                        }
+
+                        // Scroll to target with offset for floating navbar
+                        const headerOffset = 100;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Scroll Reveal Animation (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            // Number Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimated = false;
+            const counterSection = document.getElementById('counter-section');
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps approx
+                    
+                    let currentCount = 0;
+                    
+                    const updateCounter = () => {
+                        currentCount += increment;
+                        if (currentCount < target) {
+                            counter.innerText = Math.ceil(currentCount);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                });
+            };
+
+            // Observer for Counters
+            const counterObserver = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    animateCounters();
+                }
+            }, { threshold: 0.5 });
+
+            if(counterSection) {
+                counterObserver.observe(counterSection);
+            }
+
+            // Button Press Interaction Enhancement
+            const neuBtns = document.querySelectorAll('.neu-btn');
+            neuBtns.forEach(btn => {
+                btn.addEventListener('mousedown', () => btn.classList.add('neu-btn-pressed'));
+                btn.addEventListener('mouseup', () => btn.classList.remove('neu-btn-pressed'));
+                btn.addEventListener('mouseleave', () => btn.classList.remove('neu-btn-pressed'));
+                // Touch support
+                btn.addEventListener('touchstart', () => btn.classList.add('neu-btn-pressed'), {passive: true});
+                btn.addEventListener('touchend', () => btn.classList.remove('neu-btn-pressed'));
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

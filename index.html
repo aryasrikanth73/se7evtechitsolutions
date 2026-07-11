@@ -1,100 +1,1123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        window.SITE_LAUNCH_AT = new Date('2026-07-11T17:30:00+05:30').getTime();
+        window.SITE_IS_LIVE = Date.now() >= window.SITE_LAUNCH_AT;
+        if (!window.SITE_IS_LIVE) {
+            document.documentElement.classList.add('coming-soon-active');
+        }
+    </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Se7en Tech IT Solutions | Coming Soon</title>
-    <meta name="description" content="Se7en Tech IT Solutions - We are building a bold new experience for the future of recruitment, staffing, HR consulting, and corporate training.">
-    <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training">
-    
-    <!-- Open Graph / SEO -->
-    <meta property="og:title" content="Se7en Tech IT Solutions | Coming Soon">
-    <meta property="og:description" content="A smarter, faster and more inspiring digital experience is on its way.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Se7en Tech IT Solutions - Premium HR Consultancy, IT Staffing, Recruitment and Corporate Training in Hyderabad.">
+    <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Hyderabad">
+    <meta name="author" content="Se7en Tech IT Solutions">
+    <title>Se7en Tech IT Solutions | Premium HR & Staffing</title>
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Se7en Tech IT Solutions">
+    <meta property="og:description" content="Connecting Talent with Opportunity. Top-tier HR Consultancy and IT Staffing.">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
+
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+        /* ====================================================================
+           DESIGN SYSTEM & CSS VARIABLES
+           Neumorphism 2.0 / Minimal Luxury
+        ==================================================================== */
         :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #2563eb;
-            --bg-dark: #070b19;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --glass-bg: rgba(15, 23, 42, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            /* Color Palette */
+            --primary: #0A4D9C;
+            --secondary: #2F80ED;
+            --accent: #14B8FF;
+            --bg-base: #EEF3F8;
+            --bg-alt: #F5F8FC;
+            --surface: #EDF2F7;
+            --heading: #0F172A;
+            --paragraph: #475569;
+            --white: #FFFFFF;
+
+            /* Neumorphic Shadow Calculations based on --surface */
+            --shadow-light: #ffffff;
+            --shadow-dark: #d1d9e6;
+            
+            /* Shadows for Dark Footer */
+            --footer-bg: #0F172A;
+            --footer-shadow-light: #16223e;
+            --footer-shadow-dark: #080c16;
+
+            /* Neumorphic Extrusions */
+            --neu-out: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+            --neu-out-sm: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+            --neu-out-hover: 15px 15px 30px var(--shadow-dark), -15px -15px 30px var(--shadow-light);
+            --neu-in: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+            --neu-in-sm: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+            
+            /* Border Radii */
+            --radius-sm: 12px;
+            --radius-md: 24px;
+            --radius-lg: 40px;
+            --radius-pill: 50px;
+
+            /* Typography */
             --font-main: 'Poppins', sans-serif;
+            --text-base: 1rem;
+            --text-lead: clamp(1.02rem, 0.96rem + 0.24vw, 1.12rem);
+            --title-hero: clamp(2.45rem, 1.95rem + 2.25vw, 3.85rem);
+            --title-section: clamp(2rem, 1.7rem + 1.25vw, 2.75rem);
+            --title-card: clamp(1.08rem, 1.02rem + 0.28vw, 1.2rem);
+            --title-feature: clamp(1.35rem, 1.18rem + 0.75vw, 1.8rem);
+            
+            /* Transitions */
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        body, html {
-            margin: 0;
-            padding: 0;
+        /* ====================================================================
+           GLOBAL STYLES
+        ==================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
             width: 100%;
-            height: 100vh; /* Strictly 100vh */
-            background-color: var(--bg-dark);
-            font-family: var(--font-main);
-            color: var(--text-main);
-            overflow: hidden; /* Prevent scrolling entirely */
-            touch-action: none; /* Prevent mobile scroll bounce */
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-base);
         }
 
-        .bg-container {
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-base);
+            color: var(--paragraph);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading);
+            font-weight: 700;
+            line-height: 1.18;
+            letter-spacing: 0;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.75;
+            font-size: var(--text-base);
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        main {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .bg-alt {
+            background-color: var(--bg-alt);
+        }
+
+        /* Utilities */
+        .max-w-700 {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .font-weight-bold {
+            font-weight: 700;
+        }
+
+        .text-heading {
+            color: var(--heading);
+        }
+        
+        .section-title {
+            font-size: var(--title-section);
+            font-weight: 800;
+            line-height: 1.16;
+            letter-spacing: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subtitle {
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 0.78rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .fs-5 {
+            font-size: var(--text-lead) !important;
+        }
+
+        h3.h2 {
+            font-size: var(--title-feature);
+            line-height: 1.2;
+        }
+
+        h3.h4 {
+            font-size: clamp(1.12rem, 1.05rem + 0.28vw, 1.25rem);
+            line-height: 1.3;
+        }
+
+        h3.h5 {
+            font-size: clamp(1rem, 0.95rem + 0.22vw, 1.12rem);
+            line-height: 1.32;
+        }
+
+        /* ====================================================================
+           NEUMORPHIC COMPONENTS
+        ==================================================================== */
+        .neu-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out);
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .neu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neu-out-hover);
+        }
+
+        .neu-card-inner {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-in);
+            padding: 2rem;
+        }
+
+        /* Buttons */
+        .neu-btn {
+            background-color: var(--surface);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            box-shadow: var(--neu-out-sm);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .neu-btn:hover {
+            box-shadow: var(--neu-out);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .neu-btn:active, .neu-btn-pressed {
+            box-shadow: var(--neu-in-sm);
+            transform: translateY(0);
+        }
+
+        .neu-btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(10, 77, 156, 0.2);
+            border: none;
+        }
+
+        .neu-btn-primary:hover {
+            box-shadow: 0 15px 25px rgba(10, 77, 156, 0.3);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Icons */
+        .neu-icon-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--surface);
+            box-shadow: var(--neu-out);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .neu-card:hover .neu-icon-wrap {
+            color: var(--accent);
+            box-shadow: var(--neu-in);
+        }
+
+        /* Feature List Icons */
+        .contact-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* ====================================================================
+           SPECIFIC SECTIONS
+        ==================================================================== */
+        
+        /* Navigation */
+        .navbar-floating {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 20px;
+            /* Fixed center position across all viewport widths */
+            left: 50%;
+            right: auto;
+            width: min(calc(100% - 20px), 1200px);
+            transform: translateX(-50%);
+            max-width: 1200px;
+            background-color: rgba(237, 242, 247, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-pill);
+            box-shadow: var(--neu-out);
+            padding: 10px 30px;
+            z-index: 9999; /* Fix applied: Bumped z-index to stay above all elements */
+            transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .navbar-floating.scrolled {
+            top: 20px;
+            background-color: rgba(237, 242, 247, 0.95);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0;
+        }
+
+        .navbar-brand .navbar-logo {
+            display: block;
+            height: 52px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-brand .navbar-logo {
+                height: 46px;
+                max-width: 160px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-floating {
+                left: 12px;
+                right: 12px;
+                width: auto !important;
+                transform: none;
+            }
+            .navbar-brand .navbar-logo {
+                height: 42px;
+                max-width: 140px;
+            }
+        }
+
+        .nav-link {
+            color: var(--paragraph);
+            font-weight: 500;
+            padding: 10px 20px !important;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+            background-color: transparent;
+            box-shadow: var(--neu-in-sm);
+        }
+        
+        /* Mobile menu toggle */
+        .navbar-toggler-custom {
+            color: var(--primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: 120px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: var(--radius-pill);
+            background-color: var(--surface);
+            box-shadow: var(--neu-out-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            color: var(--paragraph);
+        }
+
+        .hero-title {
+            font-size: var(--title-hero);
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .hero-text {
+            font-size: var(--text-lead);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Floating Elements */
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+        }
+        .blob-1 {
+            width: 400px; height: 400px;
+            background: var(--accent);
+            top: -100px; right: -100px;
+        }
+        .blob-2 {
+            width: 300px; height: 300px;
+            background: var(--secondary);
+            bottom: -50px; left: 40%;
+        }
+
+        /* Statistics */
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            height: 100%;
+        }
+        .stat-number {
+            font-size: clamp(2.25rem, 1.95rem + 1.3vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-text {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Slider */
+        .testimonial-card {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 3rem;
+        }
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--neu-out);
+            border: 4px solid var(--surface);
+        }
+        .stars {
+            color: #FFC107;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .review-text {
+            font-size: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--shadow-dark);
+            border: none;
+            box-shadow: var(--neu-in-sm);
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+        .carousel-indicators .active {
+            background-color: var(--primary);
+            box-shadow: var(--neu-out-sm);
+            transform: scale(1.2);
+        }
+
+        /* Client Logos */
+        .logo-strip {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            box-shadow: var(--neu-in);
+        }
+        .client-logo {
+            font-size: clamp(1.05rem, 0.96rem + 0.36vw, 1.25rem);
+            font-weight: 800;
+            color: var(--paragraph);
+            opacity: 0.5;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+        .client-logo:hover {
+            opacity: 1;
+            color: var(--primary);
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Office Gallery */
+        .gallery-img-wrap {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--neu-out);
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+        .gallery-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-img-wrap:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
+
+        .career-card .gallery-img-wrap {
+            min-height: clamp(260px, 34vw, 400px);
+        }
+
+        .career-card > .row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+            align-items: center;
+            column-gap: clamp(3rem, 5vw, 5rem);
+            row-gap: 2.5rem;
+            margin: 0;
+        }
+
+        .career-card > .row > [class*="col-"] {
+            width: 100%;
+            max-width: none;
+            padding: 0;
+        }
+
+        .career-list {
+            display: grid;
+            gap: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .career-list li {
+            margin-bottom: 0 !important;
+        }
+
+        .life-gallery {
+            display: grid;
+            grid-template-columns: 1.1fr 0.95fr 0.95fr;
+            grid-template-rows: 240px 240px;
+            grid-template-areas:
+                "main team meeting"
+                "main training training";
+            gap: 1.5rem;
+        }
+
+        .life-gallery-item {
+            height: 100%;
+            min-height: 0;
+            aspect-ratio: auto;
+        }
+
+        .life-gallery-main {
+            grid-area: main;
+        }
+
+        .life-gallery-team {
+            grid-area: team;
+        }
+
+        .life-gallery-meeting {
+            grid-area: meeting;
+        }
+
+        .life-gallery-training {
+            grid-area: training;
+        }
+
+        /* CTA Section */
+        .cta-card {
+            background: linear-gradient(135deg, var(--surface), var(--bg-alt));
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neu-out);
+            padding: 5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(20, 184, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        /* Footer (Dark Neumorphism) */
+        .site-footer {
+            background-color: var(--footer-bg);
+            color: #94a3b8;
+            padding: 80px 0 30px;
+            border-top-left-radius: var(--radius-lg);
+            border-top-right-radius: var(--radius-lg);
+            margin-top: 50px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .footer-heading {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icon {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background-color: var(--footer-bg);
+            box-shadow: 5px 5px 10px var(--footer-shadow-dark), -5px -5px 10px var(--footer-shadow-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        .social-icon:hover {
+            color: var(--accent);
+            box-shadow: inset 3px 3px 6px var(--footer-shadow-dark), inset -3px -3px 6px var(--footer-shadow-light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ====================================================================
+           MICRO INTERACTIONS & ANIMATIONS
+        ==================================================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ====================================================================
+           HERO ACTION CARDS CSS
+        ==================================================================== */
+        .hero-cards-wrapper {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+
+        .hero-image-container {
+            border-radius: var(--radius-lg);
+            background-color: var(--surface);
+            padding: 15px;
+            box-shadow: var(--neu-in);
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-main-img {
+            border-radius: calc(var(--radius-lg) - 5px);
+            box-shadow: var(--neu-out);
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .neu-action-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neu-out);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            text-decoration: none !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neu-action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neu-out-hover);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .neu-action-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-md);
+            box-shadow: inset 0 0 0 rgba(20, 184, 255, 0);
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .neu-action-card:hover::before {
+            box-shadow: inset 0 0 20px rgba(20, 184, 255, 0.15);
+        }
+
+        .card-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            border-radius: var(--radius-md);
+            background-color: var(--surface);
+            box-shadow: var(--neu-in);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .neu-action-card:hover .card-icon-wrapper {
+            transform: scale(1.08);
+            box-shadow: var(--neu-in-sm);
+        }
+
+        .icon-blue { color: var(--secondary); }
+        .icon-cyan { color: var(--accent); }
+        .icon-royal { color: var(--primary); }
+
+        .card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--paragraph);
+            margin-bottom: 0.3rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: var(--title-card);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+            color: var(--heading);
+            transition: var(--transition);
+        }
+
+        .neu-action-card:hover .card-title {
+            color: var(--primary);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+            color: var(--paragraph);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-action {
+            flex-shrink: 0;
+        }
+
+        .btn-sm-custom {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .icon-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .neu-action-card:hover .icon-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Simulate button hover inside the card */
+        .neu-action-card:hover .neu-btn:not(.neu-btn-primary) {
+            box-shadow: var(--neu-out);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        .neu-action-card:hover .neu-btn-primary {
+            box-shadow: 0 15px 25px rgba(10, 77, 156, 0.3);
+            transform: translateY(-2px);
+        }
+        .neu-action-card:active .neu-btn {
+            box-shadow: var(--neu-in-sm) !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .neu-action-card {
+                padding: 1.25rem;
+                gap: 1rem;
+            }
+            .card-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            .card-title { font-size: 1.08rem; }
+            .btn-sm-custom { padding: 8px 16px; font-size: 0.85rem; }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-floating { padding: 10px 20px; }
+            .hero-section { text-align: center; padding-top: 150px; }
+            .hero-text { margin: 0 auto 2rem; }
+            .floating-bubble { display: none; }
+            .navbar-collapse {
+                background: var(--surface);
+                padding: 20px;
+                border-radius: var(--radius-md);
+                box-shadow: var(--neu-out);
+                margin-top: 15px;
+            }
+            
+            /* Responsive adjustments for hero cards */
+            .hero-image-container {
+                min-height: 350px;
+                margin-top: 2rem;
+            }
+            .neu-action-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                padding: 2rem;
+                gap: 1rem;
+            }
+            .card-desc {
+                -webkit-line-clamp: unset;
+                margin-bottom: 1rem;
+            }
+
+            .career-card {
+                padding: 2rem !important;
+            }
+
+            .career-card .gallery-img-wrap {
+                min-height: 320px;
+            }
+
+            .career-card > .row {
+                grid-template-columns: 1fr;
+                row-gap: 2rem;
+            }
+
+            .life-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 320px 230px 240px;
+                grid-template-areas:
+                    "main main"
+                    "team meeting"
+                    "training training";
+            }
+
+            .life-gallery-main {
+                min-height: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .cta-card { padding: 3rem 1.5rem; }
+
+            .career-card {
+                padding: 1.5rem !important;
+            }
+
+            .career-card .gallery-img-wrap {
+                min-height: 240px;
+            }
+
+            .career-list {
+                gap: 0.85rem;
+            }
+
+            .career-list li {
+                align-items: flex-start !important;
+            }
+
+            .career-list .contact-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+            }
+
+            .life-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+                grid-template-areas:
+                    "main"
+                    "team"
+                    "meeting"
+                    "training";
+                gap: 1rem;
+            }
+
+            .life-gallery-item,
+            .life-gallery-main,
+            .life-gallery-training {
+                min-height: 220px;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-floating {
+                left: 12px;
+                right: 12px;
+                width: auto !important;
+                transform: none;
+            }
+            .career-card {
+                border-radius: var(--radius-sm);
+                padding: 1.25rem !important;
+            }
+
+            .career-card .gallery-img-wrap {
+                min-height: 210px;
+            }
+
+            .career-list .fs-5 {
+                font-size: 0.98rem !important;
+                line-height: 1.45;
+            }
+
+            .career-card .neu-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .life-gallery-item,
+            .life-gallery-main,
+            .life-gallery-training {
+                min-height: 190px;
+            }
+        }
+    </style>
+<style>
+        /* ===== Coming Soon Launch Gate ===== */
+        html.coming-soon-active,
+        html.coming-soon-active body {
+            overflow: hidden !important;
+            height: 100vh !important;
+            touch-action: none;
+        }
+
+        #coming-soon-gate {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
             width: 100vw;
             height: 100vh;
-            z-index: -1;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            color: #f8fafc;
+            --cs-primary: #00f2fe;
+            --cs-secondary: #4facfe;
+            --cs-bg-dark: #070b19;
+            --cs-text-muted: #94a3b8;
+            --cs-glass-bg: rgba(15, 23, 42, 0.4);
+            --cs-glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        html.coming-soon-active #coming-soon-gate {
+            display: block;
+        }
+
+        #coming-soon-gate .cs-bg {
+            position: absolute;
+            inset: 0;
             overflow: hidden;
             background: radial-gradient(circle at center, #0a1128 0%, #020617 100%);
         }
 
-        .blob {
+        #coming-soon-gate .cs-blob {
             position: absolute;
             border-radius: 50%;
             filter: blur(100px);
             opacity: 0.5;
-            animation: floatBlob 20s infinite alternate ease-in-out;
+            animation: csFloatBlob 20s infinite alternate ease-in-out;
         }
 
-        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: linear-gradient(to right, #4facfe, #00f2fe); animation-delay: 0s; }
-        .blob-2 { bottom: -20%; right: -10%; width: 40vw; height: 40vw; background: linear-gradient(to right, #2563eb, #8b5cf6); animation-delay: -5s; }
-        .blob-3 { top: 40%; left: 30%; width: 30vw; height: 30vw; background: linear-gradient(to right, #0ea5e9, #38bdf8); opacity: 0.3; animation: floatBlob 25s infinite alternate-reverse ease-in-out; }
+        #coming-soon-gate .cs-blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: linear-gradient(to right, #4facfe, #00f2fe); }
+        #coming-soon-gate .cs-blob-2 { bottom: -20%; right: -10%; width: 40vw; height: 40vw; background: linear-gradient(to right, #2563eb, #8b5cf6); animation-delay: -5s; }
+        #coming-soon-gate .cs-blob-3 { top: 40%; left: 30%; width: 30vw; height: 30vw; background: linear-gradient(to right, #0ea5e9, #38bdf8); opacity: 0.3; animation: csFloatBlob 25s infinite alternate-reverse ease-in-out; }
 
-        @keyframes floatBlob {
+        @keyframes csFloatBlob {
             0% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(10%, 15%) scale(1.1); }
             66% { transform: translate(-10%, -10%) scale(0.9); }
             100% { transform: translate(5%, -15%) scale(1.2); }
         }
 
-        .particle {
+        #coming-soon-gate .cs-particle {
             position: absolute;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             pointer-events: none;
             box-shadow: 0 0 10px rgba(255,255,255,0.5);
-            animation: floatParticle linear infinite;
+            animation: csFloatParticle linear infinite;
         }
 
-        @keyframes floatParticle {
+        @keyframes csFloatParticle {
             0% { transform: translateY(100vh) scale(0); opacity: 0; }
             10% { opacity: 0.8; transform: translateY(90vh) scale(1); }
             90% { opacity: 0.8; }
             100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
         }
 
-        .main-wrapper {
+        #coming-soon-gate .cs-main {
             position: relative;
             z-index: 10;
             height: 100vh;
@@ -102,43 +1125,44 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 1rem; /* Reduced padding */
+            padding: 1rem;
             box-sizing: border-box;
         }
 
-        .glass-panel {
-            background: var(--glass-bg);
+        #coming-soon-gate .cs-panel {
+            background: var(--cs-glass-bg);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--cs-glass-border);
             border-radius: 30px;
-            padding: 2rem 1.5rem; /* Reduced padding */
+            padding: 2rem 1.5rem;
             max-width: 900px;
             width: 100%;
-            max-height: 95vh; /* Ensure it doesn't overflow screen */
+            max-height: 95vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+            animation: csFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
         }
 
-        .brand-logo {
-            width: clamp(140px, 15vw, 180px); /* Scalable logo */
+        #coming-soon-gate .cs-brand-logo {
+            width: clamp(140px, 15vw, 180px);
             height: auto;
             margin-bottom: 1rem;
             opacity: 0;
-            animation: fadeIn 1s ease-out forwards 0.3s;
+            animation: csFadeIn 1s ease-out forwards 0.3s;
             border-radius: 20px;
         }
 
-        .badge-pulse {
+        #coming-soon-gate .cs-badge {
             display: inline-block;
             background: rgba(0, 242, 254, 0.1);
-            color: var(--primary);
+            color: var(--cs-primary);
             border: 1px solid rgba(0, 242, 254, 0.3);
             padding: 0.3rem 1rem;
             border-radius: 50px;
@@ -147,61 +1171,60 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 0.8rem;
-            position: relative;
-            animation: pulse-border 2s infinite;
+            animation: csPulseBorder 2s infinite;
         }
 
-        @keyframes pulse-border {
+        @keyframes csPulseBorder {
             0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.4); }
             70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
         }
 
-        .main-title {
-            font-size: clamp(2rem, 6vw, 4rem); /* Responsive fluid font */
+        #coming-soon-gate .cs-title {
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 0.2rem;
             background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #4facfe 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-transform: uppercase;
             letter-spacing: -1px;
             opacity: 0;
-            animation: fadeUp 0.8s ease-out forwards 0.5s;
+            animation: csFadeUp 0.8s ease-out forwards 0.5s;
         }
 
-        .sub-title {
+        #coming-soon-gate .cs-sub {
             font-size: clamp(1rem, 2.5vw, 1.4rem);
             font-weight: 500;
             color: #e2e8f0;
             margin-bottom: 1rem;
             opacity: 0;
-            animation: fadeUp 0.8s ease-out forwards 0.7s;
+            animation: csFadeUp 0.8s ease-out forwards 0.7s;
         }
 
-        .quote-text {
+        #coming-soon-gate .cs-quote {
             max-width: 650px;
-            text-align: center;
-            color: var(--text-muted);
+            color: var(--cs-text-muted);
             font-size: clamp(0.85rem, 2vw, 1rem);
             line-height: 1.5;
             font-weight: 300;
             margin-bottom: 1.5rem;
             opacity: 0;
-            animation: fadeUp 0.8s ease-out forwards 0.9s;
+            animation: csFadeUp 0.8s ease-out forwards 0.9s;
         }
 
-        .wip-container {
+        #coming-soon-gate .cs-wip {
             position: relative;
-            width: 140px; /* Reduced size */
+            width: 140px;
             height: 140px;
             margin-bottom: 1.5rem;
             opacity: 0;
-            animation: fadeIn 1s ease-out forwards 1.1s;
+            animation: csFadeIn 1s ease-out forwards 1.1s;
         }
 
-        .center-node {
+        #coming-soon-gate .cs-center {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -219,16 +1242,13 @@
             z-index: 2;
         }
 
-        .orbit-wrapper {
+        #coming-soon-gate .cs-orbit {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            animation: spin 12s linear infinite;
+            inset: 0;
+            animation: csSpin 12s linear infinite;
         }
 
-        .node-path {
+        #coming-soon-gate .cs-path {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -239,78 +1259,97 @@
             border-radius: 50%;
         }
 
-        .orbit-node {
+        #coming-soon-gate .cs-node {
             position: absolute;
             width: 34px;
             height: 34px;
-            background: var(--bg-dark);
-            border: 2px solid var(--secondary);
+            background: var(--cs-bg-dark);
+            border: 2px solid var(--cs-secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--secondary);
+            color: var(--cs-secondary);
             font-size: 0.9rem;
-            animation: counter-spin 12s linear infinite;
+            animation: csCounterSpin 12s linear infinite;
             box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
         }
 
-        /* Adjusted positioning for smaller orbit */
-        .node-1 { top: -17px; left: calc(50% - 17px); }
-        .node-2 { bottom: 12px; right: -5px; }
-        .node-3 { bottom: 12px; left: -5px; }
+        #coming-soon-gate .cs-node-1 { top: -17px; left: calc(50% - 17px); }
+        #coming-soon-gate .cs-node-2 { bottom: 12px; right: -5px; }
+        #coming-soon-gate .cs-node-3 { bottom: 12px; left: -5px; }
 
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes counter-spin { 100% { transform: rotate(-360deg); } }
+        @keyframes csSpin { 100% { transform: rotate(360deg); } }
+        @keyframes csCounterSpin { 100% { transform: rotate(-360deg); } }
 
-        .progress-container {
+        #coming-soon-gate .cs-countdown {
             width: 100%;
-            max-width: 350px;
+            max-width: 420px;
             margin-bottom: 1.5rem;
             opacity: 0;
-            animation: fadeUp 1s ease-out forwards 1.3s;
+            animation: csFadeUp 1s ease-out forwards 1.3s;
         }
 
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
+        #coming-soon-gate .cs-countdown-label {
+            font-size: 0.8rem;
             color: #cbd5e1;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .custom-progress {
-            height: 4px; /* Thinner */
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .custom-progress-bar {
-            height: 100%;
-            width: 78%;
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            border-radius: 10px;
-            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .footer-section {
+        #coming-soon-gate .cs-countdown-grid {
             display: flex;
-            flex-direction: row;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        #coming-soon-gate .cs-unit {
+            min-width: 68px;
+            padding: 0.65rem 0.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 14px;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.08);
+        }
+
+        #coming-soon-gate .cs-value {
+            display: block;
+            font-size: clamp(1.4rem, 4vw, 1.85rem);
+            font-weight: 700;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-variant-numeric: tabular-nums;
+        }
+
+        #coming-soon-gate .cs-unit-label {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--cs-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #coming-soon-gate .cs-footer {
+            display: flex;
             justify-content: center;
             align-items: center;
             gap: 1.8rem;
             width: 100%;
             margin-top: 0.5rem;
             opacity: 0;
-            animation: fadeUp 1s ease-out forwards 1.5s;
+            animation: csFadeUp 1s ease-out forwards 1.5s;
         }
 
-        .icon-link {
-            color: var(--text-muted);
+        #coming-soon-gate .cs-icon {
+            color: var(--cs-text-muted);
             font-size: 1.2rem;
             transition: all 0.3s ease;
             position: relative;
@@ -324,27 +1363,20 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             text-decoration: none;
         }
-        
-        .icon-link i {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 0; /* Ensures the font-icon is perfectly vertically centered */
-        }
 
-        .icon-link:hover {
+        #coming-soon-gate .cs-icon:hover {
             color: #fff;
             background: rgba(0, 242, 254, 0.1);
             border-color: rgba(0, 242, 254, 0.3);
             transform: translateY(-2px);
         }
 
-        .icon-link::before {
+        #coming-soon-gate .cs-icon::before {
             content: attr(data-tooltip);
             position: absolute;
             bottom: -30px;
             font-size: 0.7rem;
-            background: var(--bg-dark);
+            background: var(--cs-bg-dark);
             color: #fff;
             padding: 3px 8px;
             border-radius: 4px;
@@ -352,156 +1384,772 @@
             pointer-events: none;
             transition: all 0.3s ease;
             white-space: nowrap;
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--cs-glass-border);
             z-index: 20;
         }
 
-        .icon-link:hover::before {
+        #coming-soon-gate .cs-icon:hover::before {
             opacity: 1;
             bottom: -25px;
         }
 
-        @keyframes fadeIn {
+        @keyframes csFadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        @keyframes fadeUp {
+        @keyframes csFadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Ultra small devices (like iPhone SE landscape or tiny heights) */
         @media (max-height: 600px) {
-            .glass-panel { padding: 1rem; justify-content: space-evenly; }
-            .brand-logo { width: 110px; margin-bottom: 0.5rem; }
-            .badge-pulse { margin-bottom: 0.3rem; font-size: 0.65rem; }
-            .main-title { font-size: 1.8rem; margin-bottom: 0; }
-            .sub-title { font-size: 0.9rem; margin-bottom: 0.5rem; }
-            .quote-text { font-size: 0.75rem; margin-bottom: 0.5rem; display: none; /* Hide quote completely to save space */ }
-            .wip-container { width: 100px; height: 100px; margin-bottom: 0.5rem; }
-            .center-node { width: 35px; height: 35px; font-size: 0.9rem; }
-            .orbit-node { width: 26px; height: 26px; font-size: 0.7rem; }
-            .node-1 { top: -13px; left: calc(50% - 13px); }
-            .node-2 { bottom: 5px; right: -5px; }
-            .node-3 { bottom: 5px; left: -5px; }
-            .progress-container { margin-bottom: 0.5rem; }
-            .footer-section { gap: 1rem; width: 100%; justify-content: center; }
-            .icon-link { width: 36px; height: 36px; font-size: 1rem; }
-        }
-    </style>
+            #coming-soon-gate .cs-panel { padding: 1rem; justify-content: space-evenly; }
+            #coming-soon-gate .cs-brand-logo { width: 110px; margin-bottom: 0.5rem; }
+            #coming-soon-gate .cs-badge { margin-bottom: 0.3rem; font-size: 0.65rem; }
+            #coming-soon-gate .cs-title { font-size: 1.8rem; margin-bottom: 0; }
+            #coming-soon-gate .cs-sub { font-size: 0.9rem; margin-bottom: 0.5rem; }
+            #coming-soon-gate .cs-quote { display: none; }
+            #coming-soon-gate .cs-wip { width: 100px; height: 100px; margin-bottom: 0.5rem; }
+            #coming-soon-gate .cs-center { width: 35px; height: 35px; font-size: 0.9rem; }
+            #coming-soon-gate .cs-node { width: 26px; height: 26px; font-size: 0.7rem; }
+            #coming-soon-gate .cs-node-1 { top: -13px; left: calc(50% - 13px); }
+            #coming-soon-gate .cs-node-2 { bottom: 5px; right: -5px; }
+            #coming-soon-gate .cs-node-3 { bottom: 5px; left: -5px; }
+            #coming-soon-gate .cs-countdown { margin-bottom: 0.5rem; }
+            #coming-soon-gate .cs-unit { min-width: 54px; padding: 0.4rem 0.3rem; border-radius: 10px; }
+            #coming-soon-gate .cs-value { font-size: 1.15rem; }
+            #coming-soon-gate .cs-unit-label { font-size: 0.55rem; }
+            #coming-soon-gate .cs-footer { gap: 1rem; }
+            #coming-soon-gate .cs-icon { width: 36px; height: 36px; font-size: 1rem; }
+        }</style>
 </head>
 <body>
-
-    <div class="bg-container" id="bg-particles">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+    <div id="coming-soon-gate" aria-hidden="false">
+        <div class="cs-bg" id="cs-particles">
+            <div class="cs-blob cs-blob-1"></div>
+            <div class="cs-blob cs-blob-2"></div>
+            <div class="cs-blob cs-blob-3"></div>
+        </div>
+        <div class="cs-main">
+            <div class="cs-panel">
+                <img src="logo/se7en-logo.png" alt="Se7en Tech IT Solutions" class="cs-brand-logo" onerror="this.outerHTML='<div class=\'cs-brand-logo d-flex align-items-center justify-content-center\' style=\'color:#fff;font-weight:800;font-size:1.4rem;\'><i class=\'bi bi-hexagon-fill me-2\' style=\'color:#00f2fe\'></i> Se7en Tech</div>'">
+                <span class="cs-badge">New Experience Coming</span>
+                <h1 class="cs-title">Coming Soon</h1>
+                <h2 class="cs-sub">We're Back with a Bold New Experience.</h2>
+                <p class="cs-quote">
+                    A smarter, faster digital experience is on its way.<br>
+                    Crafting excellence for the future of recruitment and corporate training.
+                </p>
+                <div class="cs-wip">
+                    <div class="cs-path"></div>
+                    <div class="cs-center"><i class="bi bi-buildings"></i></div>
+                    <div class="cs-orbit">
+                        <div class="cs-node cs-node-1" title="Recruitment"><i class="bi bi-person-bounding-box"></i></div>
+                        <div class="cs-node cs-node-2" title="IT Staffing"><i class="bi bi-briefcase"></i></div>
+                        <div class="cs-node cs-node-3" title="Corporate Training"><i class="bi bi-mortarboard"></i></div>
+                    </div>
+                </div>
+                <div class="cs-countdown">
+                    <div class="cs-countdown-label">Launching In</div>
+                    <div class="cs-countdown-grid" aria-live="polite">
+                        <div class="cs-unit"><span class="cs-value" id="cd-days">00</span><span class="cs-unit-label">Days</span></div>
+                        <div class="cs-unit"><span class="cs-value" id="cd-hours">00</span><span class="cs-unit-label">Hours</span></div>
+                        <div class="cs-unit"><span class="cs-value" id="cd-mins">00</span><span class="cs-unit-label">Mins</span></div>
+                        <div class="cs-unit"><span class="cs-value" id="cd-secs">00</span><span class="cs-unit-label">Secs</span></div>
+                    </div>
+                </div>
+                <div class="cs-footer">
+                    <a href="tel:9989874934" class="cs-icon" data-tooltip="76800 43177"><i class="bi bi-telephone"></i></a>
+                    <a href="mailto:info@se7entechitsolutions.com" class="cs-icon" data-tooltip="info@se7entechitsolutions.com"><i class="bi bi-envelope"></i></a>
+                    <a href="https://maps.google.com/?q=4-7-154/2/E/6, Attapur, Sai Hills Colony, Panduranga Nagar, Hyderabad, Telangana 500048" target="_blank" class="cs-icon" data-tooltip="Attapur, Hyderabad"><i class="bi bi-geo-alt"></i></a>
+                    <a href="https://in.linkedin.com/company/se7en-tech-it-solutions" target="_blank" class="cs-icon" data-tooltip="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <main class="main-wrapper">
+
+    <!-- ==========================================
+         HEADER / NAVIGATION
+    =========================================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-floating" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <!-- <i class="bi bi-heptagon-fill text-gradient"></i> Se7en Tech -->
+                     <img class="navbar-logo" src="logo/se7en-logo.png" alt="Se7en Tech Logo">
+                </a>
+                
+                <!-- Refined Toggler to ensure it's always clearly visible on mobile -->
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list navbar-toggler-custom"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center gap-2">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                            <a href="contact.html" class="neu-btn neu-btn-primary w-100 text-center">Get In Touch</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
         
-        <div class="glass-panel text-center">
+        <!-- ==========================================
+             HERO SECTION
+        =========================================== -->
+        <section id="home" class="hero-section pb-lg-5">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
             
-            <img src="https://media.licdn.com/dms/image/v2/D560BAQGFZW56Nv2-vw/company-logo_200_200/company-logo_200_200/0/1692357772356/se7en_tech_it_solutions_logo?e=1785369600&v=beta&t=HS1uRzHWTm3BDbE_eo4iaDkOd5lAOBz_K5bIKB8el3s" alt="Se7en Tech IT Solutions" class="brand-logo" onerror="this.outerHTML='<div class=\'brand-logo d-flex align-items-center justify-content-center\' style=\'color: #fff; font-weight: 800; font-size: 1.4rem;\'><i class=\'bi bi-hexagon-fill text-primary me-2\'></i> Se7en Tech IT Solutions</div>'">
-
-            <span class="badge-pulse">New Experience Coming</span>
-            
-            <h1 class="main-title">Coming Soon</h1>
-            <h2 class="sub-title">We're Back with a Bold New Experience.</h2>
-            
-            <!-- Reduced text payload to ensure it fits -->
-            <p class="quote-text">
-                A smarter, faster digital experience is on its way.<br>
-                Crafting excellence for the future of recruitment and corporate training.
-            </p>
-
-            <div class="wip-container">
-                <div class="node-path"></div>
-                <div class="center-node">
-                    <i class="bi bi-buildings"></i>
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 reveal">
+                        <span class="hero-label"><i class="bi bi-star-fill text-warning me-1"></i> STAFFING &bull; HR SERVICES &bull; TRAINING</span>
+                        <h1 class="hero-title">Connecting Talent with <span class="text-gradient">Opportunity</span></h1>
+                        <p class="hero-text">Se7en Tech IT Solutions is a trusted HR Consultancy, Recruitment, Staffing and Corporate Training company helping businesses build exceptional teams while empowering professionals with industry-ready skills.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center">
+                            <a href="contact.html" class="neu-btn neu-btn-primary">Get In Touch <i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="services.html" class="neu-btn"><i class="bi bi-briefcase-fill me-2"></i> Explore Services</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 reveal delay-1">
+                        <div class="hero-image-container">
+                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate office representing Se7en Tech HR services and staffing solutions" class="hero-main-img" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="orbit-wrapper">
-                    <div class="orbit-node node-1" title="Recruitment"><i class="bi bi-person-bounding-box"></i></div>
-                    <div class="orbit-node node-2" title="IT Staffing"><i class="bi bi-briefcase"></i></div>
-                    <div class="orbit-node node-3" title="Corporate Training"><i class="bi bi-mortarboard"></i></div>
+
+                <div class="row g-4 mt-5">
+                    <div class="col-lg-4">
+                        <a href="training.html" class="neu-action-card reveal delay-1 h-100">
+                            <div class="card-icon-wrapper icon-blue">
+                                <i class="bi bi-mortarboard-fill"></i>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">FOR STUDENTS</span>
+                                <h3 class="card-title">HR Foundation Program</h3>
+                                <p class="card-desc">Practical HR training with ATS resume support, LinkedIn branding, AI tools, mock interviews, and placement assistance.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a href="services.html" class="neu-action-card reveal delay-2 h-100">
+                            <div class="card-icon-wrapper icon-cyan">
+                                <i class="bi bi-building-fill"></i>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">FOR BUSINESSES</span>
+                                <h3 class="card-title">HR Services</h3>
+                                <p class="card-desc">Recruitment, staffing, HR consulting, payroll support, compliance, employee engagement, and workforce solutions.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a href="contact.html" class="neu-action-card reveal delay-3 h-100">
+                            <div class="card-icon-wrapper icon-royal">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">FOR EMPLOYERS</span>
+                                <h3 class="card-title">Hire Talent</h3>
+                                <p class="card-desc">Connect with pre-screened HR, IT, and Non-IT professionals through our recruitment and staffing support.</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="progress-container">
-                <div class="progress-label">
-                    <span>Building the Future...</span>
-                    <span id="progress-val">78%</span>
-                </div>
-                <div class="custom-progress">
-                    <div class="custom-progress-bar" id="p-bar-inner"></div>
+        <!-- ==========================================
+             STATISTICS SECTION
+        =========================================== -->
+        <section class="bg-alt py-5">
+            <div class="container">
+                <div class="row g-4" id="counter-section">
+                    <div class="col-6 col-lg-3 reveal">
+                        <div class="neu-card stat-card">
+                            <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
+                            <div class="stat-text">Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 reveal delay-1">
+                        <div class="neu-card stat-card">
+                            <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
+                            <div class="stat-text">Clients Served</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 reveal delay-2">
+                        <div class="neu-card stat-card">
+                            <div class="stat-number"><span class="counter" data-target="1200">0</span>+</div>
+                            <div class="stat-text">Candidates Placed</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 reveal delay-3">
+                        <div class="neu-card stat-card">
+                            <div class="stat-number"><span class="counter" data-target="800">0</span>+</div>
+                            <div class="stat-text">Students Trained</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="footer-section">
-                <a href="tel:9989874934" class="icon-link" data-tooltip="76800 43177">
-                    <i class="bi bi-telephone"></i>
-                </a>
-                <a href="mailto:info@se7entechitsolutions.com" class="icon-link" data-tooltip="info@se7entechitsolutions.com">
-                    <i class="bi bi-envelope"></i>
-                </a>
-                <a href="https://maps.google.com/?q=4-7-154/2/E/6, Attapur, Sai Hills Colony, Panduranga Nagar, Hyderabad, Telangana 500048" target="_blank" class="icon-link" data-tooltip="4-7-154/2/E/6, Attapur, Hyderabad">
-                    <i class="bi bi-geo-alt"></i>
-                </a>
-                <a href="https://in.linkedin.com/company/se7en-tech-it-solutions" target="_blank" class="icon-link" data-tooltip="LinkedIn">
-                    <i class="bi bi-linkedin"></i>
-                </a>
+        <!-- ==========================================
+             OUR SOLUTIONS SECTION
+        =========================================== -->
+        <section id="solutions">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">What We Do</span>
+                    <h2 class="section-title">Three Powerful Solutions.<br>One Trusted Partner.</h2>
+                    <p>Whether you're starting your HR career, growing your business, or hiring top talent, Se7en Tech has a solution designed for you.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Solution 1 -->
+                    <div class="col-lg-4 reveal">
+                        <article class="neu-card h-100 d-flex flex-column">
+                            <div class="neu-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
+                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Foundation Program</h3>
+                            <p class="mb-4 flex-grow-1">Gain practical HR knowledge through live sessions, ATS resume building, LinkedIn branding, AI tools, mock interviews, and placement support.</p>
+                            <a href="training.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    
+                    <!-- Solution 2 -->
+                    <div class="col-lg-4 reveal delay-1">
+                        <article class="neu-card h-100 d-flex flex-column">
+                            <div class="neu-icon-wrap"><i class="bi bi-building-fill"></i></div>
+                            <h3 class="h4 font-weight-bold mb-3 text-heading">HR Services</h3>
+                            <p class="mb-4 flex-grow-1">Professional HR consulting, recruitment, payroll support, compliance, employee engagement, HR operations, and workforce management.</p>
+                            <a href="services.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Explore Services <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                    
+                    <!-- Solution 3 -->
+                    <div class="col-lg-4 reveal delay-2">
+                        <article class="neu-card h-100 d-flex flex-column">
+                            <div class="neu-icon-wrap"><i class="bi bi-people-fill"></i></div>
+                            <h3 class="h4 font-weight-bold mb-3 text-heading">Hire Talent</h3>
+                            <p class="mb-4 flex-grow-1">Hire pre-screened HR, IT, and Non-IT professionals quickly through our recruitment and staffing solutions.</p>
+                            <a href="contact.html" class="fw-bold text-primary mt-auto d-inline-flex align-items-center gap-2">Hire Talent <i class="bi bi-arrow-right"></i></a>
+                        </article>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <!-- ==========================================
+             WHO WE ARE SECTION
+        =========================================== -->
+        <section id="about" class="bg-alt">
+            <div class="container">
+                <div class="row justify-content-center text-center reveal">
+                    <div class="col-lg-8 col-xl-7">
+                        <span class="section-subtitle">About Se7en Tech</span>
+                        <h2 class="section-title">Building Careers.<br><span class="text-gradient">Strengthening Businesses.</span></h2>
+                        <p class="mb-3 fs-5">Se7en Tech IT Solutions is a premier HR Consultancy, Staffing, Recruitment, and Corporate Training company based in Hyderabad.</p>
+                        <p class="mb-4 pb-2">We bridge the gap between exceptional talent and outstanding organizations. Our mission is to help businesses scale seamlessly while empowering professionals with the practical skills and confidence needed to build successful careers.</p>
+                        <a href="about.html" class="neu-btn neu-btn-primary">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             WHY SE7EN TECH SECTION
+        =========================================== -->
+        <section id="why-us">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Why Choose Us</span>
+                    <h2 class="section-title">Why Businesses & Professionals Trust Se7en Tech</h2>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Feature 1 -->
+                    <div class="col-md-4 col-sm-6 reveal">
+                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="bi bi-person-check-fill text-primary"></i>
+                            </div>
+                            <h3 class="h5 mb-2 font-weight-bold">Industry Experts</h3>
+                            <p class="mb-0 small">Practical HR and recruitment experience across business hiring needs.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="col-md-4 col-sm-6 reveal delay-1">
+                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="bi bi-lightning-charge-fill text-primary"></i>
+                            </div>
+                            <h3 class="h5 mb-2 font-weight-bold">Faster Hiring</h3>
+                            <p class="mb-0 small">Structured sourcing and screening to reduce hiring delays.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="col-md-4 col-sm-6 reveal delay-2">
+                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="bi bi-laptop text-primary"></i>
+                            </div>
+                            <h3 class="h5 mb-2 font-weight-bold">Practical Training</h3>
+                            <p class="mb-0 small">Career-focused learning built around real HR workflows.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="col-md-4 col-sm-6 reveal">
+                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="bi bi-award-fill text-primary"></i>
+                            </div>
+                            <h3 class="h5 mb-2 font-weight-bold">Placement Support</h3>
+                            <p class="mb-0 small">Resume, interview, LinkedIn, and opportunity guidance for learners.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="col-md-4 col-sm-6 reveal delay-1">
+                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="bi bi-buildings-fill text-primary"></i>
+                            </div>
+                            <h3 class="h5 mb-2 font-weight-bold">HR Consulting</h3>
+                            <p class="mb-0 small">Professional support for HR policies, operations, and workforce planning.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="col-md-4 col-sm-6 reveal delay-2">
+                        <div class="neu-card text-center h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="neu-icon-wrap mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="bi bi-diagram-3-fill text-primary"></i>
+                            </div>
+                            <h3 class="h5 mb-2 font-weight-bold">Corporate Partnerships</h3>
+                            <p class="mb-0 small">Long-term collaboration for recruitment, training, and HR solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             CAREER ACCELERATION SECTION
+        =========================================== -->
+        <section id="career" class="bg-alt">
+            <div class="container">
+                <div class="text-center max-w-700 mx-auto mb-5 reveal">
+                    <span class="section-subtitle">Learn With Us</span>
+                    <h2 class="section-title">Start Your HR Career with Confidence</h2>
+                    <p>Our HR Foundation Program equips aspiring HR professionals with practical skills, live projects, AI tools, interview preparation, and placement support.</p>
+                </div>
+                
+                <div class="neu-card career-card p-4 p-lg-5 reveal delay-1">
+                    <div class="row align-items-center g-4 g-lg-5">
+                        <div class="col-lg-6">
+                            <div class="gallery-img-wrap h-100">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="HR Corporate Training Session" loading="lazy" class="h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="h2 font-weight-bold mb-4">HR Foundation Program</h3>
+                            <ul class="career-list list-unstyled mb-5">
+                                <li class="mb-4 d-flex align-items-center gap-3">
+                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-camera-video-fill"></i></div> 
+                                    <span class="fw-medium fs-5">Live Training</span>
+                                </li>
+                                <li class="mb-4 d-flex align-items-center gap-3">
+                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-briefcase-fill"></i></div> 
+                                    <span class="fw-medium fs-5">Real HR Projects</span>
+                                </li>
+                                <li class="mb-4 d-flex align-items-center gap-3">
+                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-file-earmark-text-fill"></i></div> 
+                                    <span class="fw-medium fs-5">ATS Resume Building</span>
+                                </li>
+                                <li class="mb-4 d-flex align-items-center gap-3">
+                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-linkedin"></i></div> 
+                                    <span class="fw-medium fs-5">LinkedIn Branding</span>
+                                </li>
+                                <li class="mb-4 d-flex align-items-center gap-3">
+                                    <div class="contact-icon" style="width:45px;height:45px;font-size:1.1rem;"><i class="bi bi-award-fill"></i></div> 
+                                    <span class="fw-medium fs-5">Placement Support</span>
+                                </li>
+                            </ul>
+                            <a href="training.html" class="neu-btn neu-btn-primary">View HR Foundation Program <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TESTIMONIALS & CLIENTS
+        =========================================== -->
+        <section>
+            <div class="container">
+                <!-- Clients Strip -->
+                <div class="logo-strip mb-5 reveal">
+                    <span class="client-logo fw-bold fs-4">TCS</span>
+                    <span class="client-logo fw-bold fs-4">Infosys</span>
+                    <span class="client-logo fw-bold fs-4">Wipro</span>
+                    <span class="client-logo fw-bold fs-4">HCLTech</span>
+                    <span class="client-logo fw-bold fs-4">Tech Mahindra</span>
+                    <span class="client-logo fw-bold fs-4">Accenture</span>
+                </div>
+
+                <!-- Testimonials Slider -->
+                <div class="text-center mt-5 pt-5 reveal">
+                    <span class="section-subtitle">Success Stories</span>
+                    <h2 class="section-title">What People Say</h2>
+                </div>
+
+                <div id="testimonialCarousel" class="carousel slide reveal delay-1" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner pb-5">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="neu-card testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Rajesh K." class="client-img" loading="lazy">
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="review-text">"Se7en Tech transformed our hiring process. They understood our technical requirements perfectly and provided candidates who were not just skilled, but cultural fits. Highly recommended for IT staffing."</p>
+                                <h3 class="h5 mb-0">Rajesh K.</h3>
+                                <span class="small text-muted">VP of Engineering, FinTech Co.</span>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="neu-card testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student Review - Priya S." class="client-img" loading="lazy">
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="review-text">"The Recruitment Training program was a game-changer for my career. The practical insights into sourcing and LinkedIn optimization helped me land a job as a Talent Acquisition Specialist within a month."</p>
+                                <h3 class="h5 mb-0">Priya S.</h3>
+                                <span class="small text-muted">Trained Candidate</span>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="neu-card testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Client Review - Vikram Reddy" class="client-img" loading="lazy">
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="review-text">"A reliable partner for workforce solutions. Their turnaround time is impressive, and the quality of candidates is consistently high. They truly understand the nuances of the IT industry in Hyderabad."</p>
+                                <h3 class="h5 mb-0">Vikram Reddy</h3>
+                                <span class="small text-muted">HR Director, Tech Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             OFFICE GALLERY
+        =========================================== -->
+        <section class="bg-alt pb-0">
+            <div class="container px-4">
+                <div class="text-center mb-5 reveal">
+                    <h2 class="section-title">Life at Se7en Tech</h2>
+                </div>
+                <div class="pb-5 reveal delay-1 life-gallery">
+                    <div class="gallery-img-wrap life-gallery-item life-gallery-main">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Se7en Tech Office Space" loading="lazy">
+                    </div>
+                    <div class="gallery-img-wrap life-gallery-item life-gallery-team">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Team Work" loading="lazy">
+                    </div>
+                    <div class="gallery-img-wrap life-gallery-item life-gallery-meeting">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Se7en Tech Meeting" loading="lazy">
+                    </div>
+                    <div class="gallery-img-wrap life-gallery-item life-gallery-training">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Se7en Tech Training Session" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             READY TO CONNECT CTA
+        =========================================== -->
+        <section class="pb-0 pt-5 mt-5">
+            <div class="container reveal">
+                <div class="cta-card">
+                    <h2 class="section-title mb-4">Let's Build Your Success Story Together</h2>
+                    <p class="mb-5 fs-5 max-w-700 mx-auto">Whether you're looking to launch your HR career, strengthen your HR operations, or hire exceptional talent, our experts are ready to help.</p>
+                    <div class="d-flex flex-wrap gap-4 justify-content-center mt-3">
+                        <a href="contact.html" class="neu-btn neu-btn-primary fs-5 px-5 py-3">Contact Us <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="tel:+917680043177" class="neu-btn fs-5 px-5 py-3"><i class="bi bi-telephone-fill me-2"></i> Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- ==========================================
+         FOOTER (Dark Neumorphism)
+    =========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 reveal">
+                    <h3 class="footer-heading d-flex align-items-center gap-2">
+                        <i class="bi bi-heptagon-fill text-accent"></i> Se7en Tech
+                    </h3>
+                    <p class="mb-4 pe-lg-4">Your trusted partner in HR Consultancy, IT Staffing, Recruitment, and Corporate Training in Hyderabad. Empowering businesses and careers since 2022.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 reveal delay-1">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Services</a></li>
+                        <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Training</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 reveal delay-2">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> IT Staffing</a></li>
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> HR Consulting</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Talent Acquisition</a></li>
+                        <li><a href="training.html"><i class="bi bi-chevron-right small"></i> Corporate Training</a></li>
+                        <li><a href="services.html"><i class="bi bi-chevron-right small"></i> Workforce Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 reveal delay-3">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+917680043177"><i class="bi bi-telephone text-accent me-2"></i> +91 76800 43177</a></li>
+                        <li><a href="mailto:info@se7entechitsolutions.com" style="word-break: break-all;"><i class="bi bi-envelope text-accent me-2"></i> info@se7entech.com</a></li>
+                        <li class="d-flex align-items-start mt-2">
+                            <i class="bi bi-geo-alt text-accent me-2 mt-1"></i> 
+                            <span>4-7-154/2/E/6, Attapur, Hyderabad, TS 500048</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; <span id="year"></span> Se7en Tech IT Solutions. All Rights Reserved. Developed by <a href="https://aryasrikanth73.github.io/srikantharya/resume" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700;">Srikanth Arya</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Javascript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth Scrolling for Nav Links pointing to anchor tags (if any remain)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Close mobile menu if open
+                        const navbarCollapse = document.getElementById('navbarNav');
+                        if (navbarCollapse.classList.contains('show')) {
+                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                            bsCollapse.hide();
+                        }
+
+                        // Scroll to target with offset for floating navbar
+                        const headerOffset = 100;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Scroll Reveal Animation (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
             
-            // Progress Bar Animation Logic
-            const percentages = [78, 81, 84, 88, 92, 95];
-            let pIndex = 0;
-            const progressVal = document.getElementById('progress-val');
-            const progressBar = document.getElementById('p-bar-inner');
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
 
-            progressVal.innerText = percentages[pIndex] + '%';
-            progressBar.style.width = percentages[pIndex] + '%';
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                });
+            }, revealOptions);
 
-            setInterval(() => {
-                pIndex = (pIndex + 1) % percentages.length;
-                const val = percentages[pIndex];
-                
-                progressVal.style.opacity = 0;
-                setTimeout(() => {
-                    progressVal.innerText = val + '%';
-                    progressBar.style.width = val + '%';
-                    progressVal.style.opacity = 1;
-                }, 300);
-            }, 2500); 
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
 
-            // Floating Particles Generator (Reduced count for performance and visual clarity on small screens)
-            const bgContainer = document.getElementById('bg-particles');
-            const particleCount = 15; 
+            // Number Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimated = false;
+            const counterSection = document.getElementById('counter-section');
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const size = Math.random() * 3 + 1; 
-                const posX = Math.random() * 100; 
-                const duration = Math.random() * 15 + 10;
-                const delay = Math.random() * 10;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}vw`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-                
-                bgContainer.appendChild(particle);
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps approx
+                    
+                    let currentCount = 0;
+                    
+                    const updateCounter = () => {
+                        currentCount += increment;
+                        if (currentCount < target) {
+                            counter.innerText = Math.ceil(currentCount);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                });
+            };
+
+            // Observer for Counters
+            const counterObserver = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    animateCounters();
+                }
+            }, { threshold: 0.5 });
+
+            if(counterSection) {
+                counterObserver.observe(counterSection);
             }
+
+            // Button Press Interaction Enhancement
+            const neuBtns = document.querySelectorAll('.neu-btn');
+            neuBtns.forEach(btn => {
+                btn.addEventListener('mousedown', () => btn.classList.add('neu-btn-pressed'));
+                btn.addEventListener('mouseup', () => btn.classList.remove('neu-btn-pressed'));
+                btn.addEventListener('mouseleave', () => btn.classList.remove('neu-btn-pressed'));
+                // Touch support
+                btn.addEventListener('touchstart', () => btn.classList.add('neu-btn-pressed'), {passive: true});
+                btn.addEventListener('touchend', () => btn.classList.remove('neu-btn-pressed'));
+            });
+
+            // Coming Soon launch gate
+            (function () {
+                const gate = document.getElementById('coming-soon-gate');
+                if (!gate) return;
+
+                const revealSite = () => {
+                    document.documentElement.classList.remove('coming-soon-active');
+                    gate.setAttribute('aria-hidden', 'true');
+                    gate.style.display = 'none';
+                    window.SITE_IS_LIVE = true;
+                };
+
+                if (window.SITE_IS_LIVE) {
+                    revealSite();
+                    return;
+                }
+
+                const daysEl = document.getElementById('cd-days');
+                const hoursEl = document.getElementById('cd-hours');
+                const minsEl = document.getElementById('cd-mins');
+                const secsEl = document.getElementById('cd-secs');
+                const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+
+                const updateCountdown = () => {
+                    const diff = window.SITE_LAUNCH_AT - Date.now();
+                    if (diff <= 0) {
+                        daysEl.textContent = '00';
+                        hoursEl.textContent = '00';
+                        minsEl.textContent = '00';
+                        secsEl.textContent = '00';
+                        revealSite();
+                        return false;
+                    }
+                    const totalSecs = Math.floor(diff / 1000);
+                    daysEl.textContent = pad(Math.floor(totalSecs / 86400));
+                    hoursEl.textContent = pad(Math.floor((totalSecs % 86400) / 3600));
+                    minsEl.textContent = pad(Math.floor((totalSecs % 3600) / 60));
+                    secsEl.textContent = pad(totalSecs % 60);
+                    return true;
+                };
+
+                if (updateCountdown()) {
+                    setInterval(updateCountdown, 1000);
+                }
+
+                const bg = document.getElementById('cs-particles');
+                if (bg) {
+                    for (let i = 0; i < 15; i++) {
+                        const p = document.createElement('div');
+                        p.className = 'cs-particle';
+                        const size = Math.random() * 3 + 1;
+                        p.style.width = size + 'px';
+                        p.style.height = size + 'px';
+                        p.style.left = (Math.random() * 100) + 'vw';
+                        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                        p.style.animationDelay = (Math.random() * 10) + 's';
+                        bg.appendChild(p);
+                    }
+                }
+            })();
         });
     </script>
 </body>
 </html>
+
+
+
+
+
