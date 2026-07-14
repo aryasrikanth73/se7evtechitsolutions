@@ -13,12 +13,19 @@
     <meta name="description" content="Se7en Tech IT Solutions - Premium HR Consultancy, IT Staffing, Recruitment and Corporate Training in Hyderabad.">
     <meta name="keywords" content="HR Consultancy, IT Staffing, Recruitment, Talent Acquisition, Corporate Training, Hyderabad">
     <meta name="author" content="Se7en Tech IT Solutions">
-    <title>Se7en Tech IT Solutions | Premium HR & Staffing</title>
+<title>Se7en Tech IT Solutions | Premium HR Consultancy & IT Staffing</title>
 
-    <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Se7en Tech IT Solutions">
-    <meta property="og:description" content="Connecting Talent with Opportunity. Top-tier HR Consultancy and IT Staffing.">
-    <meta property="og:type" content="website">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.se7entechitsolutions.com/">
+<meta property="og:title" content="Se7en Tech IT Solutions | Premium HR Consultancy & IT Staffing">
+<meta property="og:description" content="Helping businesses hire top talent and empowering professionals through HR Consultancy, IT Staffing, Recruitment, and Corporate Training.">
+<meta property="og:image" content="https://www.se7entechitsolutions.com/images/og-image.jpg">
+<meta property="og:site_name" content="Se7en Tech IT Solutions">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Se7en Tech IT Solutions | Premium HR Consultancy & IT Staffing">
+<meta name="twitter:description" content="Helping businesses hire top talent through IT Staffing, Recruitment, and Corporate Training.">
+<meta name="twitter:image" content="https://www.se7entechitsolutions.com/images/~.jpg">
 
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -408,16 +415,55 @@
         }
 
         .hero-label {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: var(--radius-pill);
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 5px 5px;
+            border-radius: 999px;
             background-color: var(--surface);
             box-shadow: var(--neu-out-sm);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            color: var(--paragraph);
+            color: var(--heading);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .hero-badge i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--surface);
+            box-shadow: var(--neu-in);
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .hero-title {
+            font-size: clamp(2.6rem, 3.2vw, 4.6rem);
+            letter-spacing: -0.04em;
+            margin-bottom: 1.25rem;
+            line-height: 1.05;
+        }
+
+        .hero-text {
+            font-size: clamp(1rem, 1.1vw, 1.1rem);
+            max-width: 680px;
+            margin-bottom: 2.25rem;
+            color: #475569;
         }
 
         .hero-title {
@@ -1431,7 +1477,20 @@
             #coming-soon-gate .cs-unit-label { font-size: 0.55rem; }
             #coming-soon-gate .cs-footer { gap: 1rem; }
             #coming-soon-gate .cs-icon { width: 36px; height: 36px; font-size: 1rem; }
-        }</style>
+        }
+
+        .tm-widget {
+            padding: 0 !important;
+        }
+
+        .tm-widget h2 {
+            display: none !important;
+        }
+
+        div[isafter="true"] {
+            display: none !important;
+        }
+        </style>
 </head>
 <body>
     <div id="coming-soon-gate" aria-hidden="false">
@@ -1524,11 +1583,20 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 reveal">
-                        <span class="hero-label">
-                            <i class="bi bi-laptop-fill me-1"></i> IT STAFFING 
-                            <i class="bi bi-people-fill me-1"></i> HR SERVICES 
-                            <i class="bi bi-easel2-fill me-1"></i>CORPORATE TRAINING
-                        </span>
+                        <div class="hero-label">
+                            <span class="hero-badge">
+                                <i class="bi bi-people-fill"></i>
+                                IT STAFFING
+                            </span>
+                            <span class="hero-badge">
+                                <i class="bi bi-building-fill"></i>
+                                HR SERVICES
+                            </span>
+                            <span class="hero-badge">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                CORPORATE TRAINING
+                            </span>
+                        </div>
                         <h1 class="hero-title">Your Trusted Partner For <span class="text-gradient">IT Staffing, HR Services & Corporate Training</span></h1>
                         <p class="hero-text">Se7en Tech IT Solutions helps businesses hire top talent through IT Staffing and HR Services while empowering professionals with practical, industry-ready corporate training.</p>
                         <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center">
@@ -1594,28 +1662,40 @@
         <section class="bg-alt py-5">
             <div class="container">
                 <div class="row g-4" id="counter-section">
-                    <div class="col-6 col-lg-3 reveal">
+                    <div class="col-6 col-lg-4 reveal">
                         <div class="neu-card stat-card">
                             <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
                             <div class="stat-text">Years Experience</div>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 reveal delay-1">
+                    <div class="col-6 col-lg-4 reveal delay-1">
                         <div class="neu-card stat-card">
                             <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
                             <div class="stat-text">Clients Served</div>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 reveal delay-2">
+                    <div class="col-6 col-lg-4 reveal delay-3">
+                        <div class="neu-card stat-card">
+                            <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+                            <div class="stat-text">Trusted By</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 reveal delay-2">
                         <div class="neu-card stat-card">
                             <div class="stat-number"><span class="counter" data-target="700">0</span>+</div>
                             <div class="stat-text">Candidates Placed</div>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 reveal delay-3">
+                    <div class="col-6 col-lg-4 reveal delay-3">
                         <div class="neu-card stat-card">
                             <div class="stat-number"><span class="counter" data-target="900">0</span>+</div>
                             <div class="stat-text">Students Trained</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 reveal delay-3">
+                        <div class="neu-card stat-card">
+                            <div class="stat-number"><span class="counter" data-target="1500">0</span>+</div>
+                            <div class="stat-text">LinkedIn Followers</div>
                         </div>
                     </div>
                 </div>
