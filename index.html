@@ -574,31 +574,33 @@
         }
 
         /* Client Logos */
-        .logo-strip {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            background: var(--surface);
-            box-shadow: var(--neu-in);
-        }
-        .client-logo {
-            font-size: clamp(1.05rem, 0.96rem + 0.36vw, 1.25rem);
-            font-weight: 800;
-            color: var(--paragraph);
-            opacity: 0.5;
-            transition: var(--transition);
-            filter: grayscale(100%);
-        }
-        .client-logo:hover {
-            opacity: 1;
-            color: var(--primary);
-            filter: grayscale(0%);
-            transform: scale(1.05);
-        }
+       .logo-strip{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:40px;
+    padding:2rem;
+    border-radius:var(--radius-lg);
+    background:var(--surface);
+    box-shadow:var(--neu-in);
+}
+
+.client-logo-img{
+    height:55px;
+    width:auto;
+    max-width:180px;
+    object-fit:contain;
+    filter:grayscale(100%);
+    opacity:.65;
+    transition:all .35s ease;
+}
+
+.client-logo-img:hover{
+    filter:grayscale(0%);
+    opacity:1;
+    transform:translateY(-5px) scale(1.05);
+}
 
         /* Office Gallery */
         .gallery-img-wrap {
@@ -1893,7 +1895,7 @@
         =========================================== -->
         <section>
             <div class="container">
-                <!-- Clients Strip -->
+                <!-- Clients Strip
                 <div class="logo-strip mb-5 reveal">
                     <span class="client-logo fw-bold fs-4">TCS</span>
                     <span class="client-logo fw-bold fs-4">Infosys</span>
@@ -1901,7 +1903,42 @@
                     <span class="client-logo fw-bold fs-4">HCLTech</span>
                     <span class="client-logo fw-bold fs-4">Tech Mahindra</span>
                     <span class="client-logo fw-bold fs-4">Accenture</span>
-                </div>
+                </div> -->
+<div class="logo-strip mb-5 reveal active">
+
+    <img src="logo/clients/ampivo.jpeg" alt="Ampivo" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/atmecs.jpeg" alt="ATMECS" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/axis.jpeg" alt="Axis" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/bartronics.jpeg" alt="Bartronics" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/bits.jpeg" alt="BITS" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/buzz.jpeg" alt="Buzz" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/conneqt.jpeg" alt="Conneqt" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/dcb.jpeg" alt="DCB Bank" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/delta.jpeg" alt="Delta" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/fabrikon.jpeg" alt="Fabrikon" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/ftcash.jpeg" alt="FTCash" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/health.jpeg" alt="Health" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/idbi.jpeg" alt="IDBI Bank" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/lanncer.jpeg" alt="Lanncer" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/reliance.jpeg" alt="Reliance" class="client-logo-img" loading="lazy">
+
+    <img src="logo/clients/wipro.jpeg" alt="Wipro" class="client-logo-img" loading="lazy">
+
+</div>
 
                 <!-- Testimonials Slider -->
                 <div class="text-center mt-5 pt-5 reveal">
