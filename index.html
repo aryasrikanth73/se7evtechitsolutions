@@ -574,33 +574,76 @@
         }
 
         /* Client Logos */
-       .logo-strip{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:40px;
-    padding:2rem;
-    border-radius:var(--radius-lg);
-    background:var(--surface);
-    box-shadow:var(--neu-in);
-}
+        .logo-strip {
+            position: relative;
+            overflow: hidden;
+            padding: 1.25rem 0;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(237,242,247,0.96));
+            box-shadow: var(--neu-in);
+            border: 1px solid rgba(255,255,255,0.6);
+        }
 
-.client-logo-img{
-    height:55px;
-    width:auto;
-    max-width:180px;
-    object-fit:contain;
-    filter:grayscale(100%);
-    opacity:.65;
-    transition:all .35s ease;
-}
+        .logo-strip::before,
+        .logo-strip::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-.client-logo-img:hover{
-    filter:grayscale(0%);
-    opacity:1;
-    transform:translateY(-5px) scale(1.05);
-}
+        .logo-strip::before {
+            left: 0;
+            background: linear-gradient(90deg, rgba(237,242,247,1), rgba(237,242,247,0));
+        }
+
+        .logo-strip::after {
+            right: 0;
+            background: linear-gradient(270deg, rgba(237,242,247,1), rgba(237,242,247,0));
+        }
+
+        .logo-strip-track {
+            display: flex;
+            width: max-content;
+            gap: 1.25rem;
+            animation: logoScroll 24s linear infinite;
+            will-change: transform;
+        }
+
+        .logo-strip-group {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .client-logo-img {
+            height: 58px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            padding: 0.8rem 1rem;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.8);
+            box-shadow: var(--neu-out-sm);
+            border: 1px solid rgba(255,255,255,0.7);
+            filter: none;
+            opacity: 1;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .client-logo-img:hover {
+            transform: translateY(-5px) scale(1.04);
+            box-shadow: var(--neu-out);
+        }
+
+        @keyframes logoScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
 
         /* Office Gallery */
         .gallery-img-wrap {
@@ -1905,39 +1948,44 @@
                     <span class="client-logo fw-bold fs-4">Accenture</span>
                 </div> -->
 <div class="logo-strip mb-5 reveal active">
-
-    <img src="logo/clients/ampivo.jpeg" alt="Ampivo" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/atmecs.jpeg" alt="ATMECS" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/axis.jpeg" alt="Axis" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/bartronics.jpeg" alt="Bartronics" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/bits.jpeg" alt="BITS" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/buzz.jpeg" alt="Buzz" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/conneqt.jpeg" alt="Conneqt" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/dcb.jpeg" alt="DCB Bank" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/delta.jpeg" alt="Delta" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/fabrikon.jpeg" alt="Fabrikon" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/ftcash.jpeg" alt="FTCash" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/health.jpeg" alt="Health" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/idbi.jpeg" alt="IDBI Bank" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/lanncer.jpeg" alt="Lanncer" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/reliance.jpeg" alt="Reliance" class="client-logo-img" loading="lazy">
-
-    <img src="logo/clients/wipro.jpeg" alt="Wipro" class="client-logo-img" loading="lazy">
-
+    <div class="logo-strip-track">
+        <div class="logo-strip-group">
+            <img src="logo/clients/ampivo.jpeg" alt="Ampivo" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/atmecs.jpeg" alt="ATMECS" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/axis.jpeg" alt="Axis" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/bartronics.jpeg" alt="Bartronics" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/bits.jpeg" alt="BITS" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/buzz.jpeg" alt="Buzz" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/conneqt.jpeg" alt="Conneqt" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/dcb.jpeg" alt="DCB Bank" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/delta.jpeg" alt="Delta" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/fabrikon.jpeg" alt="Fabrikon" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/ftcash.jpeg" alt="FTCash" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/health.jpeg" alt="Health" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/idbi.jpeg" alt="IDBI Bank" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/lanncer.jpeg" alt="Lanncer" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/reliance.jpeg" alt="Reliance" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/wipro.jpeg" alt="Wipro" class="client-logo-img" loading="lazy">
+        </div>
+        <div class="logo-strip-group" aria-hidden="true">
+            <img src="logo/clients/ampivo.jpeg" alt="Ampivo" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/atmecs.jpeg" alt="ATMECS" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/axis.jpeg" alt="Axis" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/bartronics.jpeg" alt="Bartronics" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/bits.jpeg" alt="BITS" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/buzz.jpeg" alt="Buzz" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/conneqt.jpeg" alt="Conneqt" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/dcb.jpeg" alt="DCB Bank" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/delta.jpeg" alt="Delta" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/fabrikon.jpeg" alt="Fabrikon" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/ftcash.jpeg" alt="FTCash" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/health.jpeg" alt="Health" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/idbi.jpeg" alt="IDBI Bank" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/lanncer.jpeg" alt="Lanncer" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/reliance.jpeg" alt="Reliance" class="client-logo-img" loading="lazy">
+            <img src="logo/clients/wipro.jpeg" alt="Wipro" class="client-logo-img" loading="lazy">
+        </div>
+    </div>
 </div>
 
                 <!-- Testimonials Slider -->
